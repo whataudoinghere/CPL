@@ -21,7 +21,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Toast;
@@ -104,17 +103,8 @@ public class InfoDropTarget extends UninstallDropTarget {
     }
 
     public static boolean supportsDrop(Context context, ItemInfo info) {
-        // Only show the App Info drop target if developer settings are enabled.
-        boolean developmentSettingsEnabled = Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1;
-        if (!developmentSettingsEnabled) {
-            return false;
-        }
-        return info.itemType != LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT &&
-                (info instanceof AppInfo ||
-                (info instanceof ShortcutInfo && !((ShortcutInfo) info).isPromise()) ||
-                (info instanceof LauncherAppWidgetInfo &&
-                        ((LauncherAppWidgetInfo) info).restoreStatus == 0) ||
-                info instanceof PendingAddItemInfo);
+        return (info instanceof AppInfo || info instanceof ShortcutInfo
+                || info instanceof PendingAddItemInfo || info instanceof LauncherAppWidgetInfo)
+                && info.itemType != LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT;
     }
 }

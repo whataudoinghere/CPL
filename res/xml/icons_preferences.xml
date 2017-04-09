@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.android.launcher3.views.ButtonPreference
+        android:key="pref_icon_badging"
+        android:title="@string/icon_badging_title"
+        android:persistent="false"
+        android:widgetLayout="@layout/notification_pref_warning" >
+        <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+            <extra
+                android:name=":settings:fragment_args_key"
+                android:value="notification_badging" />
+        </intent>
+    </com.android.launcher3.views.ButtonPreference>
+
+    <ListPreference
+        android:key="pref_override_icon_shape"
+        android:title="@string/icon_shape_override_label"
+        android:summary="%s"
+        android:entries="@array/icon_shape_override_paths_names"
+        android:entryValues="@array/icon_shape_override_paths_values"
+        android:defaultValue=""
+        android:persistent="false" />
+
+    <Preference
+        android:persistent="true"
+        android:key="icon-packs"
+        android:title="@string/icons_pack_name"
+        android:icon="@drawable/icon_pack"/>
+</PreferenceScreen>

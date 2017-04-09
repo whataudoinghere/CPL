@@ -70,6 +70,10 @@ public abstract class SQLiteCacheHelper {
         }
     }
 
+    public SQLiteDatabase getDatabase() {
+        return mOpenHelper.getWritableDatabase();
+    }
+
     private void onDiskFull(SQLiteFullException e) {
         Log.e(TAG, "Disk full, all write operations will be ignored", e);
         mIgnoreWrites = true;

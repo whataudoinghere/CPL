@@ -29,6 +29,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Process;
 import android.os.UserHandle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -315,11 +316,19 @@ public class LauncherModel extends BroadcastReceiver
     public void onPackageChanged(String packageName, UserHandle user) {
         int op = PackageUpdatedTask.OP_UPDATE;
         enqueueModelUpdateTask(new PackageUpdatedTask(op, user, packageName));
+        IconCache.getIconsHandler(mApp.getContext()).switchIconPacks(packageName);
     }
 
     @Override
     public void onPackageRemoved(String packageName, UserHandle user) {
         onPackagesRemoved(user, packageName);
+        Context context = mApp.getContext();
+        String defaultIconPack = context.getString(R.string.default_iconpack);
+
+        //switch to default icon pack if the applied one is removed
+        if (PreferenceManager.getDefaultSharedPreferences(context).getString(Utilities.KEY_ICON_PACK, defaultIconPack).equals(packageName)) {
+            IconCache.getIconsHandler(context).switchIconPacks(defaultIconPack);
+        }
     }
 
     public void onPackagesRemoved(UserHandle user, String... packages) {

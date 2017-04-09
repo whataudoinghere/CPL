@@ -288,6 +288,10 @@
                 android:entryValues="@array/icon_shape_override_paths_values"
                 android:defaultValue=""
                 android:persistent="false" />
+            <Preference
+                android:persistent="true"
+                android:key="icon-packs"
+                android:title="@string/icons_pack_name" />
         </PreferenceCategory>
 
     </PreferenceScreen>

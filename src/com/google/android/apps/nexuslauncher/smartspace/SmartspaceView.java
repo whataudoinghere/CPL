@@ -36,7 +36,6 @@ import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import com.android.launcher3.popup.PopupContainerWithArrow;
 import com.android.launcher3.popup.SystemShortcut;
 import com.android.launcher3.util.Themes;
-import com.google.android.apps.nexuslauncher.DynamicIconProvider;
 import com.google.android.apps.nexuslauncher.graphics.IcuDateTextView;
 
 import java.util.ArrayList;
@@ -84,7 +83,7 @@ public class SmartspaceView extends FrameLayout implements ISmartspace, ValueAni
                     final Context context = getContext();
                     Launcher.getLauncher(context).startActivitySafely(v, addFlags, null);
                 } catch (ActivityNotFoundException ex) {
-                    LauncherAppsCompat.getInstance(getContext()).showAppDetailsForProfile(new ComponentName(DynamicIconProvider.GOOGLE_CALENDAR, ""), Process.myUserHandle());
+                    LauncherAppsCompat.getInstance(getContext()).showAppDetailsForProfile(new ComponentName("com.google.android.calendar", ""), Process.myUserHandle());
                 }
             }
         };
@@ -370,7 +369,7 @@ public class SmartspaceView extends FrameLayout implements ISmartspace, ValueAni
                 final Context context = dZ.getContext();
                 Launcher.getLauncher(context).startActivitySafely(view, addFlags, null);
             } catch (ActivityNotFoundException ex) {
-                LauncherAppsCompat.getInstance(dZ.getContext()).showAppDetailsForProfile(new ComponentName(DynamicIconProvider.GOOGLE_CALENDAR, ""), Process.myUserHandle());
+                LauncherAppsCompat.getInstance(dZ.getContext()).showAppDetailsForProfile(new ComponentName("com.google.android.calendar", ""), Process.myUserHandle());
             }
         }
     }

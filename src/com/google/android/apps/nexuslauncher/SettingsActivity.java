@@ -8,23 +8,29 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.TwoStatePreference;
 import android.text.TextUtils;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.android.launcher3.BuildConfig;
+import com.android.launcher3.IconCache;
+import com.android.launcher3.IconsHandler;
 import com.android.launcher3.MultiSelectRecyclerViewActivity;
 
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.graphics.IconShapeOverride;
 import com.google.android.apps.nexuslauncher.smartspace.SmartspaceController;
 
 public class SettingsActivity extends com.android.launcher3.SettingsActivity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
@@ -33,6 +39,13 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
     public final static String SMARTSPACE_PREF = "pref_smartspace";
     public final static String APP_VERSION_PREF = "about_app_version";
     public final static String APP_BUILD_DATE_PREF = "about_app_build_date";
+    public final static String ICON_PACK_PREF = "icon-packs";
+
+
+    private String mDefaultIconPack;
+    private IconsHandler mIconsHandler;
+    private PackageManager mPackageManager;
+    private Preference mIconPack;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -54,8 +67,13 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
     }
 
     public static class MySettingsFragment extends com.android.launcher3.SettingsActivity.LauncherSettingsFragment
-            implements Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
+            implements Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
         private Context mContext;
+
+        private String mDefaultIconPack;
+        private IconsHandler mIconsHandler;
+        private PackageManager mPackageManager;
+        private Preference mIconPack;
 
         @Override
         public void onCreate(Bundle bundle) {
@@ -80,8 +98,6 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             }
             findPreference(APP_BUILD_DATE_PREF).setSummary(BuildConfig.BUILD_TIME + "\n" + "(" + BuildConfig.BUILD_HOST + "/" + BuildConfig.BUILD_WHOAMI + ")");
 
-
-
             Preference vibrate = findPreference(Utilities.VIBRATIONFEEDBACKTEST);
             vibrate.setOnPreferenceClickListener(this);
 
@@ -94,7 +110,11 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             Preference forgot = findPreference(Utilities.KEY_ABOUT_FORGOT);
             forgot.setOnPreferenceClickListener(this);
 
+            Preference pack = findPreference(Utilities.KEY_ICON_PACK);
+            pack.setOnPreferenceClickListener(this);
+
             findPreference(SHOW_PREDICTIONS_PREF).setOnPreferenceChangeListener(this);
+
 
             if (Utilities.ATLEAST_NOUGAT) {
                 getPreferenceScreen().findPreference("pref_DateFormats").setEnabled(true);
@@ -106,6 +126,12 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             if (Utilities.ATLEAST_MARSHMALLOW) {
                 getPreferenceScreen().findPreference("pref_icon_badging").setEnabled(true);
             }
+
+            mPackageManager = getActivity().getPackageManager();
+            mDefaultIconPack = getString(R.string.default_iconpack);
+            mIconsHandler = IconCache.getIconsHandler(getActivity().getApplicationContext());
+            mIconPack = (Preference) findPreference(Utilities.KEY_ICON_PACK);
+            reloadIconPackSummary();
         }
 
         private String getDisplayGoogleTitle() {
@@ -127,8 +153,23 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
 
         @Override
         public void onResume() {
+            PreferenceManager.getDefaultSharedPreferences(getActivity()).registerOnSharedPreferenceChangeListener(this);
             super.onResume();
         }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            PreferenceManager.getDefaultSharedPreferences(getActivity()).unregisterOnSharedPreferenceChangeListener(this);
+            mIconsHandler.hideDialog();
+        }
+
+
+       public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+             reloadIconPackSummary();
+        }
+
+
 
         @Override
         public boolean onPreferenceChange(Preference preference, final Object newValue) {
@@ -145,15 +186,38 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             return false;
         }
 
+        private void reloadIconPackSummary() {
+            Preference preference = findPreference(ICON_PACK_PREF);
+            if (preference == null) {
+                return;
+            }
+
+            String defaultPack = mContext.getString(R.string.default_iconpack);
+            String iconPack = PreferenceManager.getDefaultSharedPreferences(getActivity())
+                    .getString(Utilities.KEY_ICON_PACK, defaultPack);
+
+            try {
+                ApplicationInfo info = mContext.getPackageManager().getApplicationInfo(iconPack, 0);
+                preference.setSummary(mContext.getPackageManager().getApplicationLabel(info));
+            } catch (PackageManager.NameNotFoundException e) {
+                preference.setSummary(defaultPack);
+            }
+        }
+
         @Override
         public boolean onPreferenceClick(Preference preference) {
             if (SMARTSPACE_PREF.equals(preference.getKey())) {
                 SmartspaceController.get(mContext).cZ();
                 return true;
             }
+
             if (Utilities.KEY_HIDDEN_APPS.equals(preference.getKey())) {
                 Intent intent = new Intent(getActivity(), MultiSelectRecyclerViewActivity.class);
                 startActivity(intent);
+                return true;
+            }
+            if (Utilities.KEY_ICON_PACK.equals(preference.getKey())) {
+                mIconsHandler.showDialog(getActivity());
                 return true;
             }
             if (Utilities.KEY_REBOOT.equals(preference.getKey())) {
@@ -187,6 +251,8 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             return false;
         }
     }
+
+
 
 
     public static class SuggestionConfirmationFragment extends DialogFragment implements DialogInterface.OnClickListener {

@@ -51,7 +51,6 @@ public class SettingsActivity extends Activity {
     /** Hidden field Settings.Secure.ENABLED_NOTIFICATION_LISTENERS */
     private static final String NOTIFICATION_ENABLED_LISTENERS = "enabled_notification_listeners";
 
-    static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
 
     @Override
