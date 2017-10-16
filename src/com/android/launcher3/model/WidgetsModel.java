@@ -14,6 +14,7 @@ import com.android.launcher3.IconCache;
 import com.android.launcher3.InvariantDeviceProfile;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherAppWidgetProviderInfo;
+import com.android.launcher3.StringSetAppFilter;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.compat.LauncherAppsCompat;
@@ -144,9 +145,9 @@ public class WidgetsModel {
             }
 
             if (mAppFilter == null) {
-                mAppFilter = AppFilter.newInstance(app.getContext());
+                mAppFilter = new StringSetAppFilter();
             }
-            if (!mAppFilter.shouldShowApp(item.componentName)) {
+            if (!mAppFilter.shouldShowApp(item.componentName.getPackageName(), app.getContext())) {
                 if (DEBUG) {
                     Log.d(TAG, String.format("%s is filtered and not added to the widget tray.",
                             item.componentName));

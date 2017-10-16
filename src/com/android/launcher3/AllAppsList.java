@@ -57,10 +57,13 @@ public class AllAppsList {
 
     private AppFilter mAppFilter;
 
+    private Context mContext;
+
     /**
      * Boring constructor.
      */
-    public AllAppsList(IconCache iconCache, AppFilter appFilter) {
+    public AllAppsList(Context context, IconCache iconCache, AppFilter appFilter) {
+        mContext = context;
         mIconCache = iconCache;
         mAppFilter = appFilter;
     }
@@ -72,7 +75,7 @@ public class AllAppsList {
      * If the app is already in the list, doesn't add it.
      */
     public void add(AppInfo info, LauncherActivityInfo activityInfo) {
-        if (!mAppFilter.shouldShowApp(info.componentName)) {
+        if (mAppFilter != null && !mAppFilter.shouldShowApp(info.componentName.getPackageName(), mContext)) {
             return;
         }
         if (findAppInfo(info.componentName, info.user) != null) {

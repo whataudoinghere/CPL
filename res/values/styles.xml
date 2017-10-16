@@ -213,4 +213,10 @@
         <item name="android:textColorPrimary">@color/colorAccent</item>
         <item name="android:colorControlNormal">@color/colorAccent</item>
     </style>
+
+    <style name="SettingsTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/settings_action_bar_color</item>
+        <item name="android:colorPrimaryDark">@color/settings_status_bar_color</item>
+        <item name="android:colorAccent">@color/launcher_accent_color</item>
+    </style>
 </resources>

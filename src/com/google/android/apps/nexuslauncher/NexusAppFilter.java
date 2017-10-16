@@ -3,11 +3,9 @@ package com.google.android.apps.nexuslauncher;
 import android.content.ComponentName;
 import android.content.Context;
 
-import com.android.launcher3.AppFilter;
-
 import java.util.HashSet;
 
-public class NexusAppFilter extends AppFilter {
+public class NexusAppFilter {
     private final HashSet<ComponentName> mHideList = new HashSet<>();
 
     public NexusAppFilter(Context context) {
@@ -21,7 +19,6 @@ public class NexusAppFilter extends AppFilter {
         mHideList.add(ComponentName.unflattenFromString("com.google.android.launcher/com.google.android.launcher.StubApp"));
     }
 
-    @Override
     public boolean shouldShowApp(ComponentName componentName) {
         return !mHideList.contains(componentName);
     }

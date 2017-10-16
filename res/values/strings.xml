@@ -316,6 +316,7 @@
     <!-- Accessibility confirmation for notification being dismissed. -->
     <string name="notification_dismissed">Notification dismissed</string>
 
+
     <string name="icu_abbrev_wday_month_day_no_year">EEEEMMMd</string>
     <string name="smartspace_preferences">Preferences</string>
     <string name="label_search">Search</string>
@@ -338,4 +339,7 @@
     <string name="title_disable_suggestions_prompt">Turn off app suggestions?</string>
     <string name="msg_disable_suggestions_prompt">"Suggestions won't appear at the top of your apps list, and the usage data used to create them will be permanently erased."</string>
     <string name="label_turn_off_suggestions">TURN OFF</string>
+
+    <string name="customize">Customize</string>
+
 </resources>

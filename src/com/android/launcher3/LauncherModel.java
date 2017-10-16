@@ -162,7 +162,7 @@ public class LauncherModel extends BroadcastReceiver
 
     LauncherModel(LauncherAppState app, IconCache iconCache, AppFilter appFilter) {
         mApp = app;
-        mBgAllAppsList = new AllAppsList(iconCache, appFilter);
+        mBgAllAppsList = new AllAppsList(app.getContext(), iconCache, appFilter);
     }
 
     /** Runs the specified runnable immediately if called from the worker thread, otherwise it is
