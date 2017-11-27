@@ -38,29 +38,32 @@ public class MultiSelectRecyclerViewActivity extends Activity implements MultiSe
     private ActionBar mActionBar;
     private MultiSelectRecyclerViewAdapter mAdapter;
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.hide_menu, menu);
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         updateHiddenApps();
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        } else {
+            updateHiddenApps();
+        }
         return super.onOptionsItemSelected(item);
     }
 
     private void updateHiddenApps() {
-
         mAdapter.addSelectionsToHideList(MultiSelectRecyclerViewActivity.this);
         LauncherAppState appState = LauncherAppState.getInstanceNoCreate();
         if (appState != null) {
             appState.getModel().forceReload();
         }
-
-        navigateUpTo(new Intent(MultiSelectRecyclerViewActivity.this, Launcher.class));
+        //navigateUpTo(new Intent(MultiSelectRecyclerViewActivity.this, Launcher.class));
     }
 
     @Override
@@ -88,8 +91,8 @@ public class MultiSelectRecyclerViewActivity extends Activity implements MultiSe
 
     @Override
     public void onItemClicked(int position) {
-
         mAdapter.toggleSelection(mActionBar, position, mInstalledPackages.get(position).activityInfo.packageName);
+        updateHiddenApps();
     }
 
     private List<ResolveInfo> getInstalledApps() {
