@@ -37,6 +37,21 @@ class MultiSelectRecyclerViewAdapter extends SelectableAdapter<MultiSelectRecycl
 
     MultiSelectRecyclerViewAdapter(Context context, List<ResolveInfo> resolveInfos, ItemClickListener clickListener) {
         mResolveInfos = resolveInfos;
+
+        int toSwitch = 0;
+        for (int i = 0; i < mResolveInfos.size(); i++) {
+            ResolveInfo selected = mResolveInfos.get(i);
+            String packageName = selected.activityInfo.packageName;
+            if (isSelected(packageName) && toSwitch != i) {
+                ResolveInfo temp = mResolveInfos.get(toSwitch);
+                mResolveInfos.set(toSwitch, selected);
+                mResolveInfos.set(i, temp);
+                toSwitch++;
+            } else if (isSelected(packageName) && toSwitch == i) {
+                toSwitch++;
+            }
+        }
+
         mClickListener = clickListener;
         mPackageManager = context.getPackageManager();
     }
