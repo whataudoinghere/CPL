@@ -355,6 +355,8 @@
     <string name="hidden_app">Hidden app</string>
     <string name="hide_selected">Hide selected app</string>
     <string name="more">More</string>
+    <string name="reset_hidden_apps">Reset all</string>
+    <string name="reset_hidden_apps_hint">Hidden apps are now available</string>
 
     <!-- Dock bar -->
     <string name="custom_dockbar">Dock bar</string>

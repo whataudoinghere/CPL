@@ -18,8 +18,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.android.launcher3.MultiSelectRecyclerViewActivity">
     <item
-        android:id="@+id/hide"
-        android:icon="@drawable/ic_check_circle"
+        android:id="@+id/reset"
+        android:icon="@drawable/ic_reset_hidden_apps"
         android:showAsAction="ifRoom"
-        android:title="@string/hide_selected" />
+        android:title="@string/reset_hidden_apps" />
 </menu>
+
+
+

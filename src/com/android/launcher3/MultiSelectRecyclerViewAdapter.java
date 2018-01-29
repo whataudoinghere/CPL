@@ -40,7 +40,6 @@ class MultiSelectRecyclerViewAdapter extends SelectableAdapter<MultiSelectRecycl
 
     MultiSelectRecyclerViewAdapter(Context context, List<ResolveInfo> resolveInfos, ItemClickListener clickListener) {
 
-
         mClickListener = clickListener;
         mPackageManager = context.getPackageManager();
         mPackages = new ArrayList<>();

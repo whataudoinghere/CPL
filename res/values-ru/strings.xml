@@ -152,6 +152,8 @@
     <string name="hide_app_selected">&#160;выбрано</string>
     <string name="hidden_app">Все приложения</string>
     <string name="hide_selected">Скрыть выбранные приложения</string>
+    <string name="reset_hidden_apps">Сбросить все</string>
+    <string name="reset_hidden_apps_hint">Скрытые приложения отображаются</string>
 
     <!-- Theme -->
     <string name="custom_theme">Тема</string>

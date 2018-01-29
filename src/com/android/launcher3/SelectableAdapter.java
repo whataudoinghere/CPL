@@ -68,4 +68,14 @@ abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder> extends Rec
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         prefs.edit().putStringSet(Utilities.KEY_HIDDEN_APPS_SET, mSelections).apply();
     }
+
+    void removeSelectionsToHideList(Context context) {
+        Set<String> hiddenApps = PreferenceManager.getDefaultSharedPreferences(context).getStringSet(Utilities.KEY_HIDDEN_APPS_SET, null);;
+
+        if (hiddenApps != null && !hiddenApps.isEmpty()) {
+            mSelections.removeAll(hiddenApps);
+        }
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.edit().putStringSet(Utilities.KEY_HIDDEN_APPS_SET, mSelections).apply();
+    }
 }
