@@ -50,9 +50,7 @@ abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder> extends Rec
     }
 
     void toggleSelection(ActionBar actionBar, int position, String packageName) {
-
         if (mSelections.contains(packageName)) {
-
             mSelections.remove(packageName);
         } else {
             mSelections.add(packageName);

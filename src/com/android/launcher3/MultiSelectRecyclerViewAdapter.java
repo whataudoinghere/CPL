@@ -25,41 +25,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class MultiSelectRecyclerViewAdapter extends SelectableAdapter<MultiSelectRecyclerViewAdapter.ViewHolder> {
 
-    private List<ResolveInfo> mResolveInfos;
+
+    private List<Packages> mPackages;
     private ItemClickListener mClickListener;
     private PackageManager mPackageManager;
 
     MultiSelectRecyclerViewAdapter(Context context, List<ResolveInfo> resolveInfos, ItemClickListener clickListener) {
-        mResolveInfos = resolveInfos;
 
-        int toSwitch = 0;
-        for (int i = 0; i < mResolveInfos.size(); i++) {
-            ResolveInfo selected = mResolveInfos.get(i);
-            String packageName = selected.activityInfo.packageName;
-            if (isSelected(packageName) && toSwitch != i) {
-                ResolveInfo temp = mResolveInfos.get(toSwitch);
-                mResolveInfos.set(toSwitch, selected);
-                mResolveInfos.set(i, temp);
-                toSwitch++;
-            } else if (isSelected(packageName) && toSwitch == i) {
-                toSwitch++;
-            }
-        }
 
         mClickListener = clickListener;
         mPackageManager = context.getPackageManager();
+        mPackages = new ArrayList<>();
+        for (int i = 0; i < resolveInfos.size(); i++) {
+            mPackages.add(new Packages(resolveInfos.get(i)));
+        }
     }
 
     // Create new views
     @Override
-    public MultiSelectRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                                        int viewType) {
+    public MultiSelectRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.hide_item, null);
 
@@ -69,16 +61,38 @@ class MultiSelectRecyclerViewAdapter extends SelectableAdapter<MultiSelectRecycl
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
 
-        String packageName = mResolveInfos.get(position).activityInfo.packageName;
-        viewHolder.label.setText(mResolveInfos.get(position).loadLabel(mPackageManager));
-        viewHolder.icon.setImageDrawable(mResolveInfos.get(position).loadIcon(mPackageManager));
-
-        viewHolder.checkBox.setChecked(isSelected(packageName));
+        viewHolder.label.setText(mPackages.get(position).getLabel());
+        viewHolder.icon.setImageDrawable(mPackages.get(position).getIcon());
+        viewHolder.checkBox.setChecked(isSelected(mPackages.get(position).getPackageName()));
     }
 
     @Override
     public int getItemCount() {
-        return mResolveInfos.size();
+        return mPackages.size();
+    }
+
+    private class Packages {
+        private String mPackageName;
+        private CharSequence mLabel;
+        private Drawable mIcon;
+
+        public Packages(ResolveInfo info) {
+            mPackageName = info.activityInfo.packageName;
+            mLabel = info.loadLabel(mPackageManager);
+            mIcon = info.loadIcon(mPackageManager);
+        }
+
+        public String getPackageName() {
+            return mPackageName;
+        }
+
+        public CharSequence getLabel() {
+            return mLabel;
+        }
+
+        public Drawable getIcon() {
+            return mIcon;
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
