@@ -11,6 +11,7 @@ import com.android.launcher3.InfoDropTarget;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.model.WidgetItem;
 import com.android.launcher3.util.PackageUserKey;
 import com.android.launcher3.widget.WidgetsBottomSheet;
@@ -55,6 +56,10 @@ public abstract class SystemShortcut extends ItemInfo {
         @Override
         public View.OnClickListener getOnClickListener(final Launcher launcher,
                 final ItemInfo itemInfo) {
+            if (!Utilities.isWorkspaceEditAllowed(launcher.getApplicationContext())) {
+                return null;
+            }
+
             final List<WidgetItem> widgets = launcher.getWidgetsForPackageUser(new PackageUserKey(
                     itemInfo.getTargetComponent().getPackageName(), itemInfo.user));
             if (widgets == null) {

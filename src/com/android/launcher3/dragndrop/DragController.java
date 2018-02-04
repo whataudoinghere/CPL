@@ -394,7 +394,14 @@ public class DragController implements DragDriver.EventListener, TouchController
      * Call this from a drag source view.
      */
     public boolean onControllerInterceptTouchEvent(MotionEvent ev) {
-        if (mOptions != null && mOptions.isAccessibleDrag) {
+        boolean isEditDisabled = !Utilities.isWorkspaceEditAllowed(
+                mLauncher.getApplicationContext());
+
+        if ((mOptions != null && mOptions.isAccessibleDrag) || isEditDisabled) {
+            if (isEditDisabled) {
+                cancelDrag();
+            }
+
             return false;
         }
 

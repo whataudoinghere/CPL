@@ -210,6 +210,10 @@
     <!-- Home screen -->
     <string name="custom_hs">Домашний экран</string>
     <string name="diabledgemargin">Отключить поля</string>
+    <string name="settings_edit_allow_title">Разрешить редактирование</string>
+    <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавленны, удалены или перемещены</string>
+    <string name="settings_edit_allow_summary_off">Значки и виджеты могут не могут быть добавленны, удалены или перемещены</string>
+    <string name="settings_edit_widgets_error">Невозожно добавить виджет</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Подписи значков на рабочем столе</string>
