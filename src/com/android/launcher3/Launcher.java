@@ -2537,6 +2537,7 @@ public class Launcher extends BaseActivity
                 .setPackage(getPackageName());
         intent.setSourceBounds(getViewBounds(v));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        showWorkspace(false);
         startActivity(intent, getActivityLaunchOptions(v));
     }
 
