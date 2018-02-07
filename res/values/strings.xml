@@ -365,6 +365,7 @@
     <string name="force_colour_logo">Сolored Google logo on search bar</string>
     <string name="dark_themeqsb">Dark search bar</string>
     <string name="transparentqsb">Transparent search bar</string>
+    <string name="hotseatShowArrow">Show arrow</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>

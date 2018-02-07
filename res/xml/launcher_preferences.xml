@@ -135,6 +135,10 @@
             android:defaultValue="false"
             android:key="pref_enablemic"
             android:title="@string/force_mic" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_hotseatShowArrow"
+            android:title="@string/hotseatShowArrow" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/custom_ico">

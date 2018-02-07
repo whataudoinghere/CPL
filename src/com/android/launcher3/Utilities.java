@@ -142,6 +142,7 @@ public final class Utilities {
     public static final String ADDCOLOUMNALLAPP = "pref_addcoloumnallapp";
     public static final String DARKQSBALLAPPS = "pref_darkqsballapp";
     public static final String DISABLEEDGEMARGIN = "pref_diabledgemargin";
+    public static final String KEY_PREF_HOTSEAT_SHOW_ARROW = "pref_hotseatShowArrow";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

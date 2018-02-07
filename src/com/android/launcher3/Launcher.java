@@ -4124,6 +4124,9 @@ public class Launcher extends BaseActivity
             if (Utilities.DISABLEEDGEMARGIN.equals(key)) {
                 needRestart();
             }
+            if (Utilities.KEY_PREF_HOTSEAT_SHOW_ARROW.equals(key)) {
+                needRestart();
+            }
         }
     }
 }
