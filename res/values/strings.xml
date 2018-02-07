@@ -389,4 +389,10 @@
     <string name="dark_themeqsballapp">Dark search bar in All Apps</string>
     <string name="num_colsallapp">Extra column in All Apps</string>
     <string name="smallallaps">Small reaserch bar</string>
+
+    <!-- Icons -->
+    <string name="custom_ico">Icons</string>
+
+    <!-- Home screen -->
+    <string name="custom_hs">Home screen</string>
 </resources>

@@ -16,6 +16,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory android:title="@string/custom_hs">
+
     <ListPreference
         android:defaultValue="5"
         android:entries="@array/numGridValues"
@@ -33,32 +35,11 @@
         android:summary="%s"
         android:title="@string/num_rows" />
 
-    <com.android.launcher3.views.ButtonPreference
-        android:key="pref_icon_badging"
-        android:title="@string/icon_badging_title"
-        android:persistent="false"
-        android:widgetLayout="@layout/notification_pref_warning" >
-        <intent android:action="android.settings.NOTIFICATION_SETTINGS">
-            <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
-            <extra
-                android:name=":settings:fragment_args_key"
-                android:value="notification_badging" />
-        </intent>
-    </com.android.launcher3.views.ButtonPreference>
-
     <PreferenceScreen
         android:key="pref_smartspace"
         android:title="@string/smartspace_preferences_in_settings"
         android:summary="@string/smartspace_preferences_in_settings_desc"
         android:persistent="false"
-        />
-
-    <SwitchPreference
-        android:key="pref_add_icon_to_home"
-        android:title="@string/auto_add_shortcuts_label"
-        android:summary="@string/auto_add_shortcuts_description"
-        android:defaultValue="true"
-        android:persistent="true"
         />
 
     <SwitchPreference
@@ -74,6 +55,7 @@
         android:defaultValue="@bool/allow_rotation"
         android:persistent="true"
         />
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/custom_allapp">
         <SwitchPreference
@@ -104,22 +86,6 @@
             android:title="@string/hide_app"
             android:summary="@string/hide_app_sum"/>
     </PreferenceCategory>
-
-    <ListPreference
-        android:key="pref_override_icon_shape"
-        android:title="@string/icon_shape_override_label"
-        android:summary="%s"
-        android:entries="@array/icon_shape_override_paths_names"
-        android:entryValues="@array/icon_shape_override_paths_values"
-        android:defaultValue=""
-        android:persistent="false" />
-
-    <com.google.android.apps.nexuslauncher.CustomIconPreference
-        android:key="pref_icon_pack"
-        android:title="@string/pref_icon_pack"
-        android:summary="%s"
-        android:defaultValue=""
-        android:persistent="true" />
 
     <PreferenceCategory
         android:title="@string/custom_theme">
@@ -166,6 +132,42 @@
             android:title="@string/force_mic" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/custom_ico">
+        <ListPreference
+            android:key="pref_override_icon_shape"
+            android:title="@string/icon_shape_override_label"
+            android:summary="%s"
+            android:entries="@array/icon_shape_override_paths_names"
+            android:entryValues="@array/icon_shape_override_paths_values"
+            android:defaultValue=""
+            android:persistent="false" />
+
+        <com.google.android.apps.nexuslauncher.CustomIconPreference
+            android:key="pref_icon_pack"
+            android:title="@string/pref_icon_pack"
+            android:summary="%s"
+            android:defaultValue=""
+            android:persistent="true" />
+        <com.android.launcher3.views.ButtonPreference
+            android:key="pref_icon_badging"
+            android:title="@string/icon_badging_title"
+            android:persistent="false"
+            android:widgetLayout="@layout/notification_pref_warning" >
+            <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+                <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
+                <extra
+                    android:name=":settings:fragment_args_key"
+                    android:value="notification_badging" />
+            </intent>
+        </com.android.launcher3.views.ButtonPreference>
+        <SwitchPreference
+            android:key="pref_add_icon_to_home"
+            android:title="@string/auto_add_shortcuts_label"
+            android:summary="@string/auto_add_shortcuts_description"
+            android:defaultValue="true"
+            android:persistent="true"
+            />
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/about">
         <PreferenceScreen
