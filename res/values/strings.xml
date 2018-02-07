@@ -395,4 +395,5 @@
 
     <!-- Home screen -->
     <string name="custom_hs">Home screen</string>
+    <string name="diabledgemargin">Disable edge margin</string>
 </resources>

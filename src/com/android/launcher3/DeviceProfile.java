@@ -180,7 +180,11 @@ public class DeviceProfile {
         ComponentName cn = new ComponentName(context.getPackageName(),
                 this.getClass().getName());
         defaultWidgetPadding = AppWidgetHostView.getDefaultPaddingForWidget(context, cn, null);
-        edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
+        boolean a = Utilities.getPrefs(context).getBoolean("pref_diabledgemargin", false);
+        if (a) {
+            edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_disabled);
+        }
+        else edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
         desiredWorkspaceLeftRightMarginPx = isVerticalBarLayout() ? 0 : edgeMarginPx;
         cellLayoutPaddingLeftRightPx =
                 res.getDimensionPixelSize(R.dimen.dynamic_grid_cell_layout_padding);

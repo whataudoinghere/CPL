@@ -4121,6 +4121,9 @@ public class Launcher extends BaseActivity
             if (Utilities.DARKQSBALLAPPS.equals(key)) {
                 recreate();
             }
+            if (Utilities.DISABLEEDGEMARGIN.equals(key)) {
+                needRestart();
+            }
         }
     }
 }
