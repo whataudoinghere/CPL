@@ -358,5 +358,11 @@
     <string name="hide_selected">Hide selected app</string>
     <string name="more">More</string>
 
+    <!-- Dock bar -->
+    <string name="force_mic">Force mic</string>
+    <string name="force_colour_logo">Сolored Google logo on search bar</string>
+    <string name="dark_themeqsb">Dark search bar</string>
+    <string name="transparentqsb">Transparent search bar</string>
+
 
 </resources>

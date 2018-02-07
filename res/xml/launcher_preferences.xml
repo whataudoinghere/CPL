@@ -113,6 +113,23 @@
             android:title="@string/googleinappmenu" />
     </PreferenceCategory>
 
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_forcecolourlogo"
+        android:title="@string/force_colour_logo" />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_darkqsb"
+        android:title="@string/dark_themeqsb" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_transparentqsbqsb"
+        android:title="@string/transparentqsb" />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_enablemic"
+        android:title="@string/force_mic" />
+
     <PreferenceScreen
         android:key="about_screen"
         android:title="@string/about"

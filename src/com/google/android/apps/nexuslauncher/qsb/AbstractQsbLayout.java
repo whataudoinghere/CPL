@@ -209,6 +209,10 @@ public abstract class AbstractQsbLayout extends FrameLayout implements LauncherL
 
     private void loadPreferences(SharedPreferences sharedPreferences) {
         mMicIconView.setVisibility(sharedPreferences.getBoolean("opa_enabled", true) ? View.GONE : View.VISIBLE);
-        requestLayout();
+        boolean mic = Utilities.getPrefs((getContext())).getBoolean("pref_enablemic", false);
+        if (mic) {
+            mMicIconView.setVisibility(sharedPreferences.getBoolean("opa_enabled", false) ? View.GONE : View.VISIBLE);
+        }
+            requestLayout();
     }
 }

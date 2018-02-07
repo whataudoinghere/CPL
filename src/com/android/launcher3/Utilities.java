@@ -131,6 +131,10 @@ public final class Utilities {
     public static final String DARKTHEME_PREFERENCE_KEY = "pref_darktheme_enabled";
     public static final String DARKTEXT_PREFERENCE_KEY = "pref_darktext_enabled";
     public static final String GOOGLEBAR_INAPPMENU_PREFERENCE_KEY = "pref_googleinappmenu_enabled";
+    public static final String MIC_PREFERENCE_KEY = "pref_enablemic";
+    public static final String FORCECOLURLOGO_PREFERENCE_KEY = "pref_forcecolourlogo";
+    public static final String TRANSPARENTQSB = "pref_transparentqsbqsb";
+    public static final String DARKQSB = "pref_darkqsb";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
