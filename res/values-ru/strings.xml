@@ -141,7 +141,6 @@
     <string name="title_google_app">Приложение Google</string>
     <string name="title_app_suggestions">Показывать рекомендуемые приложения</string>
     <string name="summary_app_suggestions">Вверху списка всех приложений</string>
-    <string name="about_app_version">Версия</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
     <string name="title_disable_suggestions_prompt">Не показывать рекомендуемые приложения?</string>
     <string name="msg_disable_suggestions_prompt">Рекомендуемые приложения не будут показываться в начале списка. Данные, связанные с этой функцией, будут удалены.</string>
@@ -153,5 +152,70 @@
     <string name="hide_app_selected">&#160;выбрано</string>
     <string name="hidden_app">Все приложения</string>
     <string name="hide_selected">Скрыть выбранные приложения</string>
-    <string name="more">Больше</string>
+
+    <!-- Theme -->
+    <string name="custom_theme">Тема</string>
+    <string name="dark_theme">Темная тема</string>
+    <string name="use_dark_theme_sum">Используется темная тема</string>
+    <string name="use_white_theme_sum">Используется светлая тема</string>
+    <string name="use_dark_text">Темный текст</string>
+    <string name="use_dark_text_sum">Использовать темный текст для лучшей читаемости на светлых обоях</string>
+
+    <!-- Dock bar -->
+    <string name="custom_dockbar">Док-бар</string>
+    <string name="num_hotseat_icons_pref_title">Колличество значков в док-баре</string>
+    <string name="force_mic">Микрофон в строке поиска</string>
+    <string name="force_colour_logo">Цветной логотип Google</string>
+    <string name="dark_themeqsb">Темная строка поиска</string>
+    <string name="transparentqsb">Прозрачная строка поиска</string>
+    <string name="hotseatShowArrow">Отображать стрелку</string>
+    <string name="hotseat_show_page_indicator">Отображать индикатор страниц</string>
+    <string name="gradient_size">Размер градиента</string>
+    <string name="remove_gradient">Отключить градиент</string>
+
+    <!-- Sizes -->
+    <string name="size_biggest">Большой</string>
+    <string name="size_big">Увеличеный</string>
+    <string name="size_smallest">Наименьший</string>
+    <string name="size_small">Уменьшеный</string>
+    <string name="size_stock">Стандартный</string>
+
+    <!-- Rows and Coloumns -->
+    <string name="num_rows">Количество строк</string>
+    <string name="num_cols">Количество столбцов</string>
+
+    <!-- About -->
+    <string name="thanks">Благодарности</string>
+    <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666)\n- ezio84\n- arco\n- jrizzoli\n- nebkat\n- xyyx\n- может быть я кого-нибудь забыл ...</string>
+    <string name="date">Дата сборки</string>
+    <string name="sum_date">07/02/18</string>
+    <string name="sum_aboutapp">Версия, информация, благодарности</string>
+    <string name="about_app_version">Версия amirzaidi / github</string>
+    <string name="about_app_version_wtu">Версия wtu / github</string>
+
+    <!-- Allapp -->
+    <string name="custom_allapp">Меню приложений</string>
+    <string name="dark_themeqsballapp">Темная строка поиска в меню приложений</string>
+    <string name="num_colsallapp">Дополнительный столбец в меню приложений</string>
+    <string name="smallallaps">Уменьшить строку поиска в меню</string>
+    <string name="googleinappmenu">Новая строка поиска в меню приложений</string>
+
+    <!-- Icons -->
+    <string name="custom_ico">Значки</string>
+    <string name="smallfont">Использовать уменьшеный шрифт подписей</string>
+    <string name="icon_size">Размер значка</string>
+
+    <!-- Home screen -->
+    <string name="custom_hs">Домашний экран</string>
+    <string name="diabledgemargin">Отключить поля</string>
+
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Подписи значков на рабочем столе</string>
+    <string name="drawer_show_labels">Подписи значков в меню приложений</string>
+
+    <!-- Folders -->
+    <string name="custom_folders">Папки</string>
+    <string name="folder_show_labels">Подписи значков в папках</string>
+
+
 </resources>
