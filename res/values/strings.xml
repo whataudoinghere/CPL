@@ -375,5 +375,11 @@
     <string name="num_rows">Number of rows</string>
     <string name="num_cols">Number of columns</string>
 
+    <!-- About -->
+    <string name="thanks">Thanks for</string>
+    <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666)\n- ezio84\n- arco\n- maybe i forgot someone ...</string>
+    <string name="date">Build date</string>
+    <string name="sum_date">03/02/18</string>
+    <string name="sum_aboutapp">About this app, version, information</string>
 
 </resources>
