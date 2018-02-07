@@ -157,8 +157,8 @@ public class InvariantDeviceProfile {
         numHotseatIcons = Integer.valueOf(prefs.getString("pref_numHotseatIcons", "5"));
         defaultLayoutId = closestProfile.defaultLayoutId;
         demoModeLayoutId = closestProfile.demoModeLayoutId;
-        numFolderRows = closestProfile.numFolderRows;
-        numFolderColumns = closestProfile.numFolderColumns;
+        numFolderRows = Integer.valueOf(prefs.getString("pref_numFolderRows", "4"));
+        numFolderColumns = Integer.valueOf(prefs.getString("pref_numFolderCols", "4"));
         minAllAppsPredictionColumns = closestProfile.minAllAppsPredictionColumns;
 
         iconSize = interpolatedDeviceProfileOut.iconSize;

@@ -59,11 +59,6 @@
             android:key="pref_desktop_show_labels"
             android:title="@string/desktop_show_labels" />
 
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="pref_folder_show_labels"
-            android:title="@string/folder_show_labels" />
-
     <SwitchPreference
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
@@ -104,6 +99,29 @@
             android:key="hidden-app"
             android:title="@string/hide_app"
             android:summary="@string/hide_app_sum"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/custom_folders">
+        <ListPreference
+            android:defaultValue="4"
+            android:entries="@array/numFolderValues"
+            android:entryValues="@array/numFolderValues"
+            android:key="pref_numFolderCols"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/num_cols" />
+        <ListPreference
+            android:defaultValue="4"
+            android:entries="@array/numFolderValues"
+            android:entryValues="@array/numFolderValues"
+            android:key="pref_numFolderRows"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/num_rows" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_folder_show_labels"
+            android:title="@string/folder_show_labels" />
     </PreferenceCategory>
 
     <PreferenceCategory

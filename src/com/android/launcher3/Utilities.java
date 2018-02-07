@@ -137,6 +137,8 @@ public final class Utilities {
     public static final String DARKQSB = "pref_darkqsb";
     public static final String COLSHOME = "pref_numCols";
     public static final String ROWSHOME = "pref_numRows";
+    public static final String COLFOLDER = "pref_numFolderCols";
+    public static final String ROWFOLDER = "pref_numFolderRows";
     public static final String HOTSEATICONS = "pref_numHotseatIcons";
     public static final String SMALLALAPPS = "pref_smallallaps";
     public static final String ADDCOLOUMNALLAPP = "pref_addcoloumnallapp";

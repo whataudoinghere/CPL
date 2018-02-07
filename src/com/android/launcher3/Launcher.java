@@ -4148,6 +4148,12 @@ public class Launcher extends BaseActivity
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
             }
+            if (Utilities.COLFOLDER.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.ROWFOLDER.equals(key)) {
+                needRestart();
+            }
         }
     }
 }
