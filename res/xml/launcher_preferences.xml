@@ -130,22 +130,33 @@
             android:title="@string/googleinappmenu" />
     </PreferenceCategory>
 
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="pref_forcecolourlogo"
-        android:title="@string/force_colour_logo" />
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="pref_darkqsb"
-        android:title="@string/dark_themeqsb" />
-    <SwitchPreference
-        android:defaultValue="true"
-        android:key="pref_transparentqsbqsb"
-        android:title="@string/transparentqsb" />
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="pref_enablemic"
-        android:title="@string/force_mic" />
+    <PreferenceCategory android:title="@string/custom_dockbar">
+        <ListPreference
+            android:defaultValue="5"
+            android:entries="@array/numHotseatIconsValues"
+            android:entryValues="@array/numHotseatIconsValues"
+            android:key="pref_numHotseatIcons"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/num_hotseat_icons_pref_title" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_forcecolourlogo"
+            android:title="@string/force_colour_logo" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_darkqsb"
+            android:title="@string/dark_themeqsb" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_transparentqsbqsb"
+            android:title="@string/transparentqsb" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_enablemic"
+            android:title="@string/force_mic" />
+    </PreferenceCategory>
+
 
     <PreferenceCategory android:title="@string/about">
         <PreferenceScreen

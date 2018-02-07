@@ -4109,6 +4109,9 @@ public class Launcher extends BaseActivity
             if (Utilities.COLSHOME.equals(key)) {
                 needRestart();
             }
+            if (Utilities.HOTSEATICONS.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

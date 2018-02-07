@@ -359,6 +359,8 @@
     <string name="more">More</string>
 
     <!-- Dock bar -->
+    <string name="custom_dockbar">Dock bar</string>
+    <string name="num_hotseat_icons_pref_title">Number of icons in dock</string>
     <string name="force_mic">Force mic</string>
     <string name="force_colour_logo">Сolored Google logo on search bar</string>
     <string name="dark_themeqsb">Dark search bar</string>

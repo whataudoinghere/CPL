@@ -148,7 +148,7 @@ public class InvariantDeviceProfile {
         InvariantDeviceProfile closestProfile = closestProfiles.get(0);
         numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) +1;
         numColumns = Integer.valueOf(prefs.getString("pref_numCols", "5"));
-        numHotseatIcons = closestProfile.numHotseatIcons;
+        numHotseatIcons = Integer.valueOf(prefs.getString("pref_numHotseatIcons", "5"));
         defaultLayoutId = closestProfile.defaultLayoutId;
         demoModeLayoutId = closestProfile.demoModeLayoutId;
         numFolderRows = closestProfile.numFolderRows;
