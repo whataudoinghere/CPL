@@ -17,11 +17,5 @@
  */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Hidden app -->
-    <string name="hide_app">Hide app</string>
-    <string name="hide_app_sum">Hide app from the app drawer</string>
-    <string name="hide_app_selected">&#160;selected</string>
-    <string name="hidden_app">Hidden app</string>
-    <string name="hide_selected">Hide selected app</string>
-    <string name="more">More</string>
+
 </resources>
