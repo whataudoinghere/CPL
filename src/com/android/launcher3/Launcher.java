@@ -4061,6 +4061,18 @@ public class Launcher extends BaseActivity
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
             }
+            if (Utilities.DARKTHEME_PREFERENCE_KEY.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
+            if (Utilities.DARKTEXT_PREFERENCE_KEY.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
+            if (Utilities.GOOGLEBAR_INAPPMENU_PREFERENCE_KEY.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
         }
     }
 }

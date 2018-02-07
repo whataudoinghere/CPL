@@ -342,4 +342,13 @@
 
     <string name="customize">Customize</string>
 
+    <string name="custom_theme">Theme</string>
+    <string name="dark_theme">Use dark theme</string>
+    <string name="use_dark_theme_sum">Use dark theme</string>
+    <string name="use_white_theme_sum">Use white theme</string>
+    <string name="use_dark_text">Use dark text</string>
+    <string name="use_dark_text_sum">Use dark text to increase visibility on light wallpapers</string>
+    <string name="googleinappmenu">Google research bar</string>
+
+
 </resources>

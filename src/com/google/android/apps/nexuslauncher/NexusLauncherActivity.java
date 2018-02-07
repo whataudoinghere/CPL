@@ -19,17 +19,30 @@ public class NexusLauncherActivity extends Launcher {
     }
 
     public void overrideTheme(boolean isDark, boolean supportsDarkText) {
-        int flags = Utilities.getDevicePrefs(this).getInt("pref_persistent_flags", 0);
-        int orientFlag = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ? 16 : 8;
-        boolean useGoogleInOrientation = (orientFlag & flags) != 0;
-        if (useGoogleInOrientation && isDark) {
+        boolean darktheme = Utilities.getPrefs(this).getBoolean("pref_darktheme_enabled", false);
+        boolean googlebarinappmenu = Utilities.getPrefs(this).getBoolean("pref_googleinappmenu_enabled", false);
+        boolean darktext = Utilities.getPrefs(this).getBoolean("pref_darktext_enabled", false);
+        setTheme(R.style.GoogleSearchLauncherTheme);
+        if (darktheme && googlebarinappmenu) {
             setTheme(R.style.GoogleSearchLauncherThemeDark);
-        } else if (useGoogleInOrientation && supportsDarkText && Utilities.ATLEAST_NOUGAT) {
+        }
+        if (darktheme && !googlebarinappmenu) {
+            setTheme(R.style.LauncherThemeDark);
+        }
+        if (!darktheme && !googlebarinappmenu) {
+            setTheme(R.style.LauncherTheme);
+        }
+        if (darktext && Utilities.ATLEAST_NOUGAT && googlebarinappmenu) {
             setTheme(R.style.GoogleSearchLauncherThemeDarkText);
-        } else if (useGoogleInOrientation) {
-            setTheme(R.style.GoogleSearchLauncherTheme);
-        } else {
-            super.overrideTheme(isDark, supportsDarkText);
+        }
+        if (darktext && Utilities.ATLEAST_NOUGAT && !googlebarinappmenu) {
+            setTheme(R.style.LauncherThemeDarkText);
+        }
+        if (darktext && darktheme && !googlebarinappmenu) {
+            setTheme(R.style.LauncherThemeDark);
+        }
+        if (darktext && darktheme && googlebarinappmenu) {
+            setTheme(R.style.GoogleSearchLauncherThemeDark);
         }
     }
 
