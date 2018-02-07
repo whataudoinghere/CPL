@@ -333,8 +333,6 @@
     <string name="title_google_app">Google app</string>
     <string name="title_app_suggestions">Display app suggestions</string>
     <string name="summary_app_suggestions">At the top of your All Apps list</string>
-    <string name="about_app_version">Version</string>
-    <string name="app_releases_url">https://github.com/amirzaidi/launcher3/releases</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
     <string name="title_disable_suggestions_prompt">Turn off app suggestions?</string>
     <string name="msg_disable_suggestions_prompt">"Suggestions won't appear at the top of your apps list, and the usage data used to create them will be permanently erased."</string>
@@ -383,11 +381,15 @@
 
     <!-- About -->
     <string name="thanks">Thanks for</string>
-    <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666)\n- ezio84\n- arco\n- maybe i forgot someone ...</string>
+    <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666)\n- ezio84\n- arco\n- jrizzoli\n- nebkat\n- xyyx\n- maybe i forgot someone ...</string>
     <string name="date">Build date</string>
-    <string name="sum_date">03/02/18</string>
+    <string name="sum_date">07/02/18</string>
     <string name="sum_aboutapp">About this app, version, information</string>
-
+    <string name="about_app_version">amirzaidi version / github</string>
+    <string name="app_releases_url">https://github.com/amirzaidi/launcher3/releases</string>
+    <string name="about_app_version_wtu">wtu version / github</string>
+    <string name="version_wtu_sum">v1</string>
+    <string name="url_wtu_git">https://github.com/whataudoinghere/Launcher3</string>
     <!-- Allapp -->
     <string name="custom_allapp">All Apps</string>
     <string name="dark_themeqsballapp">Dark search bar in All Apps</string>
