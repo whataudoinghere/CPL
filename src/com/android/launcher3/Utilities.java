@@ -146,6 +146,9 @@ public final class Utilities {
     public static final String KEY_PREF_HOTSEAT_SHOW_PAGE_INDICATOR = "pref_hotseatShowPageIndicator";
     public static final String DISABLEGRADIENT_PREFERENCE_KEY = "pref_disablegrad";
     public static final String GRADIENTSIZE = "pref_gradsize";
+    public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
+    public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
+    public static final String KEY_SHOW_FOLDER_LABELS = "pref_folder_show_labels";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

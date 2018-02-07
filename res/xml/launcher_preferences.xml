@@ -54,6 +54,16 @@
         android:defaultValue="true"
         />
 
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_desktop_show_labels"
+            android:title="@string/desktop_show_labels" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_folder_show_labels"
+            android:title="@string/folder_show_labels" />
+
     <SwitchPreference
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
@@ -86,6 +96,10 @@
             android:defaultValue="false"
             android:key="pref_addcoloumnallapp"
             android:title="@string/num_colsallapp" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_drawer_show_labels"
+            android:title="@string/drawer_show_labels" />
         <Preference
             android:key="hidden-app"
             android:title="@string/hide_app"

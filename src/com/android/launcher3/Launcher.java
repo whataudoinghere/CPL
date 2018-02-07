@@ -4136,6 +4136,18 @@ public class Launcher extends BaseActivity
             if (Utilities.GRADIENTSIZE.equals(key)) {
                 recreate();
             }
+            if (Utilities.KEY_SHOW_DESKTOP_LABELS.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
+            if (Utilities.KEY_SHOW_DRAWER_LABELS.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
+            if (Utilities.KEY_SHOW_FOLDER_LABELS.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
         }
     }
 }
