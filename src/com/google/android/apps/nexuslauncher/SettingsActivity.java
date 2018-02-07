@@ -18,12 +18,14 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 import android.preference.TwoStatePreference;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherModel;
+import com.android.launcher3.MultiSelectRecyclerViewActivity;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.util.LooperExecutor;
@@ -84,6 +86,9 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
 
             mIconPackPref = (CustomIconPreference) findPreference(ICON_PACK_PREF);
             mIconPackPref.setOnPreferenceChangeListener(this);
+
+            Preference hiddenApp = findPreference(Utilities.KEY_HIDDEN_APPS);
+            hiddenApp.setOnPreferenceClickListener(this);
 
             findPreference(SHOW_PREDICTIONS_PREF).setOnPreferenceChangeListener(this);
         }
@@ -170,9 +175,15 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
                 SmartspaceController.get(mContext).cZ();
                 return true;
             }
+            if (Utilities.KEY_HIDDEN_APPS.equals(preference.getKey())) {
+                Intent intent = new Intent(getActivity(), MultiSelectRecyclerViewActivity.class);
+                startActivity(intent);
+                return true;
+            }
             return false;
         }
     }
+
 
     public static class SuggestionConfirmationFragment extends DialogFragment implements DialogInterface.OnClickListener {
         public void onClick(final DialogInterface dialogInterface, final int n) {

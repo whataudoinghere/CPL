@@ -81,6 +81,15 @@
         android:defaultValue=""
         android:persistent="true" />
 
+    <PreferenceCategory
+        android:key="more"
+        android:title="@string/more">
+        <Preference
+            android:key="hidden-app"
+            android:title="@string/hide_app"
+            android:summary="@string/hide_app_sum"/>
+    </PreferenceCategory>
+
     <PreferenceScreen
         android:key="about_screen"
         android:title="@string/about"
