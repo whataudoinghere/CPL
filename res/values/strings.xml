@@ -366,6 +366,7 @@
     <string name="dark_themeqsb">Dark search bar</string>
     <string name="transparentqsb">Transparent search bar</string>
     <string name="hotseatShowArrow">Show arrow</string>
+    <string name="hotseat_show_page_indicator">Show page indicator</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>

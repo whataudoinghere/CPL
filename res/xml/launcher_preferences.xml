@@ -139,6 +139,10 @@
             android:defaultValue="true"
             android:key="pref_hotseatShowArrow"
             android:title="@string/hotseatShowArrow" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_hotseatShowPageIndicator"
+            android:title="@string/hotseat_show_page_indicator" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/custom_ico">
