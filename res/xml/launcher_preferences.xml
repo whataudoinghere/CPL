@@ -136,6 +136,19 @@
             android:key="pref_enablemic"
             android:title="@string/force_mic" />
         <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_disablegrad"
+            android:title="@string/remove_gradient"
+            android:disableDependentsState="true"/>
+        <ListPreference
+            android:defaultValue="100"
+            android:entries="@array/GradientSizeName"
+            android:entryValues="@array/GradientSize"
+            android:key="pref_gradsize"
+            android:summary="%s"
+            android:dependency="pref_disablegrad"
+            android:title="@string/gradient_size" />
+        <SwitchPreference
             android:defaultValue="true"
             android:key="pref_hotseatShowArrow"
             android:title="@string/hotseatShowArrow" />

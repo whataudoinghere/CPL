@@ -17,6 +17,7 @@
 package com.android.launcher3.graphics;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -71,11 +72,18 @@ public class GradientView extends View implements WallpaperColorInfo.OnChangeLis
 
     public GradientView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        float mAlphaStart1;
+        SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
         DisplayMetrics dm = getResources().getDisplayMetrics();
         this.mMaskHeight = Utilities.pxFromDp(ALPHA_MASK_HEIGHT_DP, dm);
         this.mMaskWidth = Utilities.pxFromDp(ALPHA_MASK_WIDTH_DP, dm);
         Launcher launcher = Launcher.getLauncher(context);
-        this.mAlphaStart = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : 100;
+        mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : Integer.valueOf(prefs.getString("pref_gradsize", "100"));
+        boolean disablegrad = Utilities.getPrefs((getContext())).getBoolean("pref_disablegrad", false);
+        if (disablegrad) {
+            mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : 0;
+        }
+        this.mAlphaStart = mAlphaStart1;
         this.mScrimColor = Themes.getAttrColor(context, R.attr.allAppsScrimColor);
         this.mWallpaperColorInfo = WallpaperColorInfo.getInstance(launcher);
         mAlphaColors = getResources().getInteger(R.integer.extracted_color_gradient_alpha);

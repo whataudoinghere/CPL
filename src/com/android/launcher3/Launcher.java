@@ -4130,6 +4130,12 @@ public class Launcher extends BaseActivity
             if (Utilities.KEY_PREF_HOTSEAT_SHOW_ARROW.equals(key)) {
                 needRestart();
             }
+            if (Utilities.DISABLEGRADIENT_PREFERENCE_KEY.equals(key)) {
+                recreate();
+            }
+            if (Utilities.GRADIENTSIZE.equals(key)) {
+                recreate();
+            }
         }
     }
 }

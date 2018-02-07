@@ -33,7 +33,7 @@
         <item>@string/size_biggest</item>
     </string-array>
 
-    <string-array name="gradsize">
+    <string-array name="GradientSize">
         <item>70</item>
         <item>100</item>
         <item>150</item>

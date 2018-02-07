@@ -367,6 +367,8 @@
     <string name="transparentqsb">Transparent search bar</string>
     <string name="hotseatShowArrow">Show arrow</string>
     <string name="hotseat_show_page_indicator">Show page indicator</string>
+    <string name="gradient_size">Gradient size</string>
+    <string name="remove_gradient">Disable gradient below dock</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>
