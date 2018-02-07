@@ -4112,6 +4112,15 @@ public class Launcher extends BaseActivity
             if (Utilities.HOTSEATICONS.equals(key)) {
                 needRestart();
             }
+            if (Utilities.SMALLALAPPS.equals(key)) {
+                recreate();
+            }
+            if (Utilities.ADDCOLOUMNALLAPP.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.DARKQSBALLAPPS.equals(key)) {
+                recreate();
+            }
         }
     }
 }

@@ -384,4 +384,9 @@
     <string name="sum_date">03/02/18</string>
     <string name="sum_aboutapp">About this app, version, information</string>
 
+    <!-- Allapp -->
+    <string name="custom_allapp">All Apps</string>
+    <string name="dark_themeqsballapp">Dark search bar in All Apps</string>
+    <string name="num_colsallapp">Extra column in All Apps</string>
+    <string name="smallallaps">Small reaserch bar</string>
 </resources>

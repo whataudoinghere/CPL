@@ -35,6 +35,7 @@ import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.ExtendedEditText;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.allapps.AllAppsGridAdapter;
 import com.android.launcher3.allapps.AllAppsRecyclerView;
 import com.android.launcher3.allapps.AlphabeticalAppsList;
@@ -79,7 +80,12 @@ public class AppsSearchContainerLayout extends FrameLayout
         super(context, attrs, defStyleAttr);
 
         mLauncher = Launcher.getLauncher(context);
-        mMinHeight = getResources().getDimensionPixelSize(R.dimen.all_apps_search_bar_height);
+        int mMinHeight1 = getResources().getDimensionPixelSize(R.dimen.all_apps_search_bar_height);
+        boolean a = Utilities.getPrefs((getContext())).getBoolean("pref_smallallaps", false);
+        if (a) {
+            mMinHeight1 = getResources().getDimensionPixelSize(R.dimen.all_apps_search_bar_height_min);
+        }
+        mMinHeight = mMinHeight1;
         mSearchBoxHeight = getResources()
                 .getDimensionPixelSize(R.dimen.all_apps_search_bar_field_height);
         mSearchBarController = new AllAppsSearchBarController();

@@ -69,18 +69,41 @@
         />
 
     <SwitchPreference
-        android:key="pref_show_predictions"
-        android:title="@string/title_app_suggestions"
-        android:summary="@string/summary_app_suggestions"
-        android:defaultValue="true"
-        />
-
-    <SwitchPreference
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
         android:defaultValue="@bool/allow_rotation"
         android:persistent="true"
         />
+
+    <PreferenceCategory android:title="@string/custom_allapp">
+        <SwitchPreference
+            android:key="pref_show_predictions"
+            android:title="@string/title_app_suggestions"
+            android:summary="@string/summary_app_suggestions"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_googleinappmenu_enabled"
+            android:disableDependentsState="true"
+            android:title="@string/googleinappmenu" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_darkqsballapp"
+            android:title="@string/dark_themeqsballapp" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_smallallaps"
+            android:dependency="pref_googleinappmenu_enabled"
+            android:title="@string/smallallaps" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_addcoloumnallapp"
+            android:title="@string/num_colsallapp" />
+        <Preference
+            android:key="hidden-app"
+            android:title="@string/hide_app"
+            android:summary="@string/hide_app_sum"/>
+    </PreferenceCategory>
 
     <ListPreference
         android:key="pref_override_icon_shape"
@@ -99,15 +122,6 @@
         android:persistent="true" />
 
     <PreferenceCategory
-        android:key="more"
-        android:title="@string/more">
-        <Preference
-            android:key="hidden-app"
-            android:title="@string/hide_app"
-            android:summary="@string/hide_app_sum"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/custom_theme">
         <SwitchPreference
             android:defaultValue="false"
@@ -123,11 +137,6 @@
             android:dependency="pref_darktheme_enabled"
             android:summary="@string/use_dark_text_sum"
             android:title="@string/use_dark_text" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="pref_googleinappmenu_enabled"
-            android:disableDependentsState="true"
-            android:title="@string/googleinappmenu" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/custom_dockbar">

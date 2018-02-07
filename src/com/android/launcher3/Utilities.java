@@ -138,6 +138,9 @@ public final class Utilities {
     public static final String COLSHOME = "pref_numCols";
     public static final String ROWSHOME = "pref_numRows";
     public static final String HOTSEATICONS = "pref_numHotseatIcons";
+    public static final String SMALLALAPPS = "pref_smallallaps";
+    public static final String ADDCOLOUMNALLAPP = "pref_addcoloumnallapp";
+    public static final String DARKQSBALLAPPS = "pref_darkqsballapp";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

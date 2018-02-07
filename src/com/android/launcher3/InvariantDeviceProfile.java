@@ -64,6 +64,7 @@ public class InvariantDeviceProfile {
      */
     public int numRows;
     public int numColumns;
+    public int numColumnsAll;
 
     /**
      * The minimum number of predicted apps in all apps.
@@ -148,6 +149,11 @@ public class InvariantDeviceProfile {
         InvariantDeviceProfile closestProfile = closestProfiles.get(0);
         numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) +1;
         numColumns = Integer.valueOf(prefs.getString("pref_numCols", "5"));
+        boolean a = prefs.getBoolean("pref_addcoloumnallapp", false);
+        if (!a) {
+            numColumnsAll = numColumns;
+        }
+        else numColumnsAll = numColumns + 1;
         numHotseatIcons = Integer.valueOf(prefs.getString("pref_numHotseatIcons", "5"));
         defaultLayoutId = closestProfile.defaultLayoutId;
         demoModeLayoutId = closestProfile.demoModeLayoutId;
