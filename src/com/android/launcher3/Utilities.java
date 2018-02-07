@@ -151,6 +151,8 @@ public final class Utilities {
     public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_SHOW_FOLDER_LABELS = "pref_folder_show_labels";
+    public static final String MINUSFONT = "pref_minusfont";
+    public static final String ICONSIZE = "pref_IconSize";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

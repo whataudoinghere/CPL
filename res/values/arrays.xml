@@ -42,13 +42,14 @@
 
     <string-array name="IconSizeName">
         <item>@string/size_smallest</item>
+        <item>@string/size_small</item>
         <item>@string/size_stock</item>
         <item>@string/size_big</item>
         <item>@string/size_biggest</item>
     </string-array>
 
     <string-array name="IconSizesValues">
-        <item>52</item>
+        <item>50</item>
         <item>54</item>
         <item>56</item>
         <item>58</item>

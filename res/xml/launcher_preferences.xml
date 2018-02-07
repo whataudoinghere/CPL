@@ -218,6 +218,17 @@
                     android:value="notification_badging" />
             </intent>
         </com.android.launcher3.views.ButtonPreference>
+        <ListPreference
+            android:defaultValue="56"
+            android:entries="@array/IconSizeName"
+            android:entryValues="@array/IconSizesValues"
+            android:key="pref_IconSize"
+            android:summary="%s"
+            android:title="@string/icon_size" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_minusfont"
+            android:title="@string/smallfont" />
         <SwitchPreference
             android:key="pref_add_icon_to_home"
             android:title="@string/auto_add_shortcuts_label"

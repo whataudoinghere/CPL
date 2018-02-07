@@ -4154,6 +4154,12 @@ public class Launcher extends BaseActivity
             if (Utilities.ROWFOLDER.equals(key)) {
                 needRestart();
             }
+            if (Utilities.MINUSFONT.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.ICONSIZE.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

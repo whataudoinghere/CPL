@@ -396,6 +396,8 @@
 
     <!-- Icons -->
     <string name="custom_ico">Icons</string>
+    <string name="smallfont">Use small font for lables</string>
+    <string name="icon_size">Icon size</string>
 
     <!-- Home screen -->
     <string name="custom_hs">Home screen</string>
