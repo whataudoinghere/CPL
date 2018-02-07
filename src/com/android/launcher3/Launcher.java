@@ -217,6 +217,8 @@ public class Launcher extends BaseActivity
 
     private boolean mIsSafeModeEnabled;
 
+    private boolean restart;
+
     public static final int EXIT_SPRINGLOADED_MODE_SHORT_TIMEOUT = 500;
     private static final int ON_ACTIVITY_RESULT_ANIMATION_DELAY = 500;
 
@@ -948,6 +950,11 @@ public class Launcher extends BaseActivity
         if (DEBUG_RESUME_TIME) {
             startTime = System.currentTimeMillis();
             Log.v(TAG, "Launcher.onResume()");
+        }
+
+        if (restart) {
+            restart = false;
+            Utilities.restartLauncher(getApplicationContext());
         }
 
         if (mLauncherCallbacks != null) {
@@ -4052,6 +4059,13 @@ public class Launcher extends BaseActivity
         return ((Launcher) ((ContextWrapper) context).getBaseContext());
     }
 
+    public void needRestart() {
+        if (mPaused)
+            restart = true;
+        else
+            Utilities.restartLauncher(getApplicationContext());
+    }
+
     private class RotationPrefChangeHandler implements OnSharedPreferenceChangeListener {
 
         @Override
@@ -4088,6 +4102,12 @@ public class Launcher extends BaseActivity
             if (Utilities.MIC_PREFERENCE_KEY.equals(key)) {
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
+            }
+            if (Utilities.ROWSHOME.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.COLSHOME.equals(key)) {
+                needRestart();
             }
         }
     }

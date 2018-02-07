@@ -135,6 +135,8 @@ public final class Utilities {
     public static final String FORCECOLURLOGO_PREFERENCE_KEY = "pref_forcecolourlogo";
     public static final String TRANSPARENTQSB = "pref_transparentqsbqsb";
     public static final String DARKQSB = "pref_darkqsb";
+    public static final String COLSHOME = "pref_numCols";
+    public static final String ROWSHOME = "pref_numRows";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
@@ -155,6 +157,10 @@ public final class Utilities {
             return originalSmallestWidth >= 600;
         }
         return false;
+    }
+
+    public static void restartLauncher(Context context) {
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     /**

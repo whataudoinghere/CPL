@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="numHotseatIconsValues">
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="numGridValues">
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="numFolderValues">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="GradientSizeName">
+        <item>@string/size_small</item>
+        <item>@string/size_stock</item>
+        <item>@string/size_big</item>
+        <item>@string/size_biggest</item>
+    </string-array>
+
+    <string-array name="gradsize">
+        <item>70</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+    </string-array>
+
+    <string-array name="IconSizeName">
+        <item>@string/size_smallest</item>
+        <item>@string/size_stock</item>
+        <item>@string/size_big</item>
+        <item>@string/size_biggest</item>
+    </string-array>
+
+    <string-array name="IconSizesValues">
+        <item>52</item>
+        <item>54</item>
+        <item>56</item>
+        <item>58</item>
+        <item>60</item>
+    </string-array>
+</resources>

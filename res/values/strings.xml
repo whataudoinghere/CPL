@@ -364,5 +364,16 @@
     <string name="dark_themeqsb">Dark search bar</string>
     <string name="transparentqsb">Transparent search bar</string>
 
+    <!-- Sizes -->
+    <string name="size_biggest">Biggest</string>
+    <string name="size_big">Big</string>
+    <string name="size_smallest">Smallest</string>
+    <string name="size_small">Small</string>
+    <string name="size_stock">Stock</string>
+
+    <!-- Rows and Coloumns -->
+    <string name="num_rows">Number of rows</string>
+    <string name="num_cols">Number of columns</string>
+
 
 </resources>
