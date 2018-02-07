@@ -1364,17 +1364,6 @@ public class Launcher extends BaseActivity
             settingsButton.setVisibility(View.GONE);
         }
 
-        View customizeButton = findViewById(R.id.customize_button);
-        customizeButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!mWorkspace.isSwitchingState()) {
-                    onClickCustomizeButton(view);
-                }
-           }
-        });
-        customizeButton.setOnLongClickListener(performClickOnLongClick);
-
         mOverviewPanel.setAlpha(0f);
     }
 
