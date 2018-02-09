@@ -241,7 +241,7 @@
     <dimen name="status_bar_height">24dp</dimen>
 
 <!-- Pixel -->
-    <dimen name="smartspace_title_size">20dp</dimen>
+    <dimen name="smartspace_title_size">24dp</dimen>
     <dimen name="smartspace_horizontal_padding">56dp</dimen>
     <dimen name="qsb_shadow_margin">6dp</dimen>
     <dimen name="qsb_widget_height">56dp</dimen>
