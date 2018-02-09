@@ -188,7 +188,7 @@
 
     <!-- About -->
     <string name="thanks">Благодарности</string>
-    <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666)\n- ezio84\n- arco\n- jrizzoli\n- nebkat\n- xyyx\n- может быть я кого-нибудь забыл ...</string>
+    <string name="forgot">Может быть я кого-нибудь забыл ...</string>
     <string name="date">Дата сборки</string>
     <string name="sum_date">07/02/18</string>
     <string name="sum_aboutapp">Версия, информация, благодарности</string>

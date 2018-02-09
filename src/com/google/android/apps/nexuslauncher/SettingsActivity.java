@@ -22,6 +22,7 @@ import android.preference.PreferenceScreen;
 import android.preference.TwoStatePreference;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherModel;
@@ -92,6 +93,9 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
 
             Preference reboot = findPreference(Utilities.KEY_REBOOT);
             reboot.setOnPreferenceClickListener(this);
+
+            Preference forgot = findPreference(Utilities.KEY_ABOUT_FORGOT);
+            forgot.setOnPreferenceClickListener(this);
 
             findPreference(SHOW_PREDICTIONS_PREF).setOnPreferenceChangeListener(this);
         }
@@ -185,6 +189,11 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             }
             if (Utilities.KEY_REBOOT.equals(preference.getKey())) {
                 android.os.Process.killProcess(android.os.Process.myPid());
+                return true;
+            }
+            if (Utilities.KEY_ABOUT_FORGOT.equals(preference.getKey())) {
+                Toast toast = Toast.makeText(getContext(),R.string.forgot,Toast.LENGTH_LONG);
+                toast.show();
                 return true;
             }
             return false;

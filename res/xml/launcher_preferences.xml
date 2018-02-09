@@ -277,6 +277,7 @@
                     android:data="@string/url_wtu_git" />
             </Preference>
             <Preference
+                android:key="about_forgot"
                 android:title="@string/thanks"
                 android:summary="@string/sum_thanks" >
             </Preference>
