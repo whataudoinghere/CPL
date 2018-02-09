@@ -77,8 +77,8 @@
     <string name="allow_rotation_desc" msgid="8662546029078692509">"Когда телефон повернут"</string>
     <string name="allow_rotation_blocked_desc" msgid="3212602545192996253">"В настройках отключен поворот экрана"</string>
     <string name="icon_badging_title" msgid="874121399231955394">"Значки уведомлений"</string>
-    <string name="icon_badging_desc_on" msgid="2627952638544674079">"ВКЛ"</string>
-    <string name="icon_badging_desc_off" msgid="5503319969924580241">"ВЫКЛ"</string>
+    <string name="icon_badging_desc_on" msgid="2627952638544674079">"Отображаются"</string>
+    <string name="icon_badging_desc_off" msgid="5503319969924580241">"Не отображаются"</string>
     <string name="title_missing_notification_access" msgid="7503287056163941064">"Нет доступа к уведомлениям"</string>
     <string name="msg_missing_notification_access" msgid="281113995110910548">"Чтобы показывать значки уведомлений, включите уведомления в приложении \"<xliff:g id="NAME">%1$s</xliff:g>\""</string>
     <string name="title_change_settings" msgid="1376365968844349552">"Изменить настройки"</string>
@@ -133,12 +133,12 @@
     <string name="label_voice_search">Голосовой поиск</string>
     <string name="pref_icon_pack">Пакет значков</string>
     <string name="state_loading">Применение…</string>
-    <string name="smartspace_preferences_in_settings">Обратный отсчет</string>
-    <string name="smartspace_preferences_in_settings_desc">В верхней части главного экрана</string>
+    <string name="smartspace_preferences_in_settings">Виджет \"Обратный отсчет\"</string>
+    <string name="smartspace_preferences_in_settings_desc">Настройки виджета в верхней части экрана, в котором отображаются различные события</string>
     <string name="title_show_google_app">Показывать %1$s</string>
     <string name="msg_minus_one_on_left">Слева от главного экрана</string>
     <string name="about">О приложении</string>
-    <string name="title_google_app">Приложение Google</string>
+    <string name="title_google_app">ленту новостей Google</string>
     <string name="title_app_suggestions">Показывать рекомендуемые приложения</string>
     <string name="summary_app_suggestions">Вверху списка всех приложений</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
@@ -197,10 +197,10 @@
 
     <!-- Allapp -->
     <string name="custom_allapp">Меню приложений</string>
-    <string name="dark_themeqsballapp">Темная строка поиска в меню приложений</string>
-    <string name="num_colsallapp">Дополнительный столбец в меню приложений</string>
-    <string name="smallallaps">Уменьшить строку поиска в меню</string>
-    <string name="googleinappmenu">Новая строка поиска в меню приложений</string>
+    <string name="dark_themeqsballapp">Темная строка поиска</string>
+    <string name="num_colsallapp">Дополнительный столбец</string>
+    <string name="smallallaps">Уменьшить строку поиска</string>
+    <string name="googleinappmenu">Новая строка поиска</string>
 
     <!-- Icons -->
     <string name="custom_ico">Значки</string>
@@ -221,12 +221,12 @@
     <string name="settings_edit_widgets_error">Невозожно добавить виджет</string>
 
     <!-- Hide labels -->
-    <string name="desktop_show_labels">Подписи значков на рабочем столе</string>
-    <string name="drawer_show_labels">Подписи значков в меню приложений</string>
+    <string name="desktop_show_labels">Подписи значков</string>
+    <string name="drawer_show_labels">Подписи значков</string>
 
     <!-- Folders -->
     <string name="custom_folders">Папки</string>
-    <string name="folder_show_labels">Подписи значков в папках</string>
+    <string name="folder_show_labels">Подписи значков</string>
 
 
 </resources>
