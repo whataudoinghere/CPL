@@ -2562,16 +2562,6 @@ public class Launcher extends BaseActivity
         startActivity(intent, getActivityLaunchOptions(v));
     }
 
-    private void onClickCustomizeButton(View v) {
-        if (mWorkspace.isInOverviewMode()) {
-            showWorkspace(false);
-        }
-        Intent intent = new Intent(this, CustomizeActivity.class);
-        intent.setPackage(getPackageName());
-        intent.setSourceBounds(getViewBounds(v));
-        startActivity(intent, getActivityLaunchOptions(v));
-    }
-
     @Override
     public void onAccessibilityStateChanged(boolean enabled) {
         mDragLayer.onAccessibilityStateChanged(enabled);
