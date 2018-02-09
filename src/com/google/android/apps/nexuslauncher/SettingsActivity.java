@@ -90,6 +90,9 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             Preference hiddenApp = findPreference(Utilities.KEY_HIDDEN_APPS);
             hiddenApp.setOnPreferenceClickListener(this);
 
+            Preference reboot = findPreference(Utilities.KEY_REBOOT);
+            reboot.setOnPreferenceClickListener(this);
+
             findPreference(SHOW_PREDICTIONS_PREF).setOnPreferenceChangeListener(this);
         }
 
@@ -178,6 +181,10 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             if (Utilities.KEY_HIDDEN_APPS.equals(preference.getKey())) {
                 Intent intent = new Intent(getActivity(), MultiSelectRecyclerViewActivity.class);
                 startActivity(intent);
+                return true;
+            }
+            if (Utilities.KEY_REBOOT.equals(preference.getKey())) {
+                android.os.Process.killProcess(android.os.Process.myPid());
                 return true;
             }
             return false;

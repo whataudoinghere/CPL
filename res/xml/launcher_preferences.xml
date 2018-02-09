@@ -246,6 +246,15 @@
             />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/custom_reboot">
+        <Preference
+            android:key="pref_reboot"
+            android:summary="@string/reboot_sum"
+            android:title="@string/reboot" />
+    </PreferenceCategory>
+
+
     <PreferenceCategory android:title="@string/about">
         <PreferenceScreen
             android:key="about_screen"

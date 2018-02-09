@@ -153,6 +153,7 @@ public final class Utilities {
     public static final String KEY_SHOW_FOLDER_LABELS = "pref_folder_show_labels";
     public static final String MINUSFONT = "pref_minusfont";
     public static final String ICONSIZE = "pref_IconSize";
+    public static final String KEY_REBOOT = "pref_reboot";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

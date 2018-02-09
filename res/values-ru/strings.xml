@@ -207,6 +207,11 @@
     <string name="smallfont">Использовать уменьшеный шрифт подписей</string>
     <string name="icon_size">Размер значка</string>
 
+    <!-- Reboot -->
+    <string name="custom_reboot">Перезапустить приложение</string>
+    <string name="reboot">Перезапустить!</string>
+    <string name="reboot_sum">Если некоторые настройки не применились</string>
+
     <!-- Home screen -->
     <string name="custom_hs">Домашний экран</string>
     <string name="diabledgemargin">Отключить поля</string>

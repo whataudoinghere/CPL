@@ -392,6 +392,12 @@
     <string name="about_app_version_wtu">wtu version / github</string>
     <string name="version_wtu_sum">v1</string>
     <string name="url_wtu_git">https://github.com/whataudoinghere/Launcher3</string>
+
+    <!-- Reboot -->
+    <string name="custom_reboot">Restart Launcher</string>
+    <string name="reboot">Restart</string>
+    <string name="reboot_sum">If the settings are not applied</string>
+
     <!-- Allapp -->
     <string name="custom_allapp">All Apps</string>
     <string name="dark_themeqsballapp">Dark search bar in All Apps</string>
