@@ -155,8 +155,6 @@ public final class Utilities {
     public static final String ICONSIZE = "pref_IconSize";
     public static final String KEY_REBOOT = "pref_reboot";
     public static final String KEY_ABOUT_FORGOT = "about_forgot";
-    public static final String KEY_SMARTSPASE_TIME = "about_forgot";
-    public static final String KEY_SMARTSPASE_DATE = "about_forgot";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
