@@ -157,6 +157,7 @@
     <string name="hide_selected">Скрыть выбранные приложения</string>
     <string name="reset_hidden_apps">Сбросить все</string>
     <string name="reset_hidden_apps_hint">Скрытые приложения отображаются</string>
+    <string name="hide_widgets_too">Так же скрыть виджеты этих приложений</string>
 
     <!-- Theme -->
     <string name="custom_theme">Тема</string>

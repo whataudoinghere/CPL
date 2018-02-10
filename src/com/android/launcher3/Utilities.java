@@ -155,6 +155,7 @@ public final class Utilities {
     public static final String ICONSIZE = "pref_IconSize";
     public static final String KEY_REBOOT = "pref_reboot";
     public static final String KEY_ABOUT_FORGOT = "about_forgot";
+    public static final String KEY_HIDE_WIDGET_TOO = "pref_hide_widgets_too";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
@@ -162,6 +163,11 @@ public final class Utilities {
 
     public static boolean isAllowRotationPrefEnabled(Context context) {
         return getPrefs(context).getBoolean(ALLOW_ROTATION_PREFERENCE_KEY,
+                getAllowRotationDefaultValue(context));
+    }
+
+    public static boolean hidewidgettoo(Context context) {
+        return getPrefs(context).getBoolean(KEY_HIDE_WIDGET_TOO,
                 getAllowRotationDefaultValue(context));
     }
 

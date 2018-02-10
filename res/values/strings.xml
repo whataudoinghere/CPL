@@ -362,6 +362,8 @@
     <string name="more">More</string>
     <string name="reset_hidden_apps">Reset all</string>
     <string name="reset_hidden_apps_hint">Hidden apps are now available</string>
+    <string name="hide_widgets_too">Hide widgets of these applications too</string>
+
 
     <!-- Dock bar -->
     <string name="custom_dockbar">Dock bar</string>
