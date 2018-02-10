@@ -4095,6 +4095,12 @@ public class Launcher extends BaseActivity
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
             }
+            if (Utilities.KEY_SMARTSPASE_TIME.equals(key)) {
+                recreate();
+            }
+            if (Utilities.KEY_SMARTSPASE_DATE.equals(key)) {
+                recreate();
+            }
             if (Utilities.ROWSHOME.equals(key)) {
                 needRestart();
             }

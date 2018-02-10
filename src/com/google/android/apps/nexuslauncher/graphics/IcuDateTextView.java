@@ -43,6 +43,18 @@ public class IcuDateTextView extends DoubleShadowTextView {
                         .getString(R.string.icu_abbrev_wday_month_day_no_year), Locale.getDefault()))
                         .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             }
+            boolean time = Utilities.getPrefs((getContext())).getBoolean("pref_smartspase_time", false);
+            boolean date = Utilities.getPrefs((getContext())).getBoolean("pref_smartspase_date", false);
+            if (time && !date) {
+                (mDateFormat = DateFormat.getInstanceForSkeleton(getContext()
+                        .getString(R.string.icu_abbrev_time), Locale.getDefault()))
+                        .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
+            }
+            if (time && date) {
+                (mDateFormat = DateFormat.getInstanceForSkeleton(getContext()
+                        .getString(R.string.icu_abbrev_time_date), Locale.getDefault()))
+                        .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
+            }
             format = mDateFormat.format(System.currentTimeMillis());
         } else {
             format = DateUtils.formatDateTime(getContext(), System.currentTimeMillis(),

@@ -47,6 +47,22 @@
         android:persistent="false"
         />
 
+        <SwitchPreference
+            android:key="pref_smartspase_time"
+            android:disableDependentsState="false"
+            android:title="@string/smartspace_time"
+            android:summary="@string/in_smartspace"
+            android:defaultValue="false"
+            />
+
+        <SwitchPreference
+            android:key="pref_smartspase_date"
+            android:dependency="pref_smartspase_time"
+            android:title="@string/smartspace_date"
+            android:summary="@string/in_smartspace"
+            android:defaultValue="false"
+            />
+
     <SwitchPreference
         android:key="pref_enable_minus_one"
         android:title="@string/title_show_google_app"
