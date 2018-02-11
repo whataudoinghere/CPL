@@ -390,7 +390,7 @@
 
     <!-- About -->
     <string name="thanks">Thanks for</string>
-    <string name="sum_thanks">- Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--</string>
+    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--</string>
     <string name="forgot">Maybe i forgot someone ...</string>
     <string name="date">Build date</string>
     <string name="sum_date">07/02/18</string>

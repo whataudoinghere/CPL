@@ -281,6 +281,11 @@
             android:summary="@string/sum_aboutapp"
             android:title="@string/about">
             <Preference
+                android:key="about_forgot"
+                android:title="@string/thanks"
+                android:summary="@string/sum_thanks" >
+            </Preference>
+            <Preference
                 android:key="about_app_version"
                 android:title="@string/about_app_version"
                 android:persistent="false">
@@ -295,11 +300,6 @@
                 <intent
                     android:action="android.intent.action.VIEW"
                     android:data="@string/url_wtu_git" />
-            </Preference>
-            <Preference
-                android:key="about_forgot"
-                android:title="@string/thanks"
-                android:summary="@string/sum_thanks" >
             </Preference>
             <Preference
                 android:title="@string/date"
