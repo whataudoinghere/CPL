@@ -102,8 +102,6 @@
 -keep interface com.android.launcher3.model.nano.LauncherDumpProto.** {
   *;
 }
-<<<<<<< HEAD
-=======
 
 -keep,allowshrinking,allowoptimization class com.google.android.apps.nexuslauncher.** {
   *;
@@ -124,4 +122,3 @@
 -keep class com.android.launcher3.graphics.FixedScaleDrawable {
   *;
 }
->>>>>>> 2640ce186... Launcher3: implement hidden app feature
