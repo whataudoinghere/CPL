@@ -319,7 +319,7 @@
 
     <string name="icu_abbrev_wday_month_day_no_year">EEEMMMd</string>
     <string name="icu_abbrev_time">HH:mm</string>
-    <string name="icu_abbrev_time_date">HH:mm dd MMMMEEE</string>
+    <string name="icu_abbrev_time_date">HH:mm dd MMEEE</string>
     <string name="in_smartspace">In \"At a Glance\" widget</string>
     <string name="smartspace_time">Show time</string>
     <string name="smartspace_date">Show time and date</string>
