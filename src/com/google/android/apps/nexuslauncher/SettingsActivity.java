@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -202,8 +203,22 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
                 return true;
             }
             if (Utilities.KEY_ABOUT_FORGOT.equals(preference.getKey())) {
+                SharedPreferences devicePrefs = Utilities.getPrefs(mContext);
+                devicePrefs.edit().putInt("key_ee", devicePrefs.getInt("key_ee", 0) + 1).apply();
+                int i = devicePrefs.getInt("key_ee", 0);
+                if (i <= 5) {
                     Toast toast = Toast.makeText(mContext,R.string.forgot,Toast.LENGTH_LONG);
                     toast.show();
+                }
+                if (i >= 5 && i <= 14) {
+                    Toast toast = Toast.makeText(mContext,String.valueOf(i) + "/15",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                if (i == 15) {
+                    Toast toast = Toast.makeText(mContext,R.string.ee,Toast.LENGTH_LONG);
+                    devicePrefs.edit().putInt("key_ee", 0).apply();
+                    toast.show();
+                }
                 return true;
             }
             return false;

@@ -129,6 +129,7 @@
     <string name="action_dismiss_notification" msgid="5909461085055959187">"Закрыть"</string>
     <string name="notification_dismissed" msgid="6002233469409822874">"Уведомление закрыто"</string>
     <string name="smartspace_preferences">Настройки</string>
+    <string name="ee">Тебе что, больше нечем заняться?</string>
     <string name="label_search">Поиск</string>
     <string name="label_voice_search">Голосовой поиск</string>
     <string name="pref_icon_pack">Пакет значков</string>
