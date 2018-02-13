@@ -199,10 +199,8 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
                 return true;
             }
             if (Utilities.KEY_ABOUT_FORGOT.equals(preference.getKey())) {
-                if (Utilities.ATLEAST_NOUGAT) { 
-                    Toast toast = Toast.makeText(getContext(),R.string.forgot,Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(mContext,R.string.forgot,Toast.LENGTH_LONG);
                     toast.show();
-                }
                 return true;
             }
             return false;
