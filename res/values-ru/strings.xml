@@ -134,9 +134,8 @@
     <string name="pref_icon_pack">Пакет значков</string>
     <string name="state_loading">Применение…</string>
     <string name="smartspace_preferences_in_settings">Виджет \"Обратный отсчет\"</string>
-    <string name="smartspace_time">Показывать часы</string>
-    <string name="smartspace_date">Показывать часы и дату</string>
-    <string name="in_smartspace">В виджете \"Обратный отсчет\"</string>
+    <string name="smartspace_time">Добавить часы</string>
+    <string name="in_smartspace">В виджет \"Обратный отсчет\"</string>
     <string name="smartspace_preferences_in_settings_desc">Настройки виджета в верхней части экрана, в котором отображаются различные события</string>
     <string name="title_show_google_app">Показывать %1$s</string>
     <string name="msg_minus_one_on_left">Слева от главного экрана</string>
@@ -231,5 +230,13 @@
     <string name="custom_folders">Папки</string>
     <string name="folder_show_labels">Подписи значков</string>
 
+    <!-- Date formats -->
+    <string name="date_format">Формат даты</string>
+    <string name="date_format_1">Понедельник, 7 апр.</string>
+    <string name="date_format_2">Понедельник</string>
+    <string name="date_format_3">Пн, 7 апреля</string>
+    <string name="date_format_4">Пн, 7.04</string>
+    <string name="date_format_5">Понедельник, 7</string>
+    <string name="date_format_6">Понедельник, 7 апреля</string>
 
 </resources>

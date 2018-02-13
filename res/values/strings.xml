@@ -319,10 +319,8 @@
 
     <string name="icu_abbrev_wday_month_day_no_year">EEEMMMd</string>
     <string name="icu_abbrev_time">HH:mm</string>
-    <string name="icu_abbrev_time_date">HH:mm dd MMEEE</string>
     <string name="in_smartspace">In \"At a Glance\" widget</string>
-    <string name="smartspace_time">Show time</string>
-    <string name="smartspace_date">Show time and date</string>
+    <string name="smartspace_time">Add clock</string>
     <string name="smartspace_preferences">Preferences</string>
     <string name="label_search">Search</string>
     <string name="label_voice_search">Voice search</string>
@@ -432,5 +430,14 @@
     <!-- Folders -->
     <string name="custom_folders">Folders</string>
     <string name="folder_show_labels">Show icon labels in folders</string>
+
+    <!-- Date formats -->
+    <string name="date_format">Date format</string>
+    <string name="date_format_1">Tuesday, Feb 13</string>
+    <string name="date_format_2">Tuesday</string>
+    <string name="date_format_3">Tue, February 13</string>
+    <string name="date_format_4">Tue, 02/13</string>
+    <string name="date_format_5">13 Tuesday</string>
+    <string name="date_format_6">Tuesday, February 13</string>
 
 </resources>

@@ -98,6 +98,10 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             forgot.setOnPreferenceClickListener(this);
 
             findPreference(SHOW_PREDICTIONS_PREF).setOnPreferenceChangeListener(this);
+
+            if (Utilities.ATLEAST_NOUGAT) {
+                getPreferenceScreen().findPreference("pref_DateFormats").setEnabled(true);
+            }
         }
 
         private String getDisplayGoogleTitle() {

@@ -37,28 +37,28 @@ public class IcuDateTextView extends DoubleShadowTextView {
     @TargetApi(24)
     public void reloadDateFormat(boolean forcedChange) {
         String format;
+        boolean time = Utilities.getPrefs((getContext())).getBoolean("pref_smartspase_time", false);
         if (Utilities.ATLEAST_NOUGAT) {
             if (mDateFormat == null || forcedChange) {
                 (mDateFormat = DateFormat.getInstanceForSkeleton(getContext()
                         .getString(R.string.icu_abbrev_wday_month_day_no_year), Locale.getDefault()))
                         .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             }
-            boolean time = Utilities.getPrefs((getContext())).getBoolean("pref_smartspase_time", false);
-            boolean date = Utilities.getPrefs((getContext())).getBoolean("pref_smartspase_date", false);
-            if (time && !date) {
-                (mDateFormat = DateFormat.getInstanceForSkeleton(getContext()
-                        .getString(R.string.icu_abbrev_time), Locale.getDefault()))
+            String loaddateformat = Utilities.getPrefs((getContext())).getString("pref_DateFormats", "EEEEMMMd");
+            if (time) {
+                (mDateFormat = DateFormat.getInstanceForSkeleton(loaddateformat + "HH:mm", Locale.getDefault()))
                         .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             }
-            if (time && date) {
-                (mDateFormat = DateFormat.getInstanceForSkeleton(getContext()
-                        .getString(R.string.icu_abbrev_time_date), Locale.getDefault()))
-                        .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
-            }
+            else (mDateFormat = DateFormat.getInstanceForSkeleton(loaddateformat, Locale.getDefault()))
+                    .setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
             format = mDateFormat.format(System.currentTimeMillis());
         } else {
             format = DateUtils.formatDateTime(getContext(), System.currentTimeMillis(),
                     DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH);
+            if (time) {
+                format = DateUtils.formatDateTime(getContext(), System.currentTimeMillis(),
+                        DateUtils.FORMAT_SHOW_WEEKDAY | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_MONTH | DateUtils.FORMAT_SHOW_TIME);
+            }
         }
         setText(format);
         setContentDescription(format);

@@ -55,13 +55,14 @@
             android:defaultValue="false"
             />
 
-        <SwitchPreference
-            android:key="pref_smartspase_date"
-            android:dependency="pref_smartspase_time"
-            android:title="@string/smartspace_date"
-            android:summary="@string/in_smartspace"
-            android:defaultValue="false"
-            />
+        <ListPreference
+            android:defaultValue="EEEEMMMd"
+            android:entries="@array/DateFormatsName"
+            android:entryValues="@array/DateFormatsValues"
+            android:key="pref_DateFormats"
+            android:summary="%s"
+            android:enabled="false"
+            android:title="@string/date_format" />
 
     <SwitchPreference
         android:key="pref_enable_minus_one"
