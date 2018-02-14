@@ -4152,6 +4152,9 @@ public class Launcher extends BaseActivity
             if (Utilities.ICONSIZE.equals(key)) {
                 needRestart();
             }
+            if (Utilities.KEY_DISABLE_SMARTSPASE.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

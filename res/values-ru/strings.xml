@@ -135,6 +135,7 @@
     <string name="pref_icon_pack">Пакет значков</string>
     <string name="state_loading">Применение…</string>
     <string name="smartspace_preferences_in_settings">Виджет \"Обратный отсчет\"</string>
+    <string name="smartspace_disable">Отключить \"Обратный отсчет\"</string>
     <string name="smartspace_time">Добавить часы</string>
     <string name="in_smartspace">В виджет \"Обратный отсчет\"</string>
     <string name="smartspace_preferences_in_settings_desc">Настройки виджета в верхней части экрана, в котором отображаются различные события</string>

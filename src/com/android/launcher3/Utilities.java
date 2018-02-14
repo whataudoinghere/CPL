@@ -156,6 +156,7 @@ public final class Utilities {
     public static final String KEY_REBOOT = "pref_reboot";
     public static final String KEY_ABOUT_FORGOT = "about_forgot";
     public static final String KEY_HIDE_WIDGET_TOO = "pref_hide_widgets_too";
+    public static final String KEY_DISABLE_SMARTSPASE = "pref_disabless";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

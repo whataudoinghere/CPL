@@ -330,6 +330,7 @@
     <string name="pref_icon_pack">Icon pack</string>
     <string name="state_loading">Applying…</string>
     <string name="smartspace_preferences_in_settings">\"At a Glance\" widget</string>
+    <string name="smartspace_disable">Disable \"At a Glance\" widget</string>
     <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the homescreen that displays different events</string>
     <string name="title_show_google_app">%1$s</string>
     <string name="pref_show_google_now_summary">@string/msg_minus_one_on_left</string>
