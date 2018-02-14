@@ -391,7 +391,7 @@
 
     <!-- About -->
     <string name="thanks">Thanks for</string>
-    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--</string>
+    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek </string>
     <string name="forgot">Maybe i forgot someone ...</string>
     <string name="date">Build date</string>
     <string name="sum_date">14.02.18</string>
@@ -399,7 +399,7 @@
     <string name="about_app_version">amirzaidi version / github</string>
     <string name="app_releases_url">https://github.com/amirzaidi/launcher3/releases</string>
     <string name="about_app_version_wtu">wtu version / github</string>
-    <string name="version_wtu_sum">1.1.1(fixed)</string>
+    <string name="version_wtu_sum">1.1.2</string>
     <string name="url_wtu_git">https://github.com/whataudoinghere/Launcher3</string>
 
     <!-- Reboot -->
