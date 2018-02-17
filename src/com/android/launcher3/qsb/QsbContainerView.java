@@ -128,7 +128,6 @@ public class QsbContainerView extends FrameLayout {
             AppWidgetProviderInfo widgetInfo = widgetManager.getAppWidgetInfo(widgetId);
             boolean isWidgetBound = (widgetInfo != null) &&
                     widgetInfo.provider.equals(mWidgetInfo.provider);
-
             int oldWidgetId = widgetId;
             if (!isWidgetBound) {
                 if (widgetId > -1) {
