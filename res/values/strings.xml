@@ -330,6 +330,7 @@
     <string name="pref_icon_pack">Icon pack</string>
     <string name="state_loading">Applying…</string>
     <string name="smartspace_preferences_in_settings">\"At a Glance\" widget</string>
+    <string name="smartspace_preferences_in_settings_summary">Customize your \"At a Glance\" widget</string>
     <string name="smartspace_disable">Disable \"At a Glance\" widget</string>
     <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the homescreen that displays different events</string>
     <string name="title_show_google_app">%1$s</string>
@@ -346,7 +347,9 @@
 
     <string name="customize">Customize</string>
 
+    <!-- Theme -->
     <string name="custom_theme">Theme</string>
+    <string name="custom_theme_summary">Customize theme</string>
     <string name="dark_theme">Use dark theme</string>
     <string name="use_dark_theme_sum">Use dark theme</string>
     <string name="use_white_theme_sum">Use white theme</string>
@@ -368,6 +371,7 @@
 
     <!-- Dock bar -->
     <string name="custom_dockbar">Dock bar</string>
+    <string name="custom_dockbar_summary">Customize your dock</string>
     <string name="num_hotseat_icons_pref_title">Number of icons in dock</string>
     <string name="force_mic">Force mic</string>
     <string name="force_colour_logo">Сolored Google logo on search bar</string>
@@ -409,17 +413,20 @@
 
     <!-- Allapp -->
     <string name="custom_allapp">All Apps</string>
+    <string name="custom_allapp_summary">Customize your app drawer</string>
     <string name="dark_themeqsballapp">Dark search bar in All Apps</string>
     <string name="num_colsallapp">Extra column in All Apps</string>
     <string name="smallallaps">Small reaserch bar</string>
 
     <!-- Icons -->
     <string name="custom_ico">Icons</string>
+    <string name="custom_ico_summary">Customize icons</string>
     <string name="smallfont">Use small font for lables</string>
     <string name="icon_size">Icon size</string>
 
     <!-- Home screen -->
     <string name="custom_hs">Home screen</string>
+    <string name="custom_hs_summary">Customize your home screen</string>
     <string name="diabledgemargin">Disable edge margin</string>
     <string name="settings_edit_allow_title">Allow edit</string>
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
@@ -432,6 +439,7 @@
 
     <!-- Folders -->
     <string name="custom_folders">Folders</string>
+    <string name="custom_folders_summary">Customize folders</string>
     <string name="folder_show_labels">Show icon labels in folders</string>
 
     <!-- Date formats -->

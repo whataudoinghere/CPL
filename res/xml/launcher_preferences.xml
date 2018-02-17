@@ -16,7 +16,9 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/custom_hs">
+    <PreferenceScreen
+        android:summary="@string/custom_hs_summary"
+        android:title="@string/custom_hs">
 
     <ListPreference
         android:defaultValue="5"
@@ -66,9 +68,11 @@
             android:title="@string/settings_edit_allow_title"
             android:summaryOn="@string/settings_edit_allow_summary_on"
             android:summaryOff="@string/settings_edit_allow_summary_off" />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory android:title="@string/smartspace_preferences_in_settings">
+    <PreferenceScreen
+        android:summary="@string/smartspace_preferences_in_settings_summary"
+        android:title="@string/smartspace_preferences_in_settings">
         <PreferenceScreen
             android:key="pref_smartspace"
             android:title="@string/smartspace_preferences_in_settings"
@@ -98,9 +102,11 @@
         android:summary="%s"
         android:enabled="false"
         android:title="@string/date_format" />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory android:title="@string/custom_allapp">
+    <PreferenceScreen
+        android:summary="@string/custom_allapp_summary"
+        android:title="@string/custom_allapp">
         <SwitchPreference
             android:key="pref_show_predictions"
             android:title="@string/title_app_suggestions"
@@ -136,9 +142,11 @@
             android:defaultValue="true"
             android:key="pref_hide_widgets_too"
             android:title="@string/hide_widgets_too" />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory android:title="@string/custom_folders">
+    <PreferenceScreen
+        android:summary="@string/custom_folders_summary"
+        android:title="@string/custom_folders">
         <ListPreference
             android:defaultValue="4"
             android:entries="@array/numFolderValues"
@@ -159,9 +167,10 @@
             android:defaultValue="true"
             android:key="pref_folder_show_labels"
             android:title="@string/folder_show_labels" />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory
+    <PreferenceScreen
+        android:summary="@string/custom_theme_summary"
         android:title="@string/custom_theme">
         <SwitchPreference
             android:defaultValue="false"
@@ -177,9 +186,11 @@
             android:dependency="pref_darktheme_enabled"
             android:summary="@string/use_dark_text_sum"
             android:title="@string/use_dark_text" />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory android:title="@string/custom_dockbar">
+    <PreferenceScreen
+        android:summary="@string/custom_dockbar_summary"
+        android:title="@string/custom_dockbar">
         <ListPreference
             android:defaultValue="5"
             android:entries="@array/numHotseatIconsValues"
@@ -225,9 +236,11 @@
             android:defaultValue="true"
             android:key="pref_hotseatShowPageIndicator"
             android:title="@string/hotseat_show_page_indicator" />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory android:title="@string/custom_ico">
+    <PreferenceScreen
+        android:summary="@string/custom_ico_summary"
+        android:title="@string/custom_ico">
         <ListPreference
             android:key="pref_override_icon_shape"
             android:title="@string/icon_shape_override_label"
@@ -275,23 +288,19 @@
             android:defaultValue="true"
             android:persistent="true"
             />
-    </PreferenceCategory>
+    </PreferenceScreen>
 
-    <PreferenceCategory
-        android:title="@string/custom_reboot">
+    <Preference
+        android:key="pref_reboot"
+        android:summary="@string/reboot_sum"
+        android:title="@string/reboot" />
+
+    <PreferenceScreen
+        android:key="about_screen"
+        android:summary="@string/sum_aboutapp"
+        android:title="@string/about">
+
         <Preference
-            android:key="pref_reboot"
-            android:summary="@string/reboot_sum"
-            android:title="@string/reboot" />
-    </PreferenceCategory>
-
-
-    <PreferenceCategory android:title="@string/about">
-        <PreferenceScreen
-            android:key="about_screen"
-            android:summary="@string/sum_aboutapp"
-            android:title="@string/about">
-            <Preference
                 android:key="about_forgot"
                 android:title="@string/thanks"
                 android:summary="@string/sum_thanks" >
@@ -325,6 +334,5 @@
                     android:data="package:com.google.android.apps.nexuslauncher" />
             </Preference>
         </PreferenceScreen>
-    </PreferenceCategory>
 
 </PreferenceScreen>
