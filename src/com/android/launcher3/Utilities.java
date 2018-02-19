@@ -158,6 +158,8 @@ public final class Utilities {
     public static final String KEY_ABOUT_FORGOT = "about_forgot";
     public static final String KEY_HIDE_WIDGET_TOO = "pref_hide_widgets_too";
     public static final String KEY_DISABLE_SMARTSPASE = "pref_disabless";
+    public static final String KEY_DESK_COLOUR = "pref_workspace_label_color";
+    public static final String KEY_DESK_CAN_CHANGE_COLOUR = "pref_change_workspace_label_color";
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);

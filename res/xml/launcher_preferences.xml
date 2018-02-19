@@ -43,23 +43,38 @@
         android:title="@string/diabledgemargin" />
 
     <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_desktop_show_labels"
+        android:title="@string/desktop_show_labels" />
+
+    <SwitchPreference
+         android:key="pref_change_workspace_label_color"
+         android:title="@string/use_custom_label_color"
+         android:defaultValue="false"
+         android:disableDependentsState="false"
+         android:persistent="true" />
+
+    <ListPreference
+        android:defaultValue="#FFFFFF"
+        android:entries="@array/ColorNames"
+        android:entryValues="@array/ColorValues"
+        android:key="pref_workspace_label_color"
+        android:dependency="pref_change_workspace_label_color"
+        android:persistent="true"
+        android:summary="%s"
+        android:title="@string/custom_label_color" />
+
+    <SwitchPreference
         android:key="pref_enable_minus_one"
         android:title="@string/title_show_google_app"
         android:summary="@string/pref_show_google_now_summary"
-        android:defaultValue="true"
-        />
-
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="pref_desktop_show_labels"
-            android:title="@string/desktop_show_labels" />
+        android:defaultValue="true" />
 
     <SwitchPreference
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
         android:defaultValue="@bool/allow_rotation"
-        android:persistent="true"
-        />
+        android:persistent="true" />
 
         <SwitchPreference
             android:defaultValue="true"

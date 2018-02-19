@@ -452,4 +452,8 @@
     <string name="date_format_5">13 Tuesday</string>
     <string name="date_format_6">Tuesday, February 13</string>
 
+    <!-- Color Changing -->
+    <string name="use_custom_label_color">Use custom label color</string>
+    <string name="custom_label_color">Label color</string>
+
 </resources>

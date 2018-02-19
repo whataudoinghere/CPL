@@ -249,4 +249,8 @@
     <string name="date_format_5">Понедельник, 7</string>
     <string name="date_format_6">Понедельник, 7 апреля</string>
 
+    <!-- Color Changing -->
+    <string name="use_custom_label_color">Изменить цвет подписи значков</string>
+    <string name="custom_label_color">Цвет подписи значков</string>
+
 </resources>

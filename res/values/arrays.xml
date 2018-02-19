@@ -74,4 +74,38 @@
         <item>EEEEMMMMd</item>
     </string-array>
 
+    <string-array name="ColorValues">
+        <item>#FFFFFF</item>
+        <item>#FF000000</item>
+        <item>#FF007F</item>
+        <item>#FF0000</item>
+        <item>#FF7F00</item>
+        <item>#FFFF00</item>
+        <item>#7FFF00</item>
+        <item>#00FF00</item>
+        <item>#00FF7F</item>
+        <item>#00FFFF</item>
+        <item>#007FFF</item>
+        <item>#0000FF</item>
+        <item>#7F00FF</item>
+        <item>#FF00FF</item>
+    </string-array>
+
+    <string-array name="ColorNames">
+        <item>White</item>
+        <item>Black</item>
+        <item>Bright pink</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Уellow</item>
+        <item>Сhartreuse</item>
+        <item>Green</item>
+        <item>Spring green</item>
+        <item>Cyan</item>
+        <item>Azure</item>
+        <item>Blue</item>
+        <item>Violet</item>
+        <item>Magenta</item>
+    </string-array>
+
 </resources>

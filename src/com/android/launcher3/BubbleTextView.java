@@ -163,6 +163,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
         if (display == DISPLAY_WORKSPACE) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx);
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
+            if (prefs.getBoolean("pref_change_workspace_label_color", false)){
+                setTextColor(Color.parseColor(prefs.getString("pref_workspace_label_color", "#FFFFFF")));
+            }
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
         } else if (display == DISPLAY_ALL_APPS) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
