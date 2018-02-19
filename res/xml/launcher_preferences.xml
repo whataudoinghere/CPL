@@ -45,12 +45,14 @@
     <SwitchPreference
         android:defaultValue="true"
         android:key="pref_desktop_show_labels"
+        android:disableDependentsState="false"
         android:title="@string/desktop_show_labels" />
 
     <SwitchPreference
          android:key="pref_change_workspace_label_color"
          android:title="@string/use_custom_label_color"
          android:defaultValue="false"
+         android:dependency="pref_desktop_show_labels"
          android:disableDependentsState="false"
          android:persistent="true" />
 
@@ -149,6 +151,22 @@
             android:defaultValue="true"
             android:key="pref_drawer_show_labels"
             android:title="@string/drawer_show_labels" />
+        <SwitchPreference
+            android:key="pref_change_drawer_label_color"
+            android:title="@string/use_custom_label_color"
+            android:defaultValue="false"
+            android:dependency="pref_drawer_show_labels"
+            android:disableDependentsState="false"
+            android:persistent="true" />
+        <ListPreference
+            android:defaultValue="#000000"
+            android:entries="@array/ColorNames"
+            android:entryValues="@array/ColorValues"
+            android:key="pref_drawer_label_color"
+            android:dependency="pref_change_drawer_label_color"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/custom_label_color" />
         <Preference
             android:key="hidden-app"
             android:title="@string/hide_app"
@@ -182,6 +200,22 @@
             android:defaultValue="true"
             android:key="pref_folder_show_labels"
             android:title="@string/folder_show_labels" />
+        <SwitchPreference
+            android:key="pref_change_folder_label_color"
+            android:title="@string/use_custom_label_color"
+            android:defaultValue="false"
+            android:dependency="pref_folder_show_labels"
+            android:disableDependentsState="false"
+            android:persistent="true" />
+        <ListPreference
+            android:defaultValue="#000000"
+            android:entries="@array/ColorNames"
+            android:entryValues="@array/ColorValues"
+            android:key="pref_folder_label_color"
+            android:dependency="pref_change_folder_label_color"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/custom_label_color" />
     </PreferenceScreen>
 
     <PreferenceScreen

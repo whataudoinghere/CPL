@@ -4161,6 +4161,18 @@ public class Launcher extends BaseActivity
             if (Utilities.KEY_DESK_CAN_CHANGE_COLOUR.equals(key)) {
                 recreate();
             }
+            if (Utilities.KEY_DRAWER_COLOUR.equals(key)) {
+                recreate();
+            }
+            if (Utilities.KEY_DRAWER_CAN_CHANGE_COLOUR.equals(key)) {
+                recreate();
+            }
+            if (Utilities.KEY_FOLDER_COLOUR.equals(key)) {
+                recreate();
+            }
+            if (Utilities.KEY_FOLDER_CAN_CHANGE_COLOUR.equals(key)) {
+                recreate();
+            }
         }
     }
 }

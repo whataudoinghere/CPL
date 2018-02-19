@@ -76,7 +76,7 @@
 
     <string-array name="ColorValues">
         <item>#FFFFFF</item>
-        <item>#FF000000</item>
+        <item>#000000</item>
         <item>#FF007F</item>
         <item>#FF0000</item>
         <item>#FF7F00</item>

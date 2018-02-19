@@ -159,6 +159,11 @@ public final class Utilities {
     public static final String KEY_DISABLE_SMARTSPASE = "pref_disabless";
     public static final String KEY_DESK_COLOUR = "pref_workspace_label_color";
     public static final String KEY_DESK_CAN_CHANGE_COLOUR = "pref_change_workspace_label_color";
+    public static final String KEY_DRAWER_COLOUR = "pref_drawer_label_color";
+    public static final String KEY_DRAWER_CAN_CHANGE_COLOUR = "pref_change_drawer_label_color";
+    public static final String KEY_FOLDER_COLOUR = "pref_folder_label_color";
+    public static final String KEY_FOLDER_CAN_CHANGE_COLOUR = "pref_change_folder_label_color";
+
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
