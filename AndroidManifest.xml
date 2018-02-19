@@ -111,12 +111,6 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.CustomizeActivity"
-            android:label="@string/customize"
-            android:autoRemoveFromRecents="true"
-            android:theme="@style/SettingsTheme" />
-
-        <activity
             android:name="com.android.launcher3.MultiSelectRecyclerViewActivity"
             android:autoRemoveFromRecents="true"
             android:label="@string/hidden_app"
@@ -137,6 +131,7 @@
         <!--
         Pixel
         -->
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
         <activity
             android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity"
             android:theme="@android:style/Theme.NoDisplay">
