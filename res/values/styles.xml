@@ -104,6 +104,7 @@
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondaryInverse</item>
         <item name="android:textColorPrimary">?android:attr/textColorPrimaryInverse</item>
         <item name="android:textColorSecondary">?android:attr/textColorSecondaryInverse</item>
+        <item name="bottomSheetNavBarColor">@color/all_apps_navbar_color</item>
 
         <!-- Backports -->
         <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
@@ -119,6 +120,7 @@
         <item name="android:colorPrimary">#FF333333</item>
         <item name="android:colorPrimaryDark">#424242</item>
         <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="bottomSheetNavBarColor">#00000000</item>
     </style>
 
     <style name="WidgetContainerTheme.Black" parent="@style/WidgetContainerTheme" >
@@ -127,6 +129,7 @@
         <item name="android:colorPrimary">#FF000000</item>
         <item name="android:colorPrimaryDark">#FF000000</item>
         <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="bottomSheetNavBarColor">#00000000</item>
     </style>
 
     <style name="FastScrollerPopup" >
