@@ -129,7 +129,6 @@ public final class Utilities {
     public static final String KEY_HIDDEN_APPS = "hidden-app";
     public static final String KEY_HIDDEN_APPS_SET = "hidden-app-set";
     public static final String DARKTHEME_PREFERENCE_KEY = "pref_darktheme_enabled";
-    public static final String AUTOTHEME_PREFERENCE_KEY = "pref_autotheme_enabled";
     public static final String DARKTEXT_PREFERENCE_KEY = "pref_darktext_enabled";
     public static final String GOOGLEBAR_INAPPMENU_PREFERENCE_KEY = "pref_googleinappmenu_enabled";
     public static final String MIC_PREFERENCE_KEY = "pref_enablemic";

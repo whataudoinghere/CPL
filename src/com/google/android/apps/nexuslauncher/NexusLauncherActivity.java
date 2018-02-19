@@ -22,44 +22,27 @@ public class NexusLauncherActivity extends Launcher {
         boolean darktheme = Utilities.getPrefs(this).getBoolean("pref_darktheme_enabled", false);
         boolean googlebarinappmenu = Utilities.getPrefs(this).getBoolean("pref_googleinappmenu_enabled", false);
         boolean darktext = Utilities.getPrefs(this).getBoolean("pref_darktext_enabled", false);
-        boolean autotheme = Utilities.getPrefs(this).getBoolean("pref_autotheme_enabled", false);
-        setTheme(R.style.LauncherTheme);
-        if (darktheme && googlebarinappmenu && !autotheme) {
+        setTheme(R.style.GoogleSearchLauncherTheme);
+        if (darktheme && googlebarinappmenu) {
             setTheme(R.style.GoogleSearchLauncherThemeDark);
         }
-        if (darktheme && !googlebarinappmenu && !autotheme) {
+        if (darktheme && !googlebarinappmenu) {
             setTheme(R.style.LauncherThemeDark);
         }
-        if (!darktheme && !googlebarinappmenu && !autotheme) {
+        if (!darktheme && !googlebarinappmenu) {
             setTheme(R.style.LauncherTheme);
         }
-        if (darktext && Utilities.ATLEAST_NOUGAT && googlebarinappmenu && !autotheme) {
+        if (darktext && Utilities.ATLEAST_NOUGAT && googlebarinappmenu) {
             setTheme(R.style.GoogleSearchLauncherThemeDarkText);
         }
-        if (darktext && Utilities.ATLEAST_NOUGAT && !googlebarinappmenu && !autotheme) {
+        if (darktext && Utilities.ATLEAST_NOUGAT && !googlebarinappmenu) {
             setTheme(R.style.LauncherThemeDarkText);
         }
-        if (darktext && darktheme && !googlebarinappmenu && !autotheme) {
+        if (darktext && darktheme && !googlebarinappmenu) {
             setTheme(R.style.LauncherThemeDark);
         }
-        if (darktext && darktheme && googlebarinappmenu && !autotheme) {
+        if (darktext && darktheme && googlebarinappmenu) {
             setTheme(R.style.GoogleSearchLauncherThemeDark);
-        }
-//этот участок для автотемы
-        if (googlebarinappmenu && autotheme) {
-            setTheme(R.style.GoogleSearchLauncherTheme);
-        }
-        if (isDark && autotheme) {
-            setTheme(R.style.LauncherThemeDark);
-        }
-        if (supportsDarkText && Utilities.ATLEAST_NOUGAT && autotheme) {
-            setTheme(R.style.LauncherThemeDarkText);
-        }
-        if (isDark && googlebarinappmenu && autotheme) {
-            setTheme(R.style.GoogleSearchLauncherThemeDark);
-        }
-        if (supportsDarkText && googlebarinappmenu && Utilities.ATLEAST_NOUGAT && autotheme) {
-            setTheme(R.style.GoogleSearchLauncherThemeDarkText);
         }
     }
 
