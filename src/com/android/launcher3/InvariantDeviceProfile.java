@@ -77,6 +77,7 @@ public class InvariantDeviceProfile {
      */
     public int numFolderRows;
     public int numFolderColumns;
+    public float iconAllAppSize;
     public float iconSize;
     public float landscapeIconSize;
     public int iconBitmapSize;
@@ -161,6 +162,7 @@ public class InvariantDeviceProfile {
         numFolderColumns = Integer.valueOf(prefs.getString("pref_numFolderCols", "4"));
         minAllAppsPredictionColumns = closestProfile.minAllAppsPredictionColumns;
         iconSize = Integer.valueOf(prefs.getString("pref_IconSize", "56"));
+        iconAllAppSize = 56;
         landscapeIconSize = interpolatedDeviceProfileOut.landscapeIconSize;
         iconBitmapSize = Utilities.pxFromDp(iconSize, dm);
         a = prefs.getBoolean("pref_minusfont", false);

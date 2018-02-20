@@ -170,7 +170,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
         } else if (display == DISPLAY_ALL_APPS) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
             setCompoundDrawablePadding(grid.allAppsIconDrawablePaddingPx);
-            defaultIconSize = grid.allAppsIconSizePx;
+            defaultIconSize = grid.allAppsIconSizePx * Integer.valueOf(prefs.getString("pref_drawer_icon_size", "100"))/100;
             if (prefs.getBoolean("pref_change_drawer_label_color", false)){
                 setTextColor(Color.parseColor(prefs.getString("pref_drawer_label_color", "#000000")));
             }

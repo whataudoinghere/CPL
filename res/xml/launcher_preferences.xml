@@ -42,6 +42,14 @@
         android:key="pref_diabledgemargin"
         android:title="@string/diabledgemargin" />
 
+    <ListPreference
+        android:defaultValue="56"
+        android:entries="@array/IconSizeName"
+        android:entryValues="@array/IconSizesValues"
+        android:key="pref_IconSize"
+        android:summary="%s"
+        android:title="@string/icon_size" />
+
     <SwitchPreference
         android:defaultValue="true"
         android:key="pref_desktop_show_labels"
@@ -151,6 +159,13 @@
             android:defaultValue="true"
             android:key="pref_drawer_show_labels"
             android:title="@string/drawer_show_labels" />
+        <ListPreference
+            android:defaultValue="100"
+            android:entries="@array/IconSizePrName"
+            android:entryValues="@array/IconSizesPrValues"
+            android:key="pref_drawer_icon_size"
+            android:summary="%s"
+            android:title="@string/icon_size" />
         <SwitchPreference
             android:key="pref_change_drawer_label_color"
             android:title="@string/use_custom_label_color"
@@ -337,13 +352,6 @@
                     android:value="notification_badging" />
             </intent>
         </com.android.launcher3.views.ButtonPreference>
-        <ListPreference
-            android:defaultValue="56"
-            android:entries="@array/IconSizeName"
-            android:entryValues="@array/IconSizesValues"
-            android:key="pref_IconSize"
-            android:summary="%s"
-            android:title="@string/icon_size" />
         <SwitchPreference
             android:defaultValue="false"
             android:key="pref_minusfont"

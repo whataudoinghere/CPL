@@ -4178,6 +4178,9 @@ public class Launcher extends BaseActivity
             if (Utilities.CHANGEBLACKTHEME_PREFERENCE_KEY.equals(key)) {
                 recreate();
             }
+            if (Utilities.DRAWER_ICONSIZE.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

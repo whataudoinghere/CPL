@@ -132,6 +132,7 @@ public class DeviceProfile {
     public int allAppsNumPredictiveCols;
     public int allAppsButtonVisualSize;
     public int allAppsIconSizePx;
+    public int iconAllAppSizePx;
     public int allAppsIconDrawablePaddingPx;
     public float allAppsIconTextSizePx;
 
@@ -360,8 +361,11 @@ public class DeviceProfile {
 
     private void updateIconSize(float scale, Resources res, DisplayMetrics dm) {
         // Workspace
+
         float invIconSizePx = isVerticalBarLayout() ? inv.landscapeIconSize : inv.iconSize;
+        float inviconAllAppSizePx = inv.iconAllAppSize;
         iconSizePx = (int) (Utilities.pxFromDp(invIconSizePx, dm) * scale);
+        iconAllAppSizePx = (int) (Utilities.pxFromDp(inviconAllAppSizePx, dm) * scale);
         iconTextSizePx = (int) (Utilities.pxFromSp(inv.iconTextSize, dm) * scale);
         iconDrawablePaddingPx = (int) (iconDrawablePaddingOriginalPx * scale);
 
@@ -380,7 +384,7 @@ public class DeviceProfile {
 
         // All apps
         allAppsIconTextSizePx = iconTextSizePx;
-        allAppsIconSizePx = iconSizePx;
+        allAppsIconSizePx = iconAllAppSizePx;
         allAppsIconDrawablePaddingPx = iconDrawablePaddingPx;
         allAppsCellHeightPx = getCellSize().y;
 

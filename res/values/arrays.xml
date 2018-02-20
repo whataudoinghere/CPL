@@ -56,6 +56,22 @@
         <item>60</item>
     </string-array>
 
+    <string-array name="IconSizePrName">
+        <item>@string/size_smallest</item>
+        <item>@string/size_small</item>
+        <item>@string/size_stock</item>
+        <item>@string/size_big</item>
+        <item>@string/size_biggest</item>
+    </string-array>
+
+    <string-array name="IconSizesPrValues">
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>105</item>
+        <item>108</item>
+    </string-array>
+
     <string-array name="DateFormatsName">
         <item>@string/date_format_1</item>
         <item>@string/date_format_2</item>
