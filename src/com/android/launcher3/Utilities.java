@@ -164,6 +164,7 @@ public final class Utilities {
     public static final String KEY_FOLDER_CAN_CHANGE_COLOUR = "pref_change_folder_label_color";
     public static final String KEY_QSB_CAN_CHANGE_COLOUR = "pref_customqsbcolour";
     public static final String KEY_QSB_COLOUR = "pref_qsb_color";
+    public static final String CHANGEBLACKTHEME_PREFERENCE_KEY = "pref_darkthemestyle";
 
 
     public static boolean isPropertyEnabled(String propertyName) {

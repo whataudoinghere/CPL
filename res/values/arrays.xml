@@ -74,6 +74,16 @@
         <item>EEEEMMMMd</item>
     </string-array>
 
+    <string-array name="DarkThemeName">
+        <item>@string/dark_theme</item>
+        <item>@string/black_theme</item>
+    </string-array>
+
+    <string-array name="DarkThemeValues">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
     <string-array name="ColorValues">
         <item>#FFFFFF</item>
         <item>#000000</item>

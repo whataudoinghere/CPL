@@ -4175,6 +4175,9 @@ public class Launcher extends BaseActivity
             if (Utilities.KEY_QSB_COLOUR.equals(key)) {
                 recreate();
             }
+            if (Utilities.CHANGEBLACKTHEME_PREFERENCE_KEY.equals(key)) {
+                recreate();
+            }
         }
     }
 }

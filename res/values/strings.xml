@@ -351,6 +351,8 @@
     <string name="custom_theme">Theme</string>
     <string name="custom_theme_summary">Customize theme</string>
     <string name="dark_theme">Use dark theme</string>
+    <string name="black_theme">Use black theme</string>
+    <string name="dark_theme_style">Dark theme style</string>
     <string name="use_dark_theme_sum">Use dark theme</string>
     <string name="use_white_theme_sum">Use white theme</string>
     <string name="use_dark_text">Use dark text</string>

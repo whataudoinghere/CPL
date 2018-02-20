@@ -20,14 +20,17 @@ public class NexusLauncherActivity extends Launcher {
 
     public void overrideTheme(boolean isDark, boolean supportsDarkText) {
         boolean darktheme = Utilities.getPrefs(this).getBoolean("pref_darktheme_enabled", false);
+        int darkthemestyle = Integer.valueOf(Utilities.getPrefs(this).getString("pref_darkthemestyle", "1"));
         boolean googlebarinappmenu = Utilities.getPrefs(this).getBoolean("pref_googleinappmenu_enabled", false);
         boolean darktext = Utilities.getPrefs(this).getBoolean("pref_darktext_enabled", false);
         setTheme(R.style.GoogleSearchLauncherTheme);
         if (darktheme && googlebarinappmenu) {
-            setTheme(R.style.GoogleSearchLauncherThemeDark);
+            if (darkthemestyle == 1) setTheme(R.style.GoogleSearchLauncherThemeDark);
+            else setTheme(R.style.GoogleSearchLauncherThemeBlack);
         }
         if (darktheme && !googlebarinappmenu) {
-            setTheme(R.style.LauncherThemeDark);
+            if (darkthemestyle == 1) setTheme(R.style.LauncherThemeDark);
+            else setTheme(R.style.LauncherThemeBlack);
         }
         if (!darktheme && !googlebarinappmenu) {
             setTheme(R.style.LauncherTheme);
@@ -39,10 +42,12 @@ public class NexusLauncherActivity extends Launcher {
             setTheme(R.style.LauncherThemeDarkText);
         }
         if (darktext && darktheme && !googlebarinappmenu) {
-            setTheme(R.style.LauncherThemeDark);
+            if (darkthemestyle == 1) setTheme(R.style.LauncherThemeDark);
+            else setTheme(R.style.LauncherThemeBlack);
         }
         if (darktext && darktheme && googlebarinappmenu) {
-            setTheme(R.style.GoogleSearchLauncherThemeDark);
+            if (darkthemestyle == 1) setTheme(R.style.GoogleSearchLauncherThemeDark);
+            else setTheme(R.style.GoogleSearchLauncherThemeBlack);
         }
     }
 

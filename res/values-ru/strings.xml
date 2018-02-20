@@ -164,7 +164,9 @@
     <!-- Theme -->
     <string name="custom_theme">Тема</string>
     <string name="custom_theme_summary">Настроить тему</string>
-    <string name="dark_theme">Темная тема</string>
+    <string name="dark_theme">Темная</string>
+    <string name="black_theme">Черная</string>
+    <string name="dark_theme_style">Стиль темной темы</string>
     <string name="use_dark_theme_sum">Используется темная тема</string>
     <string name="use_white_theme_sum">Используется светлая тема</string>
     <string name="use_dark_text">Темный текст</string>

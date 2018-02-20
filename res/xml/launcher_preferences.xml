@@ -229,6 +229,14 @@
             android:summaryOff="@string/use_white_theme_sum"
             android:summaryOn="@string/use_dark_theme_sum"
             android:title="@string/dark_theme" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/DarkThemeName"
+            android:entryValues="@array/DarkThemeValues"
+            android:key="pref_darkthemestyle"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/dark_theme_style" />
         <SwitchPreference
             android:defaultValue="false"
             android:key="pref_darktext_enabled"
