@@ -4083,10 +4083,6 @@ public class Launcher extends BaseActivity
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
             }
-            if (Utilities.DARKQSB.equals(key)) {
-                // Recreate the activity so that it initializes the rotation preference again.
-                recreate();
-            }
             if (Utilities.FORCECOLURLOGO_PREFERENCE_KEY.equals(key)) {
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
@@ -4171,6 +4167,12 @@ public class Launcher extends BaseActivity
                 recreate();
             }
             if (Utilities.KEY_FOLDER_CAN_CHANGE_COLOUR.equals(key)) {
+                recreate();
+            }
+            if (Utilities.KEY_QSB_CAN_CHANGE_COLOUR.equals(key)) {
+                recreate();
+            }
+            if (Utilities.KEY_QSB_COLOUR.equals(key)) {
                 recreate();
             }
         }

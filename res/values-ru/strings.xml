@@ -251,5 +251,7 @@
     <!-- Color Changing -->
     <string name="use_custom_label_color">Изменить цвет подписи значков</string>
     <string name="custom_label_color">Цвет подписи значков</string>
+    <string name="use_qsb_label_color">Изменить цвет строки поиска</string>
+    <string name="custom_qsb_color">Цвет строки поиска</string>
 
 </resources>

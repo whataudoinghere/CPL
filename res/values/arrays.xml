@@ -77,6 +77,7 @@
     <string-array name="ColorValues">
         <item>#FFFFFF</item>
         <item>#000000</item>
+        <item>#444444</item>
         <item>#FF007F</item>
         <item>#FF0000</item>
         <item>#FF7F00</item>
@@ -94,6 +95,7 @@
     <string-array name="ColorNames">
         <item>White</item>
         <item>Black</item>
+        <item>Gray</item>
         <item>Bright pink</item>
         <item>Red</item>
         <item>Orange</item>

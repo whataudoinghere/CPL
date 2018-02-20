@@ -134,7 +134,6 @@ public final class Utilities {
     public static final String MIC_PREFERENCE_KEY = "pref_enablemic";
     public static final String FORCECOLURLOGO_PREFERENCE_KEY = "pref_forcecolourlogo";
     public static final String TRANSPARENTQSB = "pref_transparentqsbqsb";
-    public static final String DARKQSB = "pref_darkqsb";
     public static final String COLSHOME = "pref_numCols";
     public static final String ROWSHOME = "pref_numRows";
     public static final String COLFOLDER = "pref_numFolderCols";
@@ -163,6 +162,8 @@ public final class Utilities {
     public static final String KEY_DRAWER_CAN_CHANGE_COLOUR = "pref_change_drawer_label_color";
     public static final String KEY_FOLDER_COLOUR = "pref_folder_label_color";
     public static final String KEY_FOLDER_CAN_CHANGE_COLOUR = "pref_change_folder_label_color";
+    public static final String KEY_QSB_CAN_CHANGE_COLOUR = "pref_customqsbcolour";
+    public static final String KEY_QSB_COLOUR = "pref_qsb_color";
 
 
     public static boolean isPropertyEnabled(String propertyName) {

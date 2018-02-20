@@ -453,6 +453,8 @@
 
     <!-- Color Changing -->
     <string name="use_custom_label_color">Use custom label color</string>
+    <string name="use_qsb_label_color">Use custom search bar color</string>
     <string name="custom_label_color">Label color</string>
+    <string name="custom_qsb_color">Search bar color</string>
 
 </resources>
