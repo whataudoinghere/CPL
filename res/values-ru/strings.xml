@@ -202,8 +202,7 @@
     <string name="forgot">Может быть я кого-нибудь забыл ...</string>
     <string name="date">Дата сборки</string>
     <string name="sum_aboutapp">Версия, информация, благодарности</string>
-    <string name="about_app_version">Версия amirzaidi / github</string>
-    <string name="about_app_version_wtu">Версия wtu / github</string>
+    <string name="about_app_version_wtu">Версия / wtu github</string>
 
     <!-- Allapp -->
     <string name="custom_allapp">Меню приложений</string>
