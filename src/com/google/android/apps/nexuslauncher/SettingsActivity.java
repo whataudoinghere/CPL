@@ -102,6 +102,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
 
             if (Utilities.ATLEAST_NOUGAT) {
                 getPreferenceScreen().findPreference("pref_DateFormats").setEnabled(true);
+                getPreferenceScreen().findPreference("pref_allappqsb_color").setEnabled(true);
             }
             if (Utilities.ATLEAST_OREO) {
                 getPreferenceScreen().findPreference("pref_override_icon_shape").setEnabled(true);

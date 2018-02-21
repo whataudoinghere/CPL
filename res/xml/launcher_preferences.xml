@@ -181,6 +181,7 @@
             android:key="pref_allappqsb_color"
             android:persistent="true"
             android:summary="%s"
+            android:enabled="false"
             android:dependency="pref_googleinappmenu_enabled"
             android:title="@string/custom_qsb_color" />
         <SwitchPreference

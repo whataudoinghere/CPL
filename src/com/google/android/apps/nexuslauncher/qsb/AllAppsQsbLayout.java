@@ -165,10 +165,16 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     }
 
     public void onExtractedColorsChanged(final WallpaperColorInfo wallpaperColorInfo) {
+        if (Utilities.ATLEAST_NOUGAT) {
         SharedPreferences prefs = Utilities.getPrefs((getContext()).getApplicationContext());
         int color = Color.parseColor(prefs.getString("pref_allappqsb_color", "0xFFFFFF"));
-        int colorwithtransparent = ColorUtils.setAlphaComponent(color, 204);
+        int colorwithtransparent = ColorUtils.setAlphaComponent(color, 255);
         bz(ColorUtils.compositeColors(ColorUtils.compositeColors(colorwithtransparent, Themes.getAttrColor(mActivity, R.attr.allAppsScrimColor)), wallpaperColorInfo.getMainColor()));
+        }
+        else {
+            int color = Themes.getAttrBoolean(mActivity, R.attr.isMainColorDark) ? 0xEBFFFFFE : 0xCCFFFFFE;
+            bz(ColorUtils.compositeColors(ColorUtils.compositeColors(color, Themes.getAttrColor(mActivity, R.attr.allAppsScrimColor)), wallpaperColorInfo.getMainColor()));
+        }
     }
 
     public void preDispatchKeyEvent(final KeyEvent keyEvent) {
