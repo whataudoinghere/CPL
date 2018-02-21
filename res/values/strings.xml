@@ -331,6 +331,7 @@
     <string name="state_loading">Applying…</string>
     <string name="smartspace_preferences_in_settings">\"At a Glance\" widget</string>
     <string name="smartspace_preferences_in_settings_summary">Customize your \"At a Glance\" widget</string>
+    <string name="smartspace_customize_in_settings">Customize widget</string>
     <string name="smartspace_disable">Disable \"At a Glance\" widget</string>
     <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the homescreen that displays different events</string>
     <string name="title_show_google_app">%1$s</string>
@@ -349,7 +350,7 @@
 
     <!-- Theme -->
     <string name="custom_theme">Theme</string>
-    <string name="custom_theme_summary">Customize theme</string>
+    <string name="custom_theme_summary">Customize theme, icons</string>
     <string name="dark_theme">Use dark theme</string>
     <string name="black_theme">Use black theme</string>
     <string name="dark_theme_style">Dark theme style</string>
@@ -368,7 +369,8 @@
     <string name="more">More</string>
     <string name="reset_hidden_apps">Reset all</string>
     <string name="reset_hidden_apps_hint">Hidden apps are now available</string>
-    <string name="hide_widgets_too">Hide widgets of these applications too</string>
+    <string name="hide_widgets_too">Hide widgets</string>
+    <string name="hide_widgets_too_sum">Hide widgets of hidden apps</string>
 
 
     <!-- Dock bar -->
@@ -422,14 +424,14 @@
 
     <!-- Icons -->
     <string name="custom_ico">Icons</string>
-    <string name="custom_ico_summary">Customize icons</string>
     <string name="smallfont">Use small font for lables</string>
     <string name="icon_size">Icon size</string>
 
     <!-- Home screen -->
     <string name="custom_hs">Home screen</string>
-    <string name="custom_hs_summary">Customize your home screen</string>
+    <string name="custom_hs_summary">Customize your home screen, \"At a Glance\" widget, folders</string>
     <string name="diabledgemargin">Disable edge margin</string>
+    <string name="diabledgemargin_sum">Left and right screen compression </string>
     <string name="settings_edit_allow_title">Allow edit</string>
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
@@ -441,8 +443,7 @@
 
     <!-- Folders -->
     <string name="custom_folders">Folders</string>
-    <string name="custom_folders_summary">Customize folders</string>
-    <string name="folder_show_labels">Show icon labels in folders</string>
+    <string name="folder_show_labels">Show icon labels</string>
 
     <!-- Date formats -->
     <string name="date_format">Date format</string>
@@ -458,5 +459,9 @@
     <string name="use_qsb_label_color">Use custom search bar color</string>
     <string name="custom_label_color">Label color</string>
     <string name="custom_qsb_color">Search bar color</string>
+
+    <!-- Behavior -->
+    <string name="behavior_pref_title">Behavior</string>
+    <string name="behavior_pref_summary">Change the behavior</string>
 
 </resources>

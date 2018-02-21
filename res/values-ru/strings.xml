@@ -135,6 +135,7 @@
     <string name="pref_icon_pack">Пакет значков</string>
     <string name="state_loading">Применение…</string>
     <string name="smartspace_preferences_in_settings">Виджет \"Обратный отсчет\"</string>
+    <string name="smartspace_customize_in_settings">Настроить виджет</string>
     <string name="smartspace_preferences_in_settings_summary">Настроить виджет \"Обратный отсчет\"</string>
     <string name="smartspace_disable">Отключить \"Обратный отсчет\"</string>
     <string name="smartspace_time">Добавить часы</string>
@@ -144,7 +145,7 @@
     <string name="msg_minus_one_on_left">Слева от главного экрана</string>
     <string name="about">О приложении</string>
     <string name="title_google_app">ленту новостей Google</string>
-    <string name="title_app_suggestions">Показывать рекомендуемые приложения</string>
+    <string name="title_app_suggestions">Рекомендуемые приложения</string>
     <string name="summary_app_suggestions">Вверху списка всех приложений</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
     <string name="title_disable_suggestions_prompt">Не показывать рекомендуемые приложения?</string>
@@ -159,11 +160,12 @@
     <string name="hide_selected">Скрыть выбранные приложения</string>
     <string name="reset_hidden_apps">Сбросить все</string>
     <string name="reset_hidden_apps_hint">Скрытые приложения отображаются</string>
-    <string name="hide_widgets_too">Так же скрыть виджеты этих приложений</string>
+    <string name="hide_widgets_too">Скрыть виджеты</string>
+    <string name="hide_widgets_too_sum">Скрыть виджеты скрытых приложений</string>
 
     <!-- Theme -->
     <string name="custom_theme">Тема</string>
-    <string name="custom_theme_summary">Настроить тему</string>
+    <string name="custom_theme_summary">Настроить тему и значки</string>
     <string name="dark_theme">Темная</string>
     <string name="black_theme">Черная</string>
     <string name="dark_theme_style">Стиль темной темы</string>
@@ -210,23 +212,23 @@
     <string name="dark_themeqsballapp">Темная строка поиска</string>
     <string name="num_colsallapp">Дополнительный столбец</string>
     <string name="smallallaps">Уменьшить строку поиска</string>
-    <string name="googleinappmenu">Новая строка поиска</string>
+    <string name="googleinappmenu">Cтрока поиска Google</string>
 
     <!-- Icons -->
     <string name="custom_ico">Значки</string>
-    <string name="custom_ico_summary">Настроить значки</string>
-    <string name="smallfont">Использовать уменьшеный шрифт подписей</string>
+    <string name="smallfont">Уменьшить шрифт подписей</string>
     <string name="icon_size">Размер значка</string>
 
     <!-- Reboot -->
     <string name="custom_reboot">Перезапустить приложение</string>
-    <string name="reboot">Перезапустить!</string>
+    <string name="reboot">Перезапустить</string>
     <string name="reboot_sum">Если некоторые настройки не применились</string>
 
     <!-- Home screen -->
-    <string name="custom_hs">Домашний экран</string>
-    <string name="custom_hs_summary">Настроить домашний экран</string>
+    <string name="custom_hs">Рабочий стол</string>
+    <string name="custom_hs_summary">Настроить рабочий стол, виджет \"Обратный отсчет\" и папки</string>
     <string name="diabledgemargin">Отключить поля</string>
+    <string name="diabledgemargin_sum">Сжатие экрана слева и справа</string>
     <string name="settings_edit_allow_title">Разрешить редактирование</string>
     <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавленны, удалены или перемещены</string>
     <string name="settings_edit_allow_summary_off">Значки и виджеты могут не могут быть добавленны, удалены или перемещены</string>
@@ -255,5 +257,9 @@
     <string name="custom_label_color">Цвет подписи значков</string>
     <string name="use_qsb_label_color">Изменить цвет строки поиска</string>
     <string name="custom_qsb_color">Цвет строки поиска</string>
+
+    <!-- Behavior -->
+    <string name="behavior_pref_title">Поведение</string>
+    <string name="behavior_pref_summary">Настроить поведение</string>
 
 </resources>
