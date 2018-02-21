@@ -135,21 +135,20 @@
     </string-array>
 
     <string-array name="ColorNames">
-        <item>White</item>
-        <item>Black</item>
-        <item>Gray</item>
-        <item>Bright pink</item>
-        <item>Red</item>
-        <item>Orange</item>
-        <item>Уellow</item>
-        <item>Сhartreuse</item>
-        <item>Green</item>
-        <item>Spring green</item>
-        <item>Cyan</item>
-        <item>Azure</item>
-        <item>Blue</item>
-        <item>Violet</item>
-        <item>Magenta</item>
+        <item>@string/White</item>
+        <item>@string/Black</item>
+        <item>@string/Gray</item>
+        <item>@string/Bright_pink</item>
+        <item>@string/Red</item>
+        <item>@string/Orange</item>
+        <item>@string/Уellow</item>
+        <item>@string/Сhartreuse</item>
+        <item>@string/Green</item>
+        <item>@string/Spring_green</item>
+        <item>@string/Cyan</item>
+        <item>@string/Azure</item>
+        <item>@string/Blue</item>
+        <item>@string/Violet</item>
+        <item>@string/Magenta</item>
     </string-array>
-
 </resources>
