@@ -90,14 +90,18 @@
         <item>EEEEMMMMd</item>
     </string-array>
 
-    <string-array name="DarkThemeName">
+    <string-array name="ThemeName">
+        <item>@string/white_theme</item>
+        <item>@string/white_withdarktext_theme</item>
         <item>@string/dark_theme</item>
         <item>@string/black_theme</item>
     </string-array>
 
-    <string-array name="DarkThemeValues">
+    <string-array name="ThemeValues">
         <item>1</item>
-        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="ColorValues">

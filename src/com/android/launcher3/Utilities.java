@@ -128,8 +128,6 @@ public final class Utilities {
     public static final String ALLOW_ROTATION_PREFERENCE_KEY = "pref_allowRotation";
     public static final String KEY_HIDDEN_APPS = "hidden-app";
     public static final String KEY_HIDDEN_APPS_SET = "hidden-app-set";
-    public static final String DARKTHEME_PREFERENCE_KEY = "pref_darktheme_enabled";
-    public static final String DARKTEXT_PREFERENCE_KEY = "pref_darktext_enabled";
     public static final String GOOGLEBAR_INAPPMENU_PREFERENCE_KEY = "pref_googleinappmenu_enabled";
     public static final String MIC_PREFERENCE_KEY = "pref_enablemic";
     public static final String FORCECOLURLOGO_PREFERENCE_KEY = "pref_forcecolourlogo";
@@ -165,7 +163,7 @@ public final class Utilities {
     public static final String KEY_FOLDER_CAN_CHANGE_COLOUR = "pref_change_folder_label_color";
     public static final String KEY_QSB_CAN_CHANGE_COLOUR = "pref_customqsbcolour";
     public static final String KEY_QSB_COLOUR = "pref_qsb_color";
-    public static final String CHANGEBLACKTHEME_PREFERENCE_KEY = "pref_darkthemestyle";
+    public static final String CHANGETHEME_PREFERENCE_KEY = "pref_themestyle";
     public static final String DRAWER_ICONSIZE = "pref_drawer_icon_size";
 
 

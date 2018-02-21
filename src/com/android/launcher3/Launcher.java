@@ -4067,14 +4067,6 @@ public class Launcher extends BaseActivity
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
             }
-            if (Utilities.DARKTHEME_PREFERENCE_KEY.equals(key)) {
-                // Recreate the activity so that it initializes the rotation preference again.
-                recreate();
-            }
-            if (Utilities.DARKTEXT_PREFERENCE_KEY.equals(key)) {
-                // Recreate the activity so that it initializes the rotation preference again.
-                recreate();
-            }
             if (Utilities.GOOGLEBAR_INAPPMENU_PREFERENCE_KEY.equals(key)) {
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
@@ -4178,7 +4170,7 @@ public class Launcher extends BaseActivity
             if (Utilities.KEY_QSB_COLOUR.equals(key)) {
                 recreate();
             }
-            if (Utilities.CHANGEBLACKTHEME_PREFERENCE_KEY.equals(key)) {
+            if (Utilities.CHANGETHEME_PREFERENCE_KEY.equals(key)) {
                 recreate();
             }
             if (Utilities.DRAWER_ICONSIZE.equals(key)) {
