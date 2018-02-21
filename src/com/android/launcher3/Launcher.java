@@ -4106,7 +4106,7 @@ public class Launcher extends BaseActivity
             if (Utilities.ADDCOLOUMNALLAPP.equals(key)) {
                 needRestart();
             }
-            if (Utilities.DARKQSBALLAPPS.equals(key)) {
+            if (Utilities.COLORQSBALLAPPS.equals(key)) {
                 recreate();
             }
             if (Utilities.DISABLEEDGEMARGIN.equals(key)) {

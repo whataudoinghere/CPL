@@ -168,16 +168,20 @@
         <SwitchPreference
             android:defaultValue="false"
             android:key="pref_googleinappmenu_enabled"
-            android:disableDependentsState="true"
+            android:disableDependentsState="false"
             android:title="@string/googleinappmenu" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="pref_darkqsballapp"
-            android:title="@string/dark_themeqsballapp" />
+        <ListPreference
+            android:defaultValue="#FFFFFF"
+            android:entries="@array/ColorNames"
+            android:entryValues="@array/ColorValues"
+            android:key="pref_allappqsb_color"
+            android:persistent="true"
+            android:summary="%s"
+            android:dependency="pref_googleinappmenu_enabled"
+            android:title="@string/custom_qsb_color" />
         <SwitchPreference
             android:defaultValue="false"
             android:key="pref_smallallaps"
-            android:dependency="pref_googleinappmenu_enabled"
             android:title="@string/smallallaps" />
         <SwitchPreference
             android:defaultValue="false"

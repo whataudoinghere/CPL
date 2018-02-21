@@ -402,12 +402,12 @@
     <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek </string>
     <string name="forgot">Maybe i forgot someone ...</string>
     <string name="date">Build date</string>
-    <string name="sum_date">14.02.18</string>
+    <string name="sum_date">20.02.18</string>
     <string name="sum_aboutapp">About this app, version, information</string>
     <string name="about_app_version">amirzaidi version / github</string>
     <string name="app_releases_url">https://github.com/amirzaidi/launcher3/releases</string>
     <string name="about_app_version_wtu">wtu version / github</string>
-    <string name="version_wtu_sum">1.1.2</string>
+    <string name="version_wtu_sum">1.1.3</string>
     <string name="url_wtu_git">https://github.com/whataudoinghere/Launcher3</string>
 
     <!-- Reboot -->
@@ -418,7 +418,6 @@
     <!-- Allapp -->
     <string name="custom_allapp">All Apps</string>
     <string name="custom_allapp_summary">Customize your app drawer</string>
-    <string name="dark_themeqsballapp">Dark search bar in All Apps</string>
     <string name="num_colsallapp">Extra column in All Apps</string>
     <string name="smallallaps">Small reaserch bar</string>
 

@@ -209,7 +209,6 @@
     <!-- Allapp -->
     <string name="custom_allapp">Меню приложений</string>
     <string name="custom_allapp_summary">Настроить меню приложений</string>
-    <string name="dark_themeqsballapp">Темная строка поиска</string>
     <string name="num_colsallapp">Дополнительный столбец</string>
     <string name="smallallaps">Уменьшить строку поиска</string>
     <string name="googleinappmenu">Cтрока поиска Google</string>
