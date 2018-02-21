@@ -140,7 +140,7 @@ public final class Utilities {
     public static final String SMALLALAPPS = "pref_smallallaps";
     public static final String ADDCOLOUMNALLAPP = "pref_addcoloumnallapp";
     public static final String COLORQSBALLAPPS = "pref_allappqsb_color";
-    public static final String DISABLEEDGEMARGIN = "pref_diabledgemargin";
+    public static final String EDGEMARGIN = "pref_marginsize";
     public static final String KEY_PREF_HOTSEAT_SHOW_ARROW = "pref_hotseatShowArrow";
     public static final String KEY_PREF_HOTSEAT_SHOW_PAGE_INDICATOR = "pref_hotseatShowPageIndicator";
     public static final String DISABLEGRADIENT_PREFERENCE_KEY = "pref_disablegrad";

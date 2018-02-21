@@ -225,7 +225,9 @@
     <!-- Home screen -->
     <string name="custom_hs">Рабочий стол</string>
     <string name="custom_hs_summary">Настроить рабочий стол, виджет \"Обратный отсчет\" и папки</string>
-    <string name="diabledgemargin">Отключить поля</string>
+    <string name="edgemarginstock">Стандартное</string>
+    <string name="edgemarginsmall">Уменьшеное</string>
+    <string name="diabledgemargin">Отключить</string>
     <string name="diabledgemargin_sum">Сжатие экрана слева и справа</string>
     <string name="settings_edit_allow_title">Разрешить редактирование</string>
     <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавленны, удалены или перемещены</string>

@@ -157,6 +157,7 @@ public class DeviceProfile {
     public DeviceProfile(Context context, InvariantDeviceProfile inv,
             Point minSize, Point maxSize,
             int width, int height, boolean isLandscape) {
+        int edgeMarginPx1 = 0;
 
         this.inv = inv;
         this.isLandscape = isLandscape;
@@ -182,17 +183,19 @@ public class DeviceProfile {
         ComponentName cn = new ComponentName(context.getPackageName(),
                 this.getClass().getName());
         defaultWidgetPadding = AppWidgetHostView.getDefaultPaddingForWidget(context, cn, null);
-        boolean a = Utilities.getPrefs(context).getBoolean("pref_diabledgemargin", false);
-        if (a) {
-            edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_disabled);
-        }
-        else edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
+
+        int marginsize = Integer.valueOf(Utilities.getPrefs(context).getString("pref_marginsize", "1"));
+        if (marginsize == 1) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
+        if (marginsize == 2) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_small);
+        if (marginsize == 3) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_disabled);
+
+        edgeMarginPx = edgeMarginPx1;
         desiredWorkspaceLeftRightMarginPx = isVerticalBarLayout() ? 0 : edgeMarginPx;
         cellLayoutPaddingLeftRightPx =
                 res.getDimensionPixelSize(R.dimen.dynamic_grid_cell_layout_padding);
         cellLayoutBottomPaddingPx =
                 res.getDimensionPixelSize(R.dimen.dynamic_grid_cell_layout_bottom_padding);
-        a = Utilities.getPrefs(context).getBoolean("pref_hotseatShowArrow", true);
+        boolean a = Utilities.getPrefs(context).getBoolean("pref_hotseatShowArrow", true);
         if (a) {
             pageIndicatorSizePx = res.getDimensionPixelSize(R.dimen.dynamic_grid_min_page_indicator_size);
         }

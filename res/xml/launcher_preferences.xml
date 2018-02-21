@@ -41,6 +41,15 @@
         android:summary="%s"
         android:title="@string/num_rows" />
 
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/MarginSizeName"
+        android:entryValues="@array/MarginSize"
+        android:key="pref_marginsize"
+        android:persistent="true"
+        android:summary="%s"
+        android:title="@string/diabledgemargin_sum" />
+
     <SwitchPreference
         android:defaultValue="false"
         android:key="pref_diabledgemargin"

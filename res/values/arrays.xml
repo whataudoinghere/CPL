@@ -104,6 +104,18 @@
         <item>4</item>
     </string-array>
 
+    <string-array name="MarginSizeName">
+        <item>@string/edgemarginstock</item>
+        <item>@string/edgemarginsmall</item>
+        <item>@string/diabledgemargin</item>
+    </string-array>
+
+    <string-array name="MarginSize">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <string-array name="ColorValues">
         <item>#FFFFFF</item>
         <item>#000000</item>

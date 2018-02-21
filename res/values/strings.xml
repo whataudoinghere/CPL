@@ -427,7 +427,9 @@
     <!-- Home screen -->
     <string name="custom_hs">Home screen</string>
     <string name="custom_hs_summary">Customize your home screen, \"At a Glance\" widget, folders</string>
-    <string name="diabledgemargin">Disable edge margin</string>
+    <string name="edgemarginstock">Stock</string>
+    <string name="edgemarginsmall">Small</string>
+    <string name="diabledgemargin">Disable</string>
     <string name="diabledgemargin_sum">Left and right screen compression </string>
     <string name="settings_edit_allow_title">Allow edit</string>
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
