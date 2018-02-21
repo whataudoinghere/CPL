@@ -165,11 +165,7 @@ public class InvariantDeviceProfile {
         iconAllAppSize = 56;
         landscapeIconSize = interpolatedDeviceProfileOut.landscapeIconSize;
         iconBitmapSize = Utilities.pxFromDp(iconSize, dm);
-        a = prefs.getBoolean("pref_minusfont", false);
-        if (a) {
-            iconTextSize = interpolatedDeviceProfileOut.iconTextSize - 1;
-        }
-        else iconTextSize = interpolatedDeviceProfileOut.iconTextSize;
+        iconTextSize = interpolatedDeviceProfileOut.iconTextSize;
         fillResIconDpi = getLauncherIconDensity(iconBitmapSize);
 
         // If the partner customization apk contains any grid overrides, apply them

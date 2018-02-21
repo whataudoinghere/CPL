@@ -60,7 +60,11 @@
         android:key="pref_desktop_show_labels"
         android:disableDependentsState="false"
         android:title="@string/desktop_show_labels" />
-
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_minusfont"
+        android:dependency="pref_desktop_show_labels"
+        android:title="@string/smallfont" />
     <SwitchPreference
          android:key="pref_change_workspace_label_color"
          android:title="@string/use_custom_label_color"
@@ -191,6 +195,11 @@
             android:defaultValue="true"
             android:key="pref_drawer_show_labels"
             android:title="@string/drawer_show_labels" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_minusfontallapp"
+            android:dependency="pref_drawer_show_labels"
+            android:title="@string/smallfont" />
         <ListPreference
             android:defaultValue="100"
             android:entries="@array/IconSizePrName"
@@ -273,10 +282,6 @@
                 android:summary="%s"
                 android:defaultValue=""
                 android:persistent="true" />
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="pref_minusfont"
-                android:title="@string/smallfont" />
         </PreferenceCategory>
 
     </PreferenceScreen>
