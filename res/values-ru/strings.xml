@@ -139,6 +139,8 @@
     <string name="smartspace_preferences_in_settings_summary">Настроить виджет \"Обратный отсчет\"</string>
     <string name="smartspace_disable">Отключить \"Обратный отсчет\"</string>
     <string name="smartspace_time">Добавить часы</string>
+    <string name="smartspace_launchclock_sum">При долгом нажатии</string>
+    <string name="smartspace_launchclock">Запустить часы</string>
     <string name="in_smartspace">В виджет \"Обратный отсчет\"</string>
     <string name="smartspace_preferences_in_settings_desc">Настройки виджета в верхней части экрана, в котором отображаются различные события</string>
     <string name="title_show_google_app">Показывать %1$s</string>

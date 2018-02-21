@@ -106,6 +106,13 @@
                 android:dependency="pref_disabless"
                 android:defaultValue="false"
                 />
+            <SwitchPreference
+                android:key="pref_launchclock"
+                android:title="@string/smartspace_launchclock"
+                android:summary="@string/smartspace_launchclock_sum"
+                android:dependency="pref_disabless"
+                android:defaultValue="false"
+                />
             <ListPreference
                 android:defaultValue="EEEEMMMd"
                 android:entries="@array/DateFormatsName"
