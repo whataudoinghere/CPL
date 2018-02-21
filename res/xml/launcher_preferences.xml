@@ -49,13 +49,7 @@
         android:persistent="true"
         android:summary="%s"
         android:title="@string/diabledgemargin_sum" />
-
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="pref_diabledgemargin"
-        android:summary="@string/diabledgemargin_sum"
-        android:title="@string/diabledgemargin" />
-
+        
     <ListPreference
         android:defaultValue="56"
         android:entries="@array/IconSizeName"
