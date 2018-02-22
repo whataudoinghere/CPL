@@ -163,7 +163,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
         int defaultIconSize = grid.iconSizePx;
         if (display == DISPLAY_WORKSPACE) {
             smallfont = prefs.getBoolean("pref_minusfont", false);
-            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx - 5);
+            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx - 3);
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx);
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
             if (prefs.getBoolean("pref_change_workspace_label_color", false)){
@@ -172,7 +172,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
         } else if (display == DISPLAY_ALL_APPS) {
             smallfont = prefs.getBoolean("pref_minusfontallapp", false);
-            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx -3);
+            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx - 3);
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
             setCompoundDrawablePadding(grid.allAppsIconDrawablePaddingPx);
             defaultIconSize = grid.allAppsIconSizePx * Integer.valueOf(prefs.getString("pref_drawer_icon_size", "100"))/100;
@@ -182,7 +182,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DRAWER_LABELS, true);
         } else if (display == DISPLAY_FOLDER) {
             smallfont = prefs.getBoolean("pref_minusfont", false);
-            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx -5);
+            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx - 3);
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx);
             setCompoundDrawablePadding(grid.folderChildDrawablePaddingPx);
             defaultIconSize = grid.folderChildIconSizePx;
