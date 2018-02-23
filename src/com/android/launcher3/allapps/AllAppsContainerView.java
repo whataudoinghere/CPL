@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.InsetDrawable;
+import android.os.Vibrator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -269,6 +270,10 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
 
     @Override
     public boolean onLongClick(final View v) {
+        if (Utilities.vibration(mLauncher)) {
+            Vibrator r = (Vibrator) mLauncher.getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(mLauncher).getString("pref_vibrationduration", "50")));
+        }
         // When we have exited all apps or are in transition, disregard long clicks
         if (!mLauncher.isAppsViewVisible() ||
                 mLauncher.getWorkspace().isSwitchingState()) return false;

@@ -385,6 +385,27 @@
             android:title="@string/settings_edit_allow_title"
             android:summaryOn="@string/settings_edit_allow_summary_on"
             android:summaryOff="@string/settings_edit_allow_summary_off" />
+        <PreferenceCategory
+            android:title="@string/allow_vibration">
+            <SwitchPreference
+                android:key="pref_vibration"
+                android:title="@string/allow_vibration"
+                android:disableDependentsState="false"
+                android:summary="@string/allow_vibration_sum"
+                android:defaultValue="true" />
+            <ListPreference
+                android:defaultValue="50"
+                android:entries="@array/VibrationDurationValues"
+                android:entryValues="@array/VibrationDurationValues"
+                android:key="pref_vibrationduration"
+                android:summary="%s"
+                android:dependency="pref_vibration"
+                android:title="@string/vibrationduration" />
+            <Preference
+                android:key="pref_vibrationdurationtest"
+                android:dependency="pref_vibration"
+                android:title="@string/vibrationdurationtest" />
+        </PreferenceCategory>
     </PreferenceScreen>
 
     <Preference
@@ -403,7 +424,6 @@
             android:title="@string/about"
             android:summary="@string/about_sum" >
         </Preference>
-
         <Preference
                 android:key="about_forgot"
                 android:title="@string/thanks"

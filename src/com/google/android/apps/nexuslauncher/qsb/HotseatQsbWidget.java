@@ -14,6 +14,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.os.Vibrator;
 import android.support.v4.graphics.ColorUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -132,6 +133,10 @@ public class HotseatQsbWidget extends AbstractQsbLayout {
 
     private void doOnClick() {
         final ConfigBuilder f = new ConfigBuilder(this, false);
+        if (Utilities.vibration(mActivity)) {
+            Vibrator r = (Vibrator) mActivity.getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(mActivity).getString("pref_vibrationduration", "50")));
+        }
         if (mActivity.getGoogleNow().startSearch(f.build(), f.getExtras())) {
             SharedPreferences devicePrefs = Utilities.getDevicePrefs(getContext());
             devicePrefs.edit().putInt("key_hotseat_qsb_tap_count", devicePrefs.getInt("key_hotseat_qsb_tap_count", 0) + 1).apply();

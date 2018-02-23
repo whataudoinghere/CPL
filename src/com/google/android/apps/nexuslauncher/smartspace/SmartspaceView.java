@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Process;
+import android.os.Vibrator;
 import android.provider.AlarmClock;
 import android.provider.CalendarContract;
 import android.text.TextPaint;
@@ -301,6 +302,10 @@ public class SmartspaceView extends FrameLayout implements ISmartspace, ValueAni
     public boolean onLongClick(final View view) {
         final boolean b = true;
         boolean clock = Utilities.getPrefs((getContext())).getBoolean("pref_launchclock", false);
+        if (Utilities.vibration(getContext())) {
+            Vibrator r = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(getContext()).getString("pref_vibrationduration", "50")));
+        }
         if (!clock) {
             final Launcher launcher = Launcher.getLauncher(getContext());
             final PopupContainerWithArrow popupContainerWithArrow = (PopupContainerWithArrow) launcher.getLayoutInflater().inflate(R.layout.popup_container, launcher.getDragLayer(), false);

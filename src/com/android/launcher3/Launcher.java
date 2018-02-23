@@ -56,6 +56,7 @@ import android.os.StrictMode;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.os.UserHandle;
+import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -2488,7 +2489,10 @@ public class Launcher extends BaseActivity
         if (!(v instanceof FolderIcon)){
             throw new IllegalArgumentException("Input must be a FolderIcon");
         }
-
+        if (Utilities.vibration(this)) {
+            Vibrator r = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(this).getString("pref_vibrationduration", "50")));
+        }
         Folder folder = ((FolderIcon) v).getFolder();
         if (!folder.isOpen() && !folder.isDestroyed()) {
             // Open the requested folder
@@ -2502,6 +2506,10 @@ public class Launcher extends BaseActivity
      */
     public void onClickAddWidgetButton(View view) {
         if (LOGD) Log.d(TAG, "onClickAddWidgetButton");
+        if (Utilities.vibration(this)) {
+            Vibrator r = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(this).getString("pref_vibrationduration", "50")));
+        }
         if (mIsSafeModeEnabled) {
             Toast.makeText(this, R.string.safemode_widget_error, Toast.LENGTH_SHORT).show();
         } else {
@@ -2518,7 +2526,10 @@ public class Launcher extends BaseActivity
             Toast.makeText(this, R.string.msg_disabled_by_admin, Toast.LENGTH_SHORT).show();
             return;
         }
-
+        if (Utilities.vibration(this)) {
+            Vibrator r = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(this).getString("pref_vibrationduration", "50")));
+        }
         int pageScroll = mWorkspace.getScrollForPage(mWorkspace.getPageNearestToCenterOfScreen());
         float offset = mWorkspace.mWallpaperOffset.wallpaperOffsetForScroll(pageScroll);
         setWaitingForResult(new PendingRequestArgs(new ItemInfo()));
@@ -2559,6 +2570,10 @@ public class Launcher extends BaseActivity
         intent.setSourceBounds(getViewBounds(v));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         showWorkspace(false);
+        if (Utilities.vibration(this)) {
+        Vibrator r = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(this).getString("pref_vibrationduration", "50")));
+        }
         startActivity(intent, getActivityLaunchOptions(v));
     }
 
@@ -2740,6 +2755,11 @@ public class Launcher extends BaseActivity
         if (!isDraggingEnabled()) return false;
         if (isWorkspaceLocked()) return false;
         if (mState != State.WORKSPACE) return false;
+
+        if (Utilities.vibration(this)) {
+            Vibrator r = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            r.vibrate(Integer.valueOf(Utilities.getPrefs(this).getString("pref_vibrationduration", "50")));
+        }
 
         boolean ignoreLongPressToOverview =
                 mDeviceProfile.shouldIgnoreLongPressToOverview(mLastDispatchTouchEventX);

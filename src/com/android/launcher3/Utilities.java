@@ -165,6 +165,8 @@ public final class Utilities {
     public static final String KEY_QSB_COLOUR = "pref_qsb_color";
     public static final String CHANGETHEME_PREFERENCE_KEY = "pref_themestyle";
     public static final String DRAWER_ICONSIZE = "pref_drawer_icon_size";
+    public static final String VIBRATIONFEEDBACKTEST = "pref_vibrationdurationtest";
+    public static final String VIBRATIONFEEDBACK = "pref_vibration";
 
 
     public static boolean isPropertyEnabled(String propertyName) {
@@ -178,6 +180,11 @@ public final class Utilities {
 
     public static boolean hidewidgettoo(Context context) {
         return getPrefs(context).getBoolean(KEY_HIDE_WIDGET_TOO,
+                getAllowRotationDefaultValue(context));
+    }
+
+    public static boolean vibration(Context context) {
+        return getPrefs(context).getBoolean(VIBRATIONFEEDBACK,
                 getAllowRotationDefaultValue(context));
     }
 

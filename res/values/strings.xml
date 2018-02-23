@@ -463,6 +463,10 @@
     <!-- Behavior -->
     <string name="behavior_pref_title">Behavior</string>
     <string name="behavior_pref_summary">Change the behavior</string>
+    <string name="allow_vibration">Vibration</string>
+    <string name="allow_vibration_sum">When you click on some interface elements</string>
+    <string name="vibrationduration">Vibration duration</string>
+    <string name="vibrationdurationtest">Test vibration</string>
 
     <!-- Colors -->
     <string name="White">White</string>

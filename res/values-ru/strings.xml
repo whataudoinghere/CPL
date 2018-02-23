@@ -266,6 +266,10 @@
     <!-- Behavior -->
     <string name="behavior_pref_title">Поведение</string>
     <string name="behavior_pref_summary">Настроить поведение</string>
+    <string name="allow_vibration">Вибрация</string>
+    <string name="allow_vibration_sum">При нажатии на некоторые элементы интерфейса</string>
+    <string name="vibrationduration">Продолжительность вибрации</string>
+    <string name="vibrationdurationtest">Тест вибрации</string>
 
     <!-- Colors -->
     <string name="White">Белый</string>
@@ -283,5 +287,6 @@
     <string name="Blue">Синий</string>
     <string name="Violet">Фиолетовый</string>
     <string name="Magenta">Пурпурный</string>
+
 
 </resources>

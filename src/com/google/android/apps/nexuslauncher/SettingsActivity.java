@@ -17,6 +17,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
@@ -88,6 +89,9 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
 
             mIconPackPref = (CustomIconPreference) findPreference(ICON_PACK_PREF);
             mIconPackPref.setOnPreferenceChangeListener(this);
+
+            Preference vibrate = findPreference(Utilities.VIBRATIONFEEDBACKTEST);
+            vibrate.setOnPreferenceClickListener(this);
 
             Preference hiddenApp = findPreference(Utilities.KEY_HIDDEN_APPS);
             hiddenApp.setOnPreferenceClickListener(this);
@@ -201,6 +205,11 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             }
             if (Utilities.KEY_REBOOT.equals(preference.getKey())) {
                 android.os.Process.killProcess(android.os.Process.myPid());
+                return true;
+            }
+            if (Utilities.VIBRATIONFEEDBACKTEST.equals(preference.getKey())) {
+                Vibrator r = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+                r.vibrate(Integer.valueOf(Utilities.getPrefs(mContext).getString("pref_vibrationduration", "50")));
                 return true;
             }
             if (Utilities.KEY_ABOUT_FORGOT.equals(preference.getKey())) {
