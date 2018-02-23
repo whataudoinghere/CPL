@@ -87,9 +87,14 @@
     <string name="icon_shape_override_label" msgid="2977264953998281004">"Изменить форму значков"</string>
     <string name="icon_shape_system_default" msgid="1709762974822753030">"Использовать системные настройки по умолчанию"</string>
     <string name="icon_shape_square" msgid="633575066111622774">"Квадрат"</string>
-    <string name="icon_shape_squircle" msgid="5658049910802669495">"Квадрат с закругленными краями"</string>
     <string name="icon_shape_circle" msgid="6550072265930144217">"Круг"</string>
-    <string name="icon_shape_teardrop" msgid="4525869388200835463">"Капля"</string>
+    <string name="icon_shape_teardrop" msgid="4525869388200835463">"Слеза"</string>
+    <string name="icon_shape_squircle" msgid="5658049910802669495">"Скругленный квадрат"</string>
+
+    <!-- New shapes of the home screen icons -->
+    <string name="icon_shape_rounded_square">Квадрат с закругленными углами</string>
+    <string name="icon_shape_super_ellipse">Квадрат с немного скругленными углами</string>
+
     <string name="icon_shape_override_progress" msgid="3461735694970239908">"Применение изменений…"</string>
     <string name="package_state_unknown" msgid="7592128424511031410">"Неизвестно"</string>
     <string name="abandoned_clean_this" msgid="7610119707847920412">"Удалить"</string>
