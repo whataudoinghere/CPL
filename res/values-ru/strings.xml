@@ -198,6 +198,7 @@
     <string name="num_cols">Количество столбцов</string>
 
     <!-- About -->
+    <string name="about_sum">Customised Pixel Launcher - лаунчер с открытым исходным кодом и расширенным функционалом, осонован на AOSP. Он бесплатен и не содержит рекламы.</string>
     <string name="thanks">Благодарности</string>
     <string name="forgot">Может быть я кого-нибудь забыл ...</string>
     <string name="date">Дата сборки</string>

@@ -400,6 +400,11 @@
         android:title="@string/about">
 
         <Preference
+            android:title="@string/about"
+            android:summary="@string/about_sum" >
+        </Preference>
+
+        <Preference
                 android:key="about_forgot"
                 android:title="@string/thanks"
                 android:summary="@string/sum_thanks" >

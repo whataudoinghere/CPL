@@ -396,6 +396,7 @@
     <string name="num_cols">Number of columns</string>
 
     <!-- About -->
+    <string name="about_sum">Customised Pixel Launcher - AOSP based open-sourse launcher with expanded functional. It is free and does not contain advertising.</string>
     <string name="thanks">Thanks for</string>
     <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek </string>
     <string name="forgot">Maybe i forgot someone ...</string>
