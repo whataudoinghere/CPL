@@ -401,7 +401,7 @@
                 android:title="@string/allow_vibration"
                 android:disableDependentsState="false"
                 android:summary="@string/allow_vibration_sum"
-                android:defaultValue="true" />
+                android:defaultValue="false" />
             <ListPreference
                 android:defaultValue="50"
                 android:entries="@array/VibrationDurationValues"

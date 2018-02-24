@@ -180,13 +180,11 @@ public final class Utilities {
     }
 
     public static boolean hidewidgettoo(Context context) {
-        return getPrefs(context).getBoolean(KEY_HIDE_WIDGET_TOO,
-                getAllowRotationDefaultValue(context));
+        return getPrefs(context).getBoolean(KEY_HIDE_WIDGET_TOO, true);
     }
 
     public static boolean vibration(Context context) {
-        return getPrefs(context).getBoolean(VIBRATIONFEEDBACK,
-                getAllowRotationDefaultValue(context));
+        return getPrefs(context).getBoolean(VIBRATIONFEEDBACK, false);
     }
 
     public static boolean getAllowRotationDefaultValue(Context context) {
