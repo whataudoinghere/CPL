@@ -167,6 +167,7 @@ public final class Utilities {
     public static final String DRAWER_ICONSIZE = "pref_drawer_icon_size";
     public static final String VIBRATIONFEEDBACKTEST = "pref_vibrationdurationtest";
     public static final String VIBRATIONFEEDBACK = "pref_vibration";
+    public static final String NOT_DOT = "pref_textinbadge";
 
 
     public static boolean isPropertyEnabled(String propertyName) {

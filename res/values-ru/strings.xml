@@ -270,6 +270,8 @@
     <string name="allow_vibration_sum">При нажатии на некоторые элементы интерфейса</string>
     <string name="vibrationduration">Продолжительность вибрации</string>
     <string name="vibrationdurationtest">Тест вибрации</string>
+    <string name="textinbadge">Не просто точка</string>
+    <string name="textinbadge_sum">Показывать колличество уведомлений в значке</string>
 
     <!-- Colors -->
     <string name="White">Белый</string>

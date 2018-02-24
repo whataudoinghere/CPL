@@ -4196,6 +4196,9 @@ public class Launcher extends BaseActivity
             if (Utilities.DRAWER_ICONSIZE.equals(key)) {
                 needRestart();
             }
+            if (Utilities.NOT_DOT.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

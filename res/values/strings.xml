@@ -467,6 +467,8 @@
     <string name="allow_vibration_sum">When you click on some interface elements</string>
     <string name="vibrationduration">Vibration duration</string>
     <string name="vibrationdurationtest">Test vibration</string>
+    <string name="textinbadge">Not just a dot</string>
+    <string name="textinbadge_sum">Show the number of notifications in badge</string>
 
     <!-- Colors -->
     <string name="White">White</string>

@@ -363,21 +363,7 @@
             android:title="@string/auto_add_shortcuts_label"
             android:summary="@string/auto_add_shortcuts_description"
             android:defaultValue="true"
-            android:persistent="true"
-            />
-        <com.android.launcher3.views.ButtonPreference
-            android:key="pref_icon_badging"
-            android:title="@string/icon_badging_title"
-            android:persistent="false"
-            android:enabled="false"
-            android:widgetLayout="@layout/notification_pref_warning" >
-            <intent android:action="android.settings.NOTIFICATION_SETTINGS">
-                <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
-                <extra
-                    android:name=":settings:fragment_args_key"
-                    android:value="notification_badging" />
-            </intent>
-        </com.android.launcher3.views.ButtonPreference>
+            android:persistent="true" />
         <SwitchPreference
             android:defaultValue="true"
             android:key="pref_workspace_edit"
@@ -385,6 +371,29 @@
             android:title="@string/settings_edit_allow_title"
             android:summaryOn="@string/settings_edit_allow_summary_on"
             android:summaryOff="@string/settings_edit_allow_summary_off" />
+        <PreferenceCategory
+            android:title="@string/icon_badging_title">
+            <com.android.launcher3.views.ButtonPreference
+                android:key="pref_icon_badging"
+                android:title="@string/icon_badging_title"
+                android:persistent="false"
+                android:enabled="false"
+                android:disableDependentsState="false"
+                android:widgetLayout="@layout/notification_pref_warning" >
+                <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+                    <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
+                    <extra
+                        android:name=":settings:fragment_args_key"
+                        android:value="notification_badging" />
+                </intent>
+            </com.android.launcher3.views.ButtonPreference>
+            <SwitchPreference
+                android:key="pref_textinbadge"
+                android:title="@string/textinbadge"
+                android:summary="@string/textinbadge_sum"
+                android:dependency="pref_icon_badging"
+                android:defaultValue="false" />
+        </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/allow_vibration">
             <SwitchPreference

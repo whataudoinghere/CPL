@@ -29,6 +29,7 @@ import android.support.annotation.Nullable;
 import android.util.SparseArray;
 
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.graphics.IconPalette;
 import com.android.launcher3.graphics.ShadowGenerator;
 
@@ -38,13 +39,14 @@ import com.android.launcher3.graphics.ShadowGenerator;
  */
 public class BadgeRenderer {
 
-    private static final boolean DOTS_ONLY = true;
+    private static boolean DOTS_ONLY = true;
 
     // The badge sizes are defined as percentages of the app icon size.
     private static final float SIZE_PERCENTAGE = 0.38f;
+    private static final float SIZE_PERCENTAGE_DOT_WITH_TEXT = 0.33f;
     // Used to expand the width of the badge for each additional digit.
-    private static final float CHAR_SIZE_PERCENTAGE = 0.12f;
-    private static final float TEXT_SIZE_PERCENTAGE = 0.26f;
+    private static final float CHAR_SIZE_PERCENTAGE = 0.08f;
+    private static final float TEXT_SIZE_PERCENTAGE = 0.22f;
     private static final float OFFSET_PERCENTAGE = 0.02f;
     private static final float STACK_OFFSET_PERCENTAGE_X = 0.05f;
     private static final float STACK_OFFSET_PERCENTAGE_Y = 0.06f;
@@ -52,11 +54,14 @@ public class BadgeRenderer {
 
     private final Context mContext;
     private final int mSize;
+    private final int mSizeForDotWithText;
     private final int mCharSize;
     private final int mTextHeight;
     private final int mOffset;
+    /*
     private final int mStackOffsetX;
     private final int mStackOffsetY;
+    */
     private final IconDrawer mLargeIconDrawer;
     private final IconDrawer mSmallIconDrawer;
     private final Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -66,12 +71,16 @@ public class BadgeRenderer {
 
     public BadgeRenderer(Context context, int iconSizePx) {
         mContext = context;
+        DOTS_ONLY = !Utilities.getPrefs(mContext).getBoolean("pref_textinbadge", false);
         Resources res = context.getResources();
         mSize = (int) (SIZE_PERCENTAGE * iconSizePx);
+        mSizeForDotWithText = (int) (SIZE_PERCENTAGE_DOT_WITH_TEXT * iconSizePx);
         mCharSize = (int) (CHAR_SIZE_PERCENTAGE * iconSizePx);
         mOffset = (int) (OFFSET_PERCENTAGE * iconSizePx);
+        /*
         mStackOffsetX = (int) (STACK_OFFSET_PERCENTAGE_X * iconSizePx);
         mStackOffsetY = (int) (STACK_OFFSET_PERCENTAGE_Y * iconSizePx);
+        */
         mTextPaint.setTextSize(iconSizePx * TEXT_SIZE_PERCENTAGE);
         mTextPaint.setTextAlign(Paint.Align.CENTER);
         mLargeIconDrawer = new IconDrawer(res.getDimensionPixelSize(R.dimen.badge_small_padding));
@@ -103,12 +112,12 @@ public class BadgeRenderer {
         String notificationCount = badgeInfo == null ? "0"
                 : String.valueOf(badgeInfo.getNotificationCount());
         int numChars = notificationCount.length();
-        int width = DOTS_ONLY ? mSize : mSize + mCharSize * (numChars - 1);
+        int width = DOTS_ONLY ? mSize : mSizeForDotWithText + mCharSize * (numChars - 1);
         // Lazily load the background with shadow.
         Bitmap backgroundWithShadow = mBackgroundsWithShadow.get(numChars);
         if (backgroundWithShadow == null) {
             backgroundWithShadow = new ShadowGenerator.Builder(Color.WHITE)
-                    .setupBlurForSize(mSize).createPill(width, mSize);
+                    .setupBlurForSize(DOTS_ONLY ? mSize : mSizeForDotWithText).createPill(width, DOTS_ONLY ? mSize : mSizeForDotWithText);
             mBackgroundsWithShadow.put(numChars, backgroundWithShadow);
         }
         canvas.save(Canvas.MATRIX_SAVE_FLAG);
@@ -128,6 +137,7 @@ public class BadgeRenderer {
         // Prepare the background and shadow and possible stacking effect.
         mBackgroundPaint.setColorFilter(palette.backgroundColorMatrixFilter);
         int backgroundWithShadowSize = backgroundWithShadow.getHeight(); // Same as width.
+        /*
         boolean shouldStack = !isDot && badgeInfo != null
                 && badgeInfo.getNotificationKeys().size() > 1;
         if (shouldStack) {
@@ -138,7 +148,7 @@ public class BadgeRenderer {
                     -backgroundWithShadowSize / 2, mBackgroundPaint);
             canvas.translate(-offsetDiffX, -offsetDiffY);
         }
-
+        */
         if (isText) {
             canvas.drawBitmap(backgroundWithShadow, -backgroundWithShadowSize / 2,
                     -backgroundWithShadowSize / 2, mBackgroundPaint);
