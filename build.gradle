@@ -38,6 +38,17 @@ android {
         }
 
     }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def project = "CPL"
+            def SEP = "_"
+            def version = variant.versionName
+            def date = new Date();
+            def formattedDate = date.format('ddMMyy')
+            def newApkName = project + SEP + version + SEP + formattedDate + ".apk"
+            output.outputFile = new File(output.outputFile.parent, newApkName)
+        }
+    }
 
     productFlavors {
         aosp {
