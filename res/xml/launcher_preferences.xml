@@ -153,6 +153,10 @@
                 android:summary="%s"
                 android:title="@string/num_rows" />
             <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_old_folder_animation"
+                android:title="@string/old_folder_animation" />
+            <SwitchPreference
                 android:defaultValue="true"
                 android:key="pref_folder_show_labels"
                 android:title="@string/folder_show_labels" />

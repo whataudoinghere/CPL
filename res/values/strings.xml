@@ -448,6 +448,7 @@
     <!-- Folders -->
     <string name="custom_folders">Folders</string>
     <string name="folder_show_labels">Show icon labels</string>
+    <string name="old_folder_animation">Old folder animation</string>
 
     <!-- Date formats -->
     <string name="date_format">Date format</string>

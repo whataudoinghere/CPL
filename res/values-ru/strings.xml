@@ -251,6 +251,7 @@
     <string name="custom_folders">Папки</string>
     <string name="custom_folders_summary">Настроить папки</string>
     <string name="folder_show_labels">Подписи значков</string>
+    <string name="old_folder_animation">Старая анимация открытия папки</string>
 
     <!-- Date formats -->
     <string name="date_format">Формат даты</string>

@@ -621,7 +621,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View.OnC
         final Runnable onCompleteRunnable;
         centerAboutIcon();
 
-        AnimatorSet anim = FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION
+        AnimatorSet anim = Utilities.oldfolderanimation(getContext())
                 ? new FolderAnimationManager(this, true /* isOpening */).getAnimator()
                 : getOpeningAnimator();
         onCompleteRunnable = new Runnable() {
@@ -633,7 +633,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View.OnC
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
-                if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+                if (Utilities.oldfolderanimation(getContext())) {
                     mFolderIcon.setBackgroundVisible(false);
                     mFolderIcon.drawLeaveBehindIfExists();
                 } else {
@@ -728,7 +728,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View.OnC
         }
 
         if (mFolderIcon != null) {
-            if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+            if (Utilities.oldfolderanimation(getContext())) {
                 mFolderIcon.clearLeaveBehindIfExists();
             } else {
                 mFolderIcon.shrinkAndFadeIn(animate);
@@ -761,7 +761,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View.OnC
     }
 
     private void animateClosed() {
-        AnimatorSet a = FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION
+        AnimatorSet a = Utilities.oldfolderanimation(getContext())
                 ? new FolderAnimationManager(this, false /* isOpening */).getAnimator()
                 : getClosingAnimator();
         a.addListener(new AnimatorListenerAdapter() {
@@ -790,12 +790,12 @@ public class Folder extends AbstractFloatingView implements DragSource, View.OnC
         clearFocus();
         if (mFolderIcon != null) {
             mFolderIcon.setVisibility(View.VISIBLE);
-            if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+            if (Utilities.oldfolderanimation(getContext())) {
                 mFolderIcon.setBackgroundVisible(true);
                 mFolderIcon.mFolderName.setTextVisibility(true);
             }
             if (wasAnimated) {
-                if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+                if (Utilities.oldfolderanimation(getContext())) {
                     mFolderIcon.mBackground.fadeInBackgroundShadow();
                     mFolderIcon.mBackground.animateBackgroundStroke();
                     mFolderIcon.onFolderClose(mContent.getCurrentPage());
@@ -1095,7 +1095,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View.OnC
     }
 
     public boolean isDropEnabled() {
-        if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+        if (Utilities.oldfolderanimation(getContext())) {
             return mState != STATE_ANIMATING;
         }
         return true;
