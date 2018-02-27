@@ -190,6 +190,8 @@
     <string name="hotseat_show_page_indicator">Отображать индикатор страниц</string>
     <string name="gradient_size">Размер градиента</string>
     <string name="remove_gradient">Отключить градиент</string>
+    <string name="custom_qsb_in_dock">Настройки строки поиска</string>
+    <string name="qsb_in_dock_show">Отображать строку поиска</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Большой</string>

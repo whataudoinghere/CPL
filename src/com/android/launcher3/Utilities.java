@@ -168,6 +168,8 @@ public final class Utilities {
     public static final String VIBRATIONFEEDBACKTEST = "pref_vibrationdurationtest";
     public static final String VIBRATIONFEEDBACK = "pref_vibration";
     public static final String NOT_DOT = "pref_textinbadge";
+    public static final String SHOW_QSB_IN_DOCK = "pref_show_qsb_in_dock";
+
 
 
     public static boolean isPropertyEnabled(String propertyName) {
@@ -177,6 +179,10 @@ public final class Utilities {
     public static boolean isAllowRotationPrefEnabled(Context context) {
         return getPrefs(context).getBoolean(ALLOW_ROTATION_PREFERENCE_KEY,
                 getAllowRotationDefaultValue(context));
+    }
+
+    public static boolean showqsb(Context context) {
+        return getPrefs(context).getBoolean(SHOW_QSB_IN_DOCK, true);
     }
 
     public static boolean hidewidgettoo(Context context) {

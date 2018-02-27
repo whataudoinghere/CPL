@@ -55,6 +55,8 @@ public class HotseatQsbWidget extends AbstractQsbLayout {
         mIsDefaultLiveWallpaper = isDefaultLiveWallpaper();
         setColors();
         setOnClickListener(this);
+        boolean visibility = Utilities.showqsb(context);
+        setVisibility(visibility ? VISIBLE : INVISIBLE);
     }
 
     static int getBottomMargin(Launcher launcher) {

@@ -4199,6 +4199,9 @@ public class Launcher extends BaseActivity
             if (Utilities.NOT_DOT.equals(key)) {
                 needRestart();
             }
+            if (Utilities.SHOW_QSB_IN_DOCK.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

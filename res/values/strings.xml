@@ -380,12 +380,14 @@
     <string name="num_hotseat_icons_pref_title">Number of icons in dock</string>
     <string name="force_mic">Force mic</string>
     <string name="force_colour_logo">Сolored Google logo on search bar</string>
-    <string name="dark_themeqsb">Dark search bar</string>
     <string name="transparentqsb">Transparent search bar</string>
     <string name="hotseatShowArrow">Show arrow</string>
     <string name="hotseat_show_page_indicator">Show page indicator</string>
     <string name="gradient_size">Gradient size</string>
     <string name="remove_gradient">Disable gradient below dock</string>
+    <string name="dark_themeqsb">Dark search bar</string>
+    <string name="custom_qsb_in_dock">Search bar settings</string>
+    <string name="qsb_in_dock_show">Show search bar in dock</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>

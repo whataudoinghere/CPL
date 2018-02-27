@@ -297,32 +297,6 @@
             android:title="@string/num_hotseat_icons_pref_title" />
         <SwitchPreference
             android:defaultValue="false"
-            android:key="pref_forcecolourlogo"
-            android:title="@string/force_colour_logo" />
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="pref_transparentqsbqsb"
-            android:title="@string/transparentqsb" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:disableDependentsState="false"
-            android:key="pref_customqsbcolour"
-            android:title="@string/use_qsb_label_color" />
-        <ListPreference
-            android:defaultValue="#FFFFFF"
-            android:entries="@array/ColorNames"
-            android:entryValues="@array/ColorValues"
-            android:key="pref_qsb_color"
-            android:persistent="true"
-            android:summary="%s"
-            android:dependency="pref_customqsbcolour"
-            android:title="@string/custom_qsb_color" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="pref_enablemic"
-            android:title="@string/force_mic" />
-        <SwitchPreference
-            android:defaultValue="false"
             android:key="pref_disablegrad"
             android:title="@string/remove_gradient"
             android:disableDependentsState="true"/>
@@ -342,6 +316,41 @@
             android:defaultValue="true"
             android:key="pref_hotseatShowPageIndicator"
             android:title="@string/hotseat_show_page_indicator" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_show_qsb_in_dock"
+            android:disableDependentsState="false"
+            android:title="@string/qsb_in_dock_show" />
+        <PreferenceCategory
+            android:dependency="pref_show_qsb_in_dock"
+            android:title="@string/custom_qsb_in_dock">
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_forcecolourlogo"
+                android:title="@string/force_colour_logo" />
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_transparentqsbqsb"
+                android:title="@string/transparentqsb" />
+            <SwitchPreference
+                android:defaultValue="false"
+                android:disableDependentsState="false"
+                android:key="pref_customqsbcolour"
+                android:title="@string/use_qsb_label_color" />
+            <ListPreference
+                android:defaultValue="#FFFFFF"
+                android:entries="@array/ColorNames"
+                android:entryValues="@array/ColorValues"
+                android:key="pref_qsb_color"
+                android:persistent="true"
+                android:summary="%s"
+                android:dependency="pref_customqsbcolour"
+                android:title="@string/custom_qsb_color" />
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_enablemic"
+                android:title="@string/force_mic" />
+        </PreferenceCategory>
     </PreferenceScreen>
 
     <PreferenceScreen
