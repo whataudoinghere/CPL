@@ -240,6 +240,8 @@
     <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавленны, удалены или перемещены</string>
     <string name="settings_edit_allow_summary_off">Значки и виджеты могут не могут быть добавленны, удалены или перемещены</string>
     <string name="settings_edit_widgets_error">Невозожно добавить виджет</string>
+    <string name="fade_out_animation">Анимация исчезновения</string>
+    <string name="fade_out_animation_sum">При смене страницы рабочего стола</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Подписи значков</string>

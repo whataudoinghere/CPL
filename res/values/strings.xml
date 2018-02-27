@@ -403,7 +403,7 @@
     <!-- About -->
     <string name="about_sum">Customised Pixel Launcher - AOSP based open-sourse launcher with expanded functional. It is free and does not contain advertising.</string>
     <string name="thanks">Thanks for</string>
-    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek </string>
+    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek, Thecrazyskull</string>
     <string name="forgot">Maybe i forgot someone ...</string>
     <string name="date">Build date</string>
     <string name="sum_date">25.02.18</string>
@@ -438,6 +438,8 @@
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+    <string name="fade_out_animation">Fade out animation</string>
+    <string name="fade_out_animation_sum">When switching page</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Show icon labels on desktop</string>

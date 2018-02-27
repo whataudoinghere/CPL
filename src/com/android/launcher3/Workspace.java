@@ -1371,9 +1371,11 @@ public class Workspace extends PagedView
         }
 
         updatePageAlphaValues();
-        updatePageContentAlpha();
         updateStateForCustomContent();
         enableHwLayersOnVisiblePages();
+        if (Utilities.fadeout(getContext())) {
+            updatePageContentAlpha();
+        }
     }
 
     private void updatePageContentAlpha() {

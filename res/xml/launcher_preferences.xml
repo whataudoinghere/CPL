@@ -49,7 +49,13 @@
         android:persistent="true"
         android:summary="%s"
         android:title="@string/diabledgemargin_sum" />
-        
+
+    <SwitchPreference
+            android:defaultValue="false"
+            android:summary="@string/fade_out_animation_sum"
+            android:key="pref_fade_out_animation"
+            android:title="@string/fade_out_animation" />
+
     <ListPreference
         android:defaultValue="56"
         android:entries="@array/IconSizeName"

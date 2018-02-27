@@ -169,6 +169,7 @@ public final class Utilities {
     public static final String VIBRATIONFEEDBACK = "pref_vibration";
     public static final String NOT_DOT = "pref_textinbadge";
     public static final String SHOW_QSB_IN_DOCK = "pref_show_qsb_in_dock";
+    public static final String FADE_OUT = "pref_fade_out_animation";
 
 
 
@@ -183,6 +184,10 @@ public final class Utilities {
 
     public static boolean showqsb(Context context) {
         return getPrefs(context).getBoolean(SHOW_QSB_IN_DOCK, true);
+    }
+
+    public static boolean fadeout(Context context) {
+        return getPrefs(context).getBoolean(FADE_OUT, false);
     }
 
     public static boolean hidewidgettoo(Context context) {
