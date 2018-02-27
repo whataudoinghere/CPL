@@ -55,43 +55,45 @@
             android:summary="@string/fade_out_animation_sum"
             android:key="pref_fade_out_animation"
             android:title="@string/fade_out_animation" />
-
-    <ListPreference
-        android:defaultValue="56"
-        android:entries="@array/IconSizeName"
-        android:entryValues="@array/IconSizesValues"
-        android:key="pref_IconSize"
-        android:summary="%s"
-        android:title="@string/icon_size" />
-
-    <SwitchPreference
-        android:defaultValue="true"
-        android:key="pref_desktop_show_labels"
-        android:disableDependentsState="false"
-        android:title="@string/desktop_show_labels" />
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="pref_minusfont"
-        android:dependency="pref_desktop_show_labels"
-        android:title="@string/smallfont" />
-    <SwitchPreference
-         android:key="pref_change_workspace_label_color"
-         android:title="@string/use_custom_label_color"
-         android:defaultValue="false"
-         android:dependency="pref_desktop_show_labels"
-         android:disableDependentsState="false"
-         android:persistent="true" />
-
-    <ListPreference
-        android:defaultValue="#FFFFFF"
-        android:entries="@array/ColorNames"
-        android:entryValues="@array/ColorValues"
-        android:key="pref_workspace_label_color"
-        android:dependency="pref_change_workspace_label_color"
-        android:persistent="true"
-        android:summary="%s"
-        android:title="@string/custom_label_color" />
     </PreferenceCategory>
+        <PreferenceCategory
+            android:title="@string/custom_ico">
+            <ListPreference
+                android:defaultValue="56"
+                android:entries="@array/IconSizeName"
+                android:entryValues="@array/IconSizesValues"
+                android:key="pref_IconSize"
+                android:summary="%s"
+                android:title="@string/icon_size" />
+
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_desktop_show_labels"
+                android:disableDependentsState="false"
+                android:title="@string/desktop_show_labels" />
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_minusfont"
+                android:dependency="pref_desktop_show_labels"
+                android:title="@string/smallfont" />
+            <SwitchPreference
+                android:key="pref_change_workspace_label_color"
+                android:title="@string/use_custom_label_color"
+                android:defaultValue="false"
+                android:dependency="pref_desktop_show_labels"
+                android:disableDependentsState="false"
+                android:persistent="true" />
+
+            <ListPreference
+                android:defaultValue="#FFFFFF"
+                android:entries="@array/ColorNames"
+                android:entryValues="@array/ColorValues"
+                android:key="pref_workspace_label_color"
+                android:dependency="pref_change_workspace_label_color"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/custom_label_color" />
+        </PreferenceCategory>
 
         <PreferenceCategory
             android:title="@string/smartspace_preferences_in_settings">
@@ -212,38 +214,6 @@
             android:defaultValue="false"
             android:key="pref_addcoloumnallapp"
             android:title="@string/num_colsallapp" />
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="pref_drawer_show_labels"
-            android:title="@string/drawer_show_labels" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="pref_minusfontallapp"
-            android:dependency="pref_drawer_show_labels"
-            android:title="@string/smallfont" />
-        <ListPreference
-            android:defaultValue="100"
-            android:entries="@array/IconSizePrName"
-            android:entryValues="@array/IconSizesPrValues"
-            android:key="pref_drawer_icon_size"
-            android:summary="%s"
-            android:title="@string/icon_size" />
-        <SwitchPreference
-            android:key="pref_change_drawer_label_color"
-            android:title="@string/use_custom_label_color"
-            android:defaultValue="false"
-            android:dependency="pref_drawer_show_labels"
-            android:disableDependentsState="false"
-            android:persistent="true" />
-        <ListPreference
-            android:defaultValue="#000000"
-            android:entries="@array/ColorNames"
-            android:entryValues="@array/ColorValues"
-            android:key="pref_drawer_label_color"
-            android:dependency="pref_change_drawer_label_color"
-            android:persistent="true"
-            android:summary="%s"
-            android:title="@string/custom_label_color" />
         <Preference
             android:key="hidden-app"
             android:title="@string/hide_app"
@@ -253,6 +223,41 @@
             android:key="pref_hide_widgets_too"
             android:summary="@string/hide_widgets_too_sum"
             android:title="@string/hide_widgets_too" />
+        <PreferenceCategory
+            android:title="@string/custom_ico">
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_drawer_show_labels"
+                android:title="@string/drawer_show_labels" />
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_minusfontallapp"
+                android:dependency="pref_drawer_show_labels"
+                android:title="@string/smallfont" />
+            <ListPreference
+                android:defaultValue="100"
+                android:entries="@array/IconSizePrName"
+                android:entryValues="@array/IconSizesPrValues"
+                android:key="pref_drawer_icon_size"
+                android:summary="%s"
+                android:title="@string/icon_size" />
+            <SwitchPreference
+                android:key="pref_change_drawer_label_color"
+                android:title="@string/use_custom_label_color"
+                android:defaultValue="false"
+                android:dependency="pref_drawer_show_labels"
+                android:disableDependentsState="false"
+                android:persistent="true" />
+            <ListPreference
+                android:defaultValue="#000000"
+                android:entries="@array/ColorNames"
+                android:entryValues="@array/ColorValues"
+                android:key="pref_drawer_label_color"
+                android:dependency="pref_change_drawer_label_color"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/custom_label_color" />
+        </PreferenceCategory>
     </PreferenceScreen>
 
     <PreferenceScreen
