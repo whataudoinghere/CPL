@@ -20,12 +20,12 @@ import android.os.SystemClock;
 import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
 import android.preference.TwoStatePreference;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.launcher3.BuildConfig;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherModel;
 import com.android.launcher3.MultiSelectRecyclerViewActivity;
@@ -40,6 +40,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
     public final static String ENABLE_MINUS_ONE_PREF = "pref_enable_minus_one";
     public final static String SMARTSPACE_PREF = "pref_smartspace";
     public final static String APP_VERSION_PREF = "about_app_version";
+    public final static String APP_BUILD_DATE_PREF = "about_app_build_date";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -86,6 +87,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             } catch (PackageManager.NameNotFoundException ex) {
                 Log.e("SettingsActivity", "Unable to load my own package info", ex);
             }
+            findPreference(APP_BUILD_DATE_PREF).setSummary(BuildConfig.BUILD_TIME + "\n" + "(" + BuildConfig.BUILD_HOST + ")");
 
             mIconPackPref = (CustomIconPreference) findPreference(ICON_PACK_PREF);
             mIconPackPref.setOnPreferenceChangeListener(this);

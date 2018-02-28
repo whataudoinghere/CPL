@@ -471,8 +471,8 @@
                     android:data="@string/url_wtu_git" />
             </Preference>
             <Preference
-                android:title="@string/date"
-                android:summary="@string/sum_date" >
+                android:key="about_app_build_date"
+                android:title="@string/date">
             </Preference>
             <Preference
                 android:key="app_info"
