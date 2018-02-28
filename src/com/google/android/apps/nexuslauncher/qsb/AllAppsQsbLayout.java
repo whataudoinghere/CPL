@@ -171,9 +171,9 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     public void onExtractedColorsChanged(final WallpaperColorInfo wallpaperColorInfo) {
         if (Utilities.ATLEAST_NOUGAT) {
         SharedPreferences prefs = Utilities.getPrefs((getContext()).getApplicationContext());
-        int color = Color.parseColor(prefs.getString("pref_allappqsb_color", "0xFFFFFF"));
-        int colorwithtransparent = ColorUtils.setAlphaComponent(color, 255);
-        bz(ColorUtils.compositeColors(ColorUtils.compositeColors(colorwithtransparent, Themes.getAttrColor(mActivity, R.attr.allAppsScrimColor)), wallpaperColorInfo.getMainColor()));
+        Integer intColor = prefs.getInt("pref_allappqsb_color_picker", -1);
+        String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+        bz(ColorUtils.compositeColors(ColorUtils.compositeColors((Color.parseColor(hexColor)), Themes.getAttrColor(mActivity, R.attr.allAppsScrimColor)), wallpaperColorInfo.getMainColor()));
         }
         else {
             int color = Themes.getAttrBoolean(mActivity, R.attr.isMainColorDark) ? 0xEBFFFFFE : 0xCCFFFFFE;

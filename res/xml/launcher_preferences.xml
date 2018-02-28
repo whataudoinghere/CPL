@@ -14,7 +14,8 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceScreen
         android:summary="@string/custom_hs_summary"
@@ -84,14 +85,10 @@
                 android:disableDependentsState="false"
                 android:persistent="true" />
 
-            <ListPreference
-                android:defaultValue="#FFFFFF"
-                android:entries="@array/ColorNames"
-                android:entryValues="@array/ColorValues"
-                android:key="pref_workspace_label_color"
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_workspace_label_color_picker"
+                android:defaultValue="0xff666666"
                 android:dependency="pref_change_workspace_label_color"
-                android:persistent="true"
-                android:summary="%s"
                 android:title="@string/custom_label_color" />
         </PreferenceCategory>
 
@@ -169,15 +166,11 @@
                 android:dependency="pref_folder_show_labels"
                 android:disableDependentsState="false"
                 android:persistent="true" />
-            <ListPreference
-                android:defaultValue="#000000"
-                android:entries="@array/ColorNames"
-                android:entryValues="@array/ColorValues"
-                android:key="pref_folder_label_color"
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_folder_label_color_picker"
                 android:dependency="pref_change_folder_label_color"
-                android:persistent="true"
-                android:summary="%s"
-                android:title="@string/custom_label_color" />
+                android:title="@string/custom_label_color"
+                android:defaultValue="0xff666666" />
         </PreferenceCategory>
 
     </PreferenceScreen>
@@ -191,21 +184,6 @@
             android:title="@string/title_app_suggestions"
             android:summary="@string/summary_app_suggestions"
             android:defaultValue="true" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="pref_googleinappmenu_enabled"
-            android:disableDependentsState="false"
-            android:title="@string/googleinappmenu" />
-        <ListPreference
-            android:defaultValue="#FFFFFF"
-            android:entries="@array/ColorNames"
-            android:entryValues="@array/ColorValues"
-            android:key="pref_allappqsb_color"
-            android:persistent="true"
-            android:summary="%s"
-            android:enabled="false"
-            android:dependency="pref_googleinappmenu_enabled"
-            android:title="@string/custom_qsb_color" />
         <SwitchPreference
             android:defaultValue="false"
             android:key="pref_smallallaps"
@@ -223,6 +201,20 @@
             android:key="pref_hide_widgets_too"
             android:summary="@string/hide_widgets_too_sum"
             android:title="@string/hide_widgets_too" />
+        <PreferenceCategory
+            android:title="@string/googleinappmenu">
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_googleinappmenu_enabled"
+                android:disableDependentsState="false"
+                android:title="@string/googleinappmenu" />
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_allappqsb_color_picker"
+                android:dependency="pref_googleinappmenu_enabled"
+                android:title="@string/custom_qsb_color"
+                android:enabled="false"
+                android:defaultValue="0xEBFFFFFE" />
+        </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/custom_ico">
             <SwitchPreference
@@ -248,15 +240,11 @@
                 android:dependency="pref_drawer_show_labels"
                 android:disableDependentsState="false"
                 android:persistent="true" />
-            <ListPreference
-                android:defaultValue="#000000"
-                android:entries="@array/ColorNames"
-                android:entryValues="@array/ColorValues"
-                android:key="pref_drawer_label_color"
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_drawer_label_color_picker"
                 android:dependency="pref_change_drawer_label_color"
-                android:persistent="true"
-                android:summary="%s"
-                android:title="@string/custom_label_color" />
+                android:title="@string/custom_label_color"
+                android:defaultValue="0xff666666" />
         </PreferenceCategory>
     </PreferenceScreen>
 
@@ -344,6 +332,10 @@
                 android:key="pref_forcecolourlogo"
                 android:title="@string/force_colour_logo" />
             <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_enablemic"
+                android:title="@string/force_mic" />
+            <SwitchPreference
                 android:defaultValue="true"
                 android:key="pref_transparentqsbqsb"
                 android:title="@string/transparentqsb" />
@@ -352,19 +344,12 @@
                 android:disableDependentsState="false"
                 android:key="pref_customqsbcolour"
                 android:title="@string/use_qsb_label_color" />
-            <ListPreference
-                android:defaultValue="#FFFFFF"
-                android:entries="@array/ColorNames"
-                android:entryValues="@array/ColorValues"
-                android:key="pref_qsb_color"
-                android:persistent="true"
-                android:summary="%s"
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_qsb_color_picker"
+                app:supportsAlpha="true"
                 android:dependency="pref_customqsbcolour"
-                android:title="@string/custom_qsb_color" />
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="pref_enablemic"
-                android:title="@string/force_mic" />
+                android:title="@string/custom_qsb_color"
+                android:defaultValue="0xff666666" />
         </PreferenceCategory>
     </PreferenceScreen>
 

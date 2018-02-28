@@ -77,12 +77,17 @@ public class HotseatQsbWidget extends AbstractQsbLayout {
         if (!transparentqsb && forcecolour) bz(0xFFFFFFFF);
         if (customqsbcolour){
         SharedPreferences prefs = Utilities.getPrefs((getContext()).getApplicationContext());
+        /*
         int qsbcolor = Color.parseColor(prefs.getString("pref_qsb_color", "0xFFFFFF"));
         if (transparentqsb) {
             int colorwithtransparent = ColorUtils.setAlphaComponent(qsbcolor, 204);
             bz(colorwithtransparent);
         }
         else bz(qsbcolor);
+        */
+            Integer intColor = prefs.getInt("pref_qsb_color_picker", -1);
+            String hexColor = "#" + Integer.toHexString(intColor);
+            bz(Color.parseColor(hexColor));
         }
     }
 

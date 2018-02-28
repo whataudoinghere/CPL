@@ -167,7 +167,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx);
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
             if (prefs.getBoolean("pref_change_workspace_label_color", false)){
-                setTextColor(Color.parseColor(prefs.getString("pref_workspace_label_color", "#FFFFFF")));
+                Integer intColor = prefs.getInt("pref_workspace_label_color_picker", -1);
+                String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+                setTextColor(Color.parseColor(hexColor));
             }
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
         } else if (display == DISPLAY_ALL_APPS) {
@@ -177,7 +179,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             setCompoundDrawablePadding(grid.allAppsIconDrawablePaddingPx);
             defaultIconSize = grid.allAppsIconSizePx * Integer.valueOf(prefs.getString("pref_drawer_icon_size", "100"))/100;
             if (prefs.getBoolean("pref_change_drawer_label_color", false)){
-                setTextColor(Color.parseColor(prefs.getString("pref_drawer_label_color", "#000000")));
+                Integer intColor = prefs.getInt("pref_drawer_label_color_picker", -1);
+                String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+                setTextColor(Color.parseColor(hexColor));
             }
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DRAWER_LABELS, true);
         } else if (display == DISPLAY_FOLDER) {
@@ -187,7 +191,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             setCompoundDrawablePadding(grid.folderChildDrawablePaddingPx);
             defaultIconSize = grid.folderChildIconSizePx;
             if (prefs.getBoolean("pref_change_folder_label_color", false)){
-                setTextColor(Color.parseColor(prefs.getString("pref_folder_label_color", "#000000")));
+                Integer intColor = prefs.getInt("pref_folder_label_color_picker", -1);
+                String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+                setTextColor(Color.parseColor(hexColor));
             }
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_FOLDER_LABELS, true);
         }

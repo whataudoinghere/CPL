@@ -139,7 +139,7 @@ public final class Utilities {
     public static final String HOTSEATICONS = "pref_numHotseatIcons";
     public static final String SMALLALAPPS = "pref_smallallaps";
     public static final String ADDCOLOUMNALLAPP = "pref_addcoloumnallapp";
-    public static final String COLORQSBALLAPPS = "pref_allappqsb_color";
+    public static final String COLORQSBALLAPPS = "pref_allappqsb_color_picker";
     public static final String EDGEMARGIN = "pref_marginsize";
     public static final String KEY_PREF_HOTSEAT_SHOW_ARROW = "pref_hotseatShowArrow";
     public static final String KEY_PREF_HOTSEAT_SHOW_PAGE_INDICATOR = "pref_hotseatShowPageIndicator";
@@ -155,14 +155,14 @@ public final class Utilities {
     public static final String KEY_ABOUT_FORGOT = "about_forgot";
     public static final String KEY_HIDE_WIDGET_TOO = "pref_hide_widgets_too";
     public static final String KEY_DISABLE_SMARTSPASE = "pref_disabless";
-    public static final String KEY_DESK_COLOUR = "pref_workspace_label_color";
+    public static final String KEY_DESK_COLOUR = "pref_workspace_label_color_picker";
     public static final String KEY_DESK_CAN_CHANGE_COLOUR = "pref_change_workspace_label_color";
-    public static final String KEY_DRAWER_COLOUR = "pref_drawer_label_color";
+    public static final String KEY_DRAWER_COLOUR = "pref_drawer_label_color_picker";
     public static final String KEY_DRAWER_CAN_CHANGE_COLOUR = "pref_change_drawer_label_color";
-    public static final String KEY_FOLDER_COLOUR = "pref_folder_label_color";
+    public static final String KEY_FOLDER_COLOUR = "pref_folder_label_color_picker";
     public static final String KEY_FOLDER_CAN_CHANGE_COLOUR = "pref_change_folder_label_color";
     public static final String KEY_QSB_CAN_CHANGE_COLOUR = "pref_customqsbcolour";
-    public static final String KEY_QSB_COLOUR = "pref_qsb_color";
+    public static final String KEY_QSB_COLOUR = "pref_qsb_color_picker";
     public static final String CHANGETHEME_PREFERENCE_KEY = "pref_themestyle";
     public static final String DRAWER_ICONSIZE = "pref_drawer_icon_size";
     public static final String VIBRATIONFEEDBACKTEST = "pref_vibrationdurationtest";
