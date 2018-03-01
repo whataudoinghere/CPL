@@ -397,6 +397,10 @@
     <string name="size_stock">Stock</string>
 
     <!-- Rows and Coloumns -->
+    <string name="change_grid_size">Change grid size</string>
+    <string name="custom_grid_size">Grid size</string>
+    <string name="custom_grid_size_on">Use selected size</string>
+    <string name="custom_grid_size_off">Grid size depends from DPI</string>
     <string name="num_rows">Number of rows</string>
     <string name="num_cols">Number of columns</string>
 
@@ -473,5 +477,6 @@
     <string name="vibrationdurationtest">Test vibration</string>
     <string name="textinbadge">Not just a dot</string>
     <string name="textinbadge_sum">Show the number of notifications in badge</string>
+
 
 </resources>

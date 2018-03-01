@@ -23,13 +23,21 @@
         android:title="@string/custom_hs">
 
     <PreferenceCategory
-        android:title="@string/custom_hs">
+        android:title="@string/custom_grid_size">
 
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_change_grid_size"
+        android:summaryOn="@string/custom_grid_size_on"
+        android:summaryOff="@string/custom_grid_size_off"
+        android:disableDependentsState="false"
+        android:title="@string/change_grid_size" />
     <ListPreference
         android:defaultValue="5"
         android:entries="@array/numGridValues"
         android:entryValues="@array/numGridValues"
         android:key="pref_numCols"
+        android:dependency="pref_change_grid_size"
         android:persistent="true"
         android:summary="%s"
         android:title="@string/num_cols" />
@@ -37,10 +45,15 @@
         android:defaultValue="4"
         android:entries="@array/numGridValues"
         android:entryValues="@array/numGridValues"
+        android:dependency="pref_change_grid_size"
         android:key="pref_numRows"
         android:persistent="true"
         android:summary="%s"
         android:title="@string/num_rows" />
+    </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/custom_hs">
 
     <ListPreference
         android:defaultValue="1"
@@ -56,7 +69,7 @@
             android:summary="@string/fade_out_animation_sum"
             android:key="pref_fade_out_animation"
             android:title="@string/fade_out_animation" />
-    </PreferenceCategory>
+        </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/custom_ico">
             <ListPreference

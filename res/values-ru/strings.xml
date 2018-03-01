@@ -201,6 +201,10 @@
     <string name="size_stock">Стандартный</string>
 
     <!-- Rows and Coloumns -->
+    <string name="change_grid_size">Изменить размер сетки</string>
+    <string name="custom_grid_size">Размер сетки</string>
+    <string name="custom_grid_size_on">Использовать выбраный размер</string>
+    <string name="custom_grid_size_off">Размер сетки зависит от DPI устройства</string>
     <string name="num_rows">Количество строк</string>
     <string name="num_cols">Количество столбцов</string>
 

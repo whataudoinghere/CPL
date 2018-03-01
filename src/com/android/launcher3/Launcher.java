@@ -4205,6 +4205,9 @@ public class Launcher extends BaseActivity
             if (Utilities.OLD_FOLDER_ANIMATION.equals(key)) {
                 needRestart();
             }
+            if (Utilities.CHANGE_GRID.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

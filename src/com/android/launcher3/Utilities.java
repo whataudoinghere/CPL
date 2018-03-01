@@ -171,6 +171,7 @@ public final class Utilities {
     public static final String SHOW_QSB_IN_DOCK = "pref_show_qsb_in_dock";
     public static final String FADE_OUT = "pref_fade_out_animation";
     public static final String OLD_FOLDER_ANIMATION = "pref_old_folder_animation";
+    public static final String CHANGE_GRID = "pref_change_grid_size";
 
 
 

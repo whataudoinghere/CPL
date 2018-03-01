@@ -148,9 +148,16 @@ public class InvariantDeviceProfile {
         SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
 
         InvariantDeviceProfile closestProfile = closestProfiles.get(0);
-        numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) +1;
-        numColumns = Integer.valueOf(prefs.getString("pref_numCols", "5"));
-        boolean a = prefs.getBoolean("pref_addcoloumnallapp", false);
+        boolean a = prefs.getBoolean("pref_change_grid_size", true);
+        if (a) {
+            numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) +1;
+            numColumns = Integer.valueOf(prefs.getString("pref_numCols", "5"));
+        }
+        else {
+            numRows = closestProfile.numRows;
+            numColumns = closestProfile.numColumns;
+        }
+        a = prefs.getBoolean("pref_addcoloumnallapp", false);
         if (!a) {
             numColumnsAll = numColumns;
         }
