@@ -278,22 +278,4 @@
     <string name="textinbadge">Не просто точка</string>
     <string name="textinbadge_sum">Показывать колличество уведомлений в значке</string>
 
-    <!-- Colors -->
-    <string name="White">Белый</string>
-    <string name="Black">Черный</string>
-    <string name="Gray">Серый</string>
-    <string name="Bright_pink">Ярко розовый</string>
-    <string name="Red">Красный</string>
-    <string name="Orange">Оранжевый</string>
-    <string name="Уellow">Желтый</string>
-    <string name="Сhartreuse">Салатовый</string>
-    <string name="Green">Зеленый</string>
-    <string name="Spring_green">Нежно зеленый</string>
-    <string name="Cyan">Ярко голобуй</string>
-    <string name="Azure">Голубой</string>
-    <string name="Blue">Синий</string>
-    <string name="Violet">Фиолетовый</string>
-    <string name="Magenta">Пурпурный</string>
-
-
 </resources>

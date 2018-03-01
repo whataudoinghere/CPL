@@ -474,21 +474,4 @@
     <string name="textinbadge">Not just a dot</string>
     <string name="textinbadge_sum">Show the number of notifications in badge</string>
 
-    <!-- Colors -->
-    <string name="White">White</string>
-    <string name="Black">Black</string>
-    <string name="Gray">Gray</string>
-    <string name="Bright_pink">Bright pink</string>
-    <string name="Red">Red</string>
-    <string name="Orange">Orange</string>
-    <string name="Уellow">Уellow</string>
-    <string name="Сhartreuse">Сhartreuse</string>
-    <string name="Green">Green</string>
-    <string name="Spring_green">Spring green</string>
-    <string name="Cyan">Cyan</string>
-    <string name="Azure">Azure</string>
-    <string name="Blue">Blue</string>
-    <string name="Violet">Violet</string>
-    <string name="Magenta">Magenta</string>
-
 </resources>
