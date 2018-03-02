@@ -43,6 +43,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Process;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.Pair;
@@ -338,28 +339,10 @@ public class IconsHandler {
         if (drawable == null) {
             return null;
         }
-
         if (drawable instanceof AdaptiveIconDrawable) {
-            Drawable backgroundDr = ((AdaptiveIconDrawable) drawable).getBackground();
-            Drawable foregroundDr = ((AdaptiveIconDrawable) drawable).getForeground();
 
-            Drawable[] drr = new Drawable[2];
-            drr[0] = backgroundDr;
-            drr[1] = foregroundDr;
-
-            LayerDrawable layerDrawable = new LayerDrawable(drr);
-
-            int width = layerDrawable.getIntrinsicWidth();
-            int height = layerDrawable.getIntrinsicHeight();
-
-            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
-            Canvas canvas = new Canvas(bitmap);
-
-            layerDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-            layerDrawable.draw(canvas);
-
-            return generateBitmap(componentName, bitmap);
+            return generateBitmap(componentName, LauncherIcons.createBadgedIconBitmap(drawable,
+                    Process.myUserHandle(), mContext, Build.VERSION_CODES.O));
         }
 
         if (drawable instanceof BitmapDrawable) {
