@@ -363,17 +363,17 @@ public class IconsHandler {
     }
 
     public Bitmap getDrawableIconForPackage(ComponentName componentName) {
+        Bitmap cachedIcon = cacheGetDrawable(componentName.toString());
+        if (cachedIcon != null) {
+            return cachedIcon;
+        }
+
         String drawableName = mAppFilterDrawables.get(componentName.toString());
         Drawable drawable = loadDrawable(null, drawableName, false);
         if (drawable != null && drawable instanceof BitmapDrawable) {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
             cacheStoreDrawable(componentName.toString(), bitmap);
             return bitmap;
-        }
-
-        Bitmap cachedIcon = cacheGetDrawable(componentName.toString());
-        if (cachedIcon != null) {
-            return cachedIcon;
         }
 
         return getDefaultAppDrawable(componentName);
