@@ -89,7 +89,7 @@
     <!-- Label for uninstall drop target. [CHAR_LIMIT=20]-->
     <string name="uninstall_drop_target_label">Uninstall</string>
     <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
-    <string name="app_info_drop_target_label">App info</string>
+    <string name="app_info_drop_target_label">App Info</string>
 
     <!-- Permissions: -->
     <skip />
@@ -167,13 +167,13 @@
 
     <!-- Strings for settings -->
     <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
-    <string name="allow_rotation_title">Allow Home screen rotation</string>
+    <string name="allow_rotation_title">Home Screen Rotation</string>
     <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
     <string name="allow_rotation_desc">When phone is rotated</string>
     <!-- Text explaining that rotation is disabled in Display settings. 'Display' refers to the Display section in system settings [CHAR LIMIT=100] -->
     <string name="allow_rotation_blocked_desc">Current Display setting doesn\'t permit rotation</string>
     <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
-    <string name="icon_badging_title">Notification dots</string>
+    <string name="icon_badging_title">Notification Dots</string>
     <!-- Text to indicate that the system icon badging setting is on [CHAR LIMIT=100] -->
     <string name="icon_badging_desc_on">On</string>
     <!-- Text to indicate that the system icon badging setting is off [CHAR LIMIT=100] -->
@@ -186,12 +186,12 @@
     <string name="title_change_settings">Change settings</string>
 
     <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=40] -->
-    <string name="auto_add_shortcuts_label">Add icon to Home screen</string>
+    <string name="auto_add_shortcuts_label">Add Icon to Home Screen</string>
     <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
     <string name="auto_add_shortcuts_description">For new apps</string>
 
     <!-- Developer setting to change the shape of icons on home screen. [CHAR LIMIT=50] -->
-    <string name="icon_shape_override_label">Change icon shape</string>
+    <string name="icon_shape_override_label">Icon Shape</string>
     <!-- Option to not change the icon shape on home screen and use the system default setting instead. [CHAR LIMIT=50] -->
     <string name="icon_shape_system_default">Use system default</string>
     <!-- Option to change the shape of the home screen icons to a square. [CHAR LIMIT=50] -->
@@ -324,28 +324,28 @@
 
     <string name="icu_abbrev_wday_month_day_no_year">EEEMMMd</string>
     <string name="icu_abbrev_time">HH:mm</string>
-    <string name="in_smartspace">In \"At a Glance\" widget</string>
-    <string name="smartspace_time">Add clock</string>
+    <string name="in_smartspace">In \"At a Glance\" Widget</string>
+    <string name="smartspace_time">Add Clock</string>
     <string name="smartspace_preferences">Preferences</string>
     <string name="label_search">Search</string>
     <string name="label_voice_search">Voice search</string>
     <string name="default_live_wallpaper">com.breel.wallpapers/com.breel.wallpapers.dioramas.lagos.LagosWallpaperService</string>
-    <string name="pref_icon_pack">Icon pack</string>
+    <string name="pref_icon_pack">Icon Pack</string>
     <string name="state_loading">Applying…</string>
-    <string name="smartspace_preferences_in_settings">\"At a Glance\" widget</string>
+    <string name="smartspace_preferences_in_settings">\"At a Glance\" Widget</string>
     <string name="smartspace_preferences_in_settings_summary">Customize your \"At a Glance\" widget</string>
-    <string name="smartspace_customize_in_settings">Customize widget</string>
-    <string name="smartspace_disable">Disable \"At a Glance\" widget</string>
-    <string name="smartspace_launchclock_sum">On long click</string>
-    <string name="smartspace_launchclock">Launch clock app</string>
-    <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the homescreen that displays different events</string>
+    <string name="smartspace_customize_in_settings">Customize Widget</string>
+    <string name="smartspace_disable">Disable \"At a Glance\" Widget</string>
+    <string name="smartspace_launchclock_sum">On long pressing the widget</string>
+    <string name="smartspace_launchclock">Launch Clock App</string>
+    <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the home screen what do display</string>
     <string name="title_show_google_app">%1$s</string>
     <string name="pref_show_google_now_summary">@string/msg_minus_one_on_left</string>
     <string name="msg_minus_one_on_left">To the left of the main Home screen</string>
     <string name="about">About</string>
-    <string name="title_google_app">Google app</string>
-    <string name="title_app_suggestions">Display app suggestions</string>
-    <string name="summary_app_suggestions">At the top of your All Apps list</string>
+    <string name="title_google_app">Google App</string>
+    <string name="title_app_suggestions">App Suggestions</string>
+    <string name="summary_app_suggestions">At the top of the app drawer</string>
     <string name="app_name_pixel_launcher">Customised Pixel Launcher</string>
     <string name="title_disable_suggestions_prompt">Turn off app suggestions?</string>
     <string name="msg_disable_suggestions_prompt">"Suggestions won't appear at the top of your apps list, and the usage data used to create them will be permanently erased."</string>
@@ -355,39 +355,40 @@
 
     <!-- Theme -->
     <string name="custom_theme">Theme</string>
-    <string name="custom_theme_summary">Customize theme, icons</string>
+    <string name="custom_theme_summary">Customize the theme and icons</string>
     <string name="white_theme">White</string>
     <string name="white_withdarktext_theme">White with dark text</string>
     <string name="dark_theme">Dark</string>
     <string name="black_theme">Black</string>
 
     <!-- Hidden app -->
-    <string name="hide_app">Hide app</string>
-    <string name="hide_app_sum">Hide app from the app drawer</string>
+    <string name="hide_app">Hide Apps</string>
+    <string name="hide_app_sum">Hide apps from the app drawer</string>
     <string name="hide_app_selected">&#160;selected</string>
     <string name="hidden_app">Hidden app</string>
     <string name="hide_selected">Hide selected app</string>
     <string name="more">More</string>
     <string name="reset_hidden_apps">Reset all</string>
     <string name="reset_hidden_apps_hint">Hidden apps are now available</string>
-    <string name="hide_widgets_too">Hide widgets</string>
-    <string name="hide_widgets_too_sum">Hide widgets of hidden apps</string>
+    <string name="hide_widgets_too">Hide Widgets</string>
+    <string name="hide_widgets_too_sum">Dont\s show widgets of hidden apps</string>
 
 
     <!-- Dock bar -->
-    <string name="custom_dockbar">Dock bar</string>
-    <string name="custom_dockbar_summary">Customize your dock</string>
-    <string name="num_hotseat_icons_pref_title">Number of icons in dock</string>
-    <string name="force_mic">Force mic</string>
-    <string name="force_colour_logo">Сolored Google logo on search bar</string>
-    <string name="transparentqsb">Transparent search bar</string>
-    <string name="hotseatShowArrow">Show arrow</string>
-    <string name="hotseat_show_page_indicator">Show page indicator</string>
-    <string name="gradient_size">Gradient size</string>
-    <string name="remove_gradient">Disable gradient below dock</string>
-    <string name="dark_themeqsb">Dark search bar</string>
-    <string name="custom_qsb_in_dock">Search bar settings</string>
-    <string name="qsb_in_dock_show">Show search bar in dock</string>
+    <string name="custom_dockbar">Dock</string>
+    <string name="custom_dockbar_summary">Customize the dock</string>
+    <string name="num_hotseat_icons_pref_title">Number of Dock Icons</string>
+    <string name="force_mic">Show Microphone</string>
+    <string name="force_colour_logo">Colored Google Search Bar Logo</string>
+    <string name="transparentqsb">Transparency on Search Bar</string>
+    <string name="hotseatShowArrow">Show Arrow</string>
+    <string name="hotseat_show_page_indicator">Show Page Indicator</string>
+    <string name="gradient_size">Gradient Size</string>
+    <string name="remove_gradient">Disable Dock Gradient</string>
+    <string name="dark_themeqsb">Dark Search Bar</string>
+    <string name="custom_qsb_in_dock">Search Bar Settings</string>
+    <string name="qsb_in_dock_show">Show Search Bar In Dock</string>
+    <string name="googleinappmenu">New Google Search Bar</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>
@@ -397,64 +398,64 @@
     <string name="size_stock">Stock</string>
 
     <!-- Rows and Coloumns -->
-    <string name="change_grid_size">Change grid size</string>
-    <string name="custom_grid_size">Grid size</string>
+    <string name="change_grid_size">Change Grid Size</string>
+    <string name="custom_grid_size">Grid Size</string>
     <string name="custom_grid_size_on">Use selected size</string>
     <string name="custom_grid_size_off">Grid size depends from DPI</string>
-    <string name="num_rows">Number of rows</string>
-    <string name="num_cols">Number of columns</string>
+    <string name="num_rows">Number of Rows</string>
+    <string name="num_cols">Number of Columns</string>
 
     <!-- About -->
-    <string name="about_sum">Customised Pixel Launcher - AOSP based open-sourse launcher with expanded functional. It is free and does not contain advertising.</string>
-    <string name="thanks">Thanks for</string>
+    <string name="about_sum">"Customized Pixel Launcher - AOSP based open-source launcher with expanded functionality. It's free and contains no ads."</string>
+    <string name="thanks">Thanks to</string>
     <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek, Thecrazyskull</string>
     <string name="forgot">Maybe i forgot someone ...</string>
-    <string name="date">Build date</string>
-    <string name="sum_aboutapp">About this app, version, information</string>
+    <string name="date">Build Date</string>
+    <string name="sum_aboutapp">About the app, version information, credits</string>
     <string name="about_app_version_wtu">Version / whataudoinghere GitHub</string>
     <string name="url_wtu_git">https://github.com/whataudoinghere/Launcher3</string>
 
     <!-- Reboot -->
     <string name="custom_reboot">Restart Launcher</string>
     <string name="reboot">Restart</string>
-    <string name="reboot_sum">If settings are not applied</string>
+    <string name="reboot_sum">Restart to re-apply settings</string>
 
     <!-- Allapp -->
     <string name="custom_allapp">All Apps</string>
     <string name="custom_allapp_summary">Customize your app drawer</string>
-    <string name="num_colsallapp">Extra column in All Apps</string>
-    <string name="smallallaps">Small reaserch bar</string>
+    <string name="num_colsallapp">Extra Column in App Drawer</string>
+    <string name="smallallaps">Small Search Bar</string>
 
     <!-- Icons -->
     <string name="custom_ico">Icons</string>
-    <string name="smallfont">Use small font for lables</string>
-    <string name="icon_size">Icon size</string>
+    <string name="smallfont">Smaller Font for Labels</string>
+    <string name="icon_size">Icon Size</string>
 
     <!-- Home screen -->
-    <string name="custom_hs">Home screen</string>
+    <string name="custom_hs">Home Screen</string>
     <string name="custom_hs_summary">Customize your home screen, \"At a Glance\" widget, folders</string>
     <string name="edgemarginstock">Stock</string>
     <string name="edgemarginsmall">Small</string>
     <string name="diabledgemargin">Disable</string>
-    <string name="diabledgemargin_sum">Left and right screen compression </string>
-    <string name="settings_edit_allow_title">Allow edit</string>
-    <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
+    <string name="diabledgemargin_sum">Horizontal Screen Padding</string>
+    <string name="settings_edit_allow_title">Allow Home Screen Editing</string>
+    <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the home screen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
-    <string name="fade_out_animation">Fade out animation</string>
+    <string name="fade_out_animation">Fade Out Animation</string>
     <string name="fade_out_animation_sum">When switching page</string>
 
     <!-- Hide labels -->
-    <string name="desktop_show_labels">Show icon labels on desktop</string>
-    <string name="drawer_show_labels">Show icon labels in drawer</string>
+    <string name="desktop_show_labels">Icon Labels on Home Screen</string>
+    <string name="drawer_show_labels">Icon Labels in Drawer</string>
 
     <!-- Folders -->
     <string name="custom_folders">Folders</string>
-    <string name="folder_show_labels">Show icon labels</string>
-    <string name="old_folder_animation">Old folder animation</string>
+    <string name="folder_show_labels">Icon Labels in Folders</string>
+    <string name="old_folder_animation">Old Folder Animation</string>
 
     <!-- Date formats -->
-    <string name="date_format">Date format</string>
+    <string name="date_format">Date Format</string>
     <string name="date_format_1">Tuesday, Feb 13</string>
     <string name="date_format_2">Tuesday</string>
     <string name="date_format_3">Tue, February 13</string>
@@ -463,20 +464,20 @@
     <string name="date_format_6">Tuesday, February 13</string>
 
     <!-- Color Changing -->
-    <string name="use_custom_label_color">Use custom label color</string>
-    <string name="use_qsb_label_color">Use custom search bar color</string>
-    <string name="custom_label_color">Label color</string>
-    <string name="custom_qsb_color">Search bar color</string>
+    <string name="use_custom_label_color">Custom Label Color</string>
+    <string name="use_qsb_label_color">Custom Search Bar Color</string>
+    <string name="custom_label_color">Label Color</string>
+    <string name="custom_qsb_color">Search Bar Color</string>
 
     <!-- Behavior -->
     <string name="behavior_pref_title">Behavior</string>
-    <string name="behavior_pref_summary">Change the behavior</string>
+    <string name="behavior_pref_summary">Change the UI behavior</string>
     <string name="allow_vibration">Vibration</string>
-    <string name="allow_vibration_sum">When you click on some interface elements</string>
-    <string name="vibrationduration">Vibration duration</string>
-    <string name="vibrationdurationtest">Test vibration</string>
-    <string name="textinbadge">Not just a dot</string>
-    <string name="textinbadge_sum">Show the number of notifications in badge</string>
+    <string name="allow_vibration_sum">When you click on interface elements</string>
+    <string name="vibrationduration">Vibration Duration</string>
+    <string name="vibrationdurationtest">Test Vibration</string>
+    <string name="textinbadge">Notification Badges</string>
+    <string name="textinbadge_sum">Show the number of notifications in a badge</string>
 
 
 </resources>
