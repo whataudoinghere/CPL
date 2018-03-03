@@ -408,7 +408,7 @@
     <!-- About -->
     <string name="about_sum">"Customized Pixel Launcher - AOSP based open-source launcher with expanded functionality. It's free and contains no ads."</string>
     <string name="thanks">Thanks to</string>
-    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek, Thecrazyskull</string>
+    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek, Thecrazyskull, stavros3006, yukuku</string>
     <string name="forgot">Maybe i forgot someone ...</string>
     <string name="date">Build Date</string>
     <string name="sum_aboutapp">About the app, version information, credits</string>
