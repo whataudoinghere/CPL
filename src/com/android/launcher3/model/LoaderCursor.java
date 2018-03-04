@@ -21,6 +21,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
+import android.content.SharedPreferences;
 import android.content.pm.LauncherActivityInfo;
 import android.database.Cursor;
 import android.database.CursorWrapper;
@@ -450,7 +451,8 @@ public class LoaderCursor extends CursorWrapper {
 
         if (!occupied.containsKey(item.screenId)) {
             GridOccupancy screen = new GridOccupancy(countX + 1, countY + 1);
-            if (item.screenId == Workspace.FIRST_SCREEN_ID) {
+            boolean disabless = Utilities.getPrefs(mContext).getBoolean("pref_disabless", false);
+            if (item.screenId == Workspace.FIRST_SCREEN_ID && !disabless) {
                 // Mark the first row as occupied (if the feature is enabled)
                 // in order to account for the QSB.
                 screen.markCells(0, 0, countX + 1, 1, FeatureFlags.QSB_ON_FIRST_SCREEN);
