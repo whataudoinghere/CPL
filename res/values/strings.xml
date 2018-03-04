@@ -113,7 +113,7 @@
     <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> is not allowed to make phone calls</string>
 
     <!-- Widgets: -->
-    <skip />    
+    <skip />
 
     <!-- Text to show user in place of a gadget when we can't display it properly -->
     <string name="gadget_error_text">Problem loading widget</string>
@@ -137,7 +137,7 @@
     <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
     <string name="workspace_scroll_format">Home screen %1$d of %2$d</string>
     <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
-    <string name="workspace_new_page">New home screen page</string>
+    <string name="workspace_new_page">New Home screen page</string>
 
     <!-- Folder accessibility -->
     <!-- The format string for when a folder is opened, speaks the dimensions -->
@@ -240,7 +240,7 @@
     <string name="action_move_here">Move item here</string>
 
     <!-- Accessibility confirmation for item added to workspace. -->
-    <string name="item_added_to_workspace">Item added to home screen</string>
+    <string name="item_added_to_workspace">Item added to Home screen</string>
 
     <!-- Accessibility confirmation for item removed. -->
     <string name="item_removed">Item removed</string>
@@ -338,7 +338,7 @@
     <string name="smartspace_disable">Disable \"At a Glance\" Widget</string>
     <string name="smartspace_launchclock_sum">On long pressing the widget</string>
     <string name="smartspace_launchclock">Launch Clock App</string>
-    <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the home screen what do display</string>
+    <string name="smartspace_preferences_in_settings_desc">Configure the widget at the top of the Home screen what it should display</string>
     <string name="title_show_google_app">%1$s</string>
     <string name="pref_show_google_now_summary">@string/msg_minus_one_on_left</string>
     <string name="msg_minus_one_on_left">To the left of the main Home screen</string>
@@ -387,7 +387,7 @@
     <string name="remove_gradient">Disable Dock Gradient</string>
     <string name="dark_themeqsb">Dark Search Bar</string>
     <string name="custom_qsb_in_dock">Search Bar Settings</string>
-    <string name="qsb_in_dock_show">Show Search Bar In Dock</string>
+    <string name="qsb_in_dock_show">Search Bar In Dock</string>
     <string name="googleinappmenu">New Google Search Bar</string>
 
     <!-- Sizes -->
@@ -401,7 +401,7 @@
     <string name="change_grid_size">Change Grid Size</string>
     <string name="custom_grid_size">Grid Size</string>
     <string name="custom_grid_size_on">Use selected size</string>
-    <string name="custom_grid_size_off">Grid size depends from DPI</string>
+    <string name="custom_grid_size_off">Grid size depends on DPI</string>
     <string name="num_rows">Number of Rows</string>
     <string name="num_cols">Number of Columns</string>
 
@@ -433,15 +433,15 @@
 
     <!-- Home screen -->
     <string name="custom_hs">Home Screen</string>
-    <string name="custom_hs_summary">Customize your home screen, \"At a Glance\" widget, folders</string>
+    <string name="custom_hs_summary">Customize your Home screen, \"At a Glance\" widget, folders</string>
     <string name="edgemarginstock">Stock</string>
     <string name="edgemarginsmall">Small</string>
     <string name="diabledgemargin">Disable</string>
     <string name="diabledgemargin_sum">Horizontal Screen Padding</string>
     <string name="settings_edit_allow_title">Allow Home Screen Editing</string>
-    <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the home screen</string>
-    <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
-    <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+    <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the Home screen</string>
+    <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the Home screen</string>
+    <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the Home screen</string>
     <string name="fade_out_animation">Fade Out Animation</string>
     <string name="fade_out_animation_sum">When switching page</string>
 
