@@ -73,7 +73,7 @@
     <string name="settings_button_text" msgid="8873672322605444408">"Настройки главного экрана"</string>
     <string name="msg_disabled_by_admin" msgid="6898038085516271325">"Функция отключена администратором"</string>
     <string name="accessibility_action_overview" msgid="6257665857640347026">"Обзор"</string>
-    <string name="allow_rotation_title" msgid="7728578836261442095">"Разрешить поворачивать главный экран"</string>
+    <string name="allow_rotation_title" msgid="7728578836261442095">"Поворачивать главный экран"</string>
     <string name="allow_rotation_desc" msgid="8662546029078692509">"Когда телефон повернут"</string>
     <string name="allow_rotation_blocked_desc" msgid="3212602545192996253">"В настройках отключен поворот экрана"</string>
     <string name="icon_badging_title" msgid="874121399231955394">"Значки уведомлений"</string>
@@ -83,8 +83,8 @@
     <string name="msg_missing_notification_access" msgid="281113995110910548">"Чтобы показывать значки уведомлений, включите уведомления в приложении \"<xliff:g id="NAME">%1$s</xliff:g>\""</string>
     <string name="title_change_settings" msgid="1376365968844349552">"Изменить настройки"</string>
     <string name="auto_add_shortcuts_label" msgid="8222286205987725611">"Добавлять значки"</string>
-    <string name="auto_add_shortcuts_description" msgid="7117251166066978730">"Добавлять значки установленных приложений на главный экран."</string>
-    <string name="icon_shape_override_label" msgid="2977264953998281004">"Изменить форму значков"</string>
+    <string name="auto_add_shortcuts_description" msgid="7117251166066978730">"Добавлять значки установленных приложений на главный экран"</string>
+    <string name="icon_shape_override_label" msgid="2977264953998281004">"Форма значков"</string>
     <string name="icon_shape_system_default" msgid="1709762974822753030">"Использовать системные настройки по умолчанию"</string>
     <string name="icon_shape_square" msgid="633575066111622774">"Квадрат"</string>
     <string name="icon_shape_circle" msgid="6550072265930144217">"Круг"</string>
@@ -236,10 +236,10 @@
     <!-- Home screen -->
     <string name="custom_hs">Рабочий стол</string>
     <string name="custom_hs_summary">Настроить рабочий стол, виджет \"Обратный отсчет\" и папки</string>
-    <string name="edgemarginstock">Стандартное</string>
-    <string name="edgemarginsmall">Уменьшеное</string>
+    <string name="edgemarginstock">Стандартные</string>
+    <string name="edgemarginsmall">Уменьшеные</string>
     <string name="diabledgemargin">Отключить</string>
-    <string name="diabledgemargin_sum">Сжатие экрана слева и справа</string>
+    <string name="diabledgemargin_sum">Поля на рабочем столе</string>
     <string name="settings_edit_allow_title">Разрешить редактирование</string>
     <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавленны, удалены или перемещены</string>
     <string name="settings_edit_allow_summary_off">Значки и виджеты могут не могут быть добавленны, удалены или перемещены</string>

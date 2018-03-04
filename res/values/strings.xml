@@ -408,7 +408,7 @@
     <!-- About -->
     <string name="about_sum">"Customized Pixel Launcher - AOSP based open-source launcher with expanded functionality. It's free and contains no ads."</string>
     <string name="thanks">Thanks to</string>
-    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek, Thecrazyskull, stavros3006, yukuku</string>
+    <string name="sum_thanks">Amir Zaidi (amirzaidi), Lawnchair team (deletescape, paphonb, fonix232, divadsn, Rawi666), ezio84, arco, jrizzoli, nebkat, xyyx, Mazda--, chauek, Thecrazyskull, stavros3006, yukuku, hundeva</string>
     <string name="forgot">Maybe i forgot someone ...</string>
     <string name="date">Build Date</string>
     <string name="sum_aboutapp">About the app, version information, credits</string>
@@ -478,8 +478,8 @@
     <string name="vibrationdurationtest">Test Vibration</string>
     <string name="textinbadge">Notification Badges</string>
     <string name="textinbadge_sum">Show the number of notifications in a badge</string>
-    <string name="double_tap_to_lock_title">Double tap to lock</string>
-    <string name="double_tap_to_lock_summary">On your home screen</string>
+    <string name="double_tap_to_lock_title">Double Tap to Lock</string>
+    <string name="double_tap_to_lock_summary">On the Home screen</string>
     <string name="double_tap_to_lock_hint">To be able to use double tap to lock, you have to enable admin access for Customised Pixel Launcher. This is a secure lock, meaning you have to enter your PIN on the next unlock, if you have any.</string>
     <string name="double_tap_to_lock_disable_warning">By disabling admin access, you will not be able to use double tap to lock on your home screen.</string>
 
