@@ -350,6 +350,7 @@ public class CellLayout extends ViewGroup implements BubbleTextShadowHandler {
                 && mStylusEventHelper.onMotionEvent(ev)) {
             return true;
         }
+        Utilities.handleWorkspaceTouchEvent(getContext(), ev);
         return handled;
     }
 

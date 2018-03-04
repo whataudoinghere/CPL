@@ -49,7 +49,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
-
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import com.android.launcher3.config.FeatureFlags;
 
 import java.io.ByteArrayOutputStream;
@@ -66,6 +67,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import android.view.MotionEvent;
 
 /**
  * Various utilities shared amongst the Launcher's classes.
@@ -82,6 +84,8 @@ public final class Utilities {
     private static final float[] sPoint = new float[2];
     private static final Matrix sMatrix = new Matrix();
     private static final Matrix sInverseMatrix = new Matrix();
+
+    private static final LeanDoubleTapToLockRegistry REGISTRY = new LeanDoubleTapToLockRegistry();
 
     public static final boolean ATLEAST_OREO_MR1 =
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1;
@@ -172,6 +176,7 @@ public final class Utilities {
     public static final String FADE_OUT = "pref_fade_out_animation";
     public static final String OLD_FOLDER_ANIMATION = "pref_old_folder_animation";
     public static final String CHANGE_GRID = "pref_change_grid_size";
+    public static final String DOUBLE_TAP_TO_LOCK = "pref_double_tap_to_lock";
 
 
 
@@ -190,6 +195,10 @@ public final class Utilities {
 
     public static boolean fadeout(Context context) {
         return getPrefs(context).getBoolean(FADE_OUT, false);
+    }
+
+    public static boolean isDoubleTapToLockEnabled(Context context) {
+        return getPrefs(context).getBoolean(DOUBLE_TAP_TO_LOCK, false);
     }
 
     public static boolean oldfolderanimation(Context context) {
@@ -218,6 +227,27 @@ public final class Utilities {
 
     public static void restartLauncher(Context context) {
         android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+    public static void handleWorkspaceTouchEvent(Context context, MotionEvent ev) {
+        REGISTRY.add(ev);
+        if (Utilities.isDoubleTapToLockEnabled(context) && REGISTRY.shouldLock()) {
+            DevicePolicyManager devicePolicyManager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+            if (devicePolicyManager != null) {
+                if (devicePolicyManager.isAdminActive(adminComponent(context))) {
+                    devicePolicyManager.lockNow();
+                } else {
+                    Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+                    intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminComponent(context));
+                    intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, context.getString(R.string.double_tap_to_lock_hint));
+                    context.startActivity(intent);
+                }
+            }
+        }
+    }
+
+    private static ComponentName adminComponent(Context context) {
+        return new ComponentName(context, LeanDeviceAdmin.class);
     }
 
     /**

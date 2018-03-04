@@ -393,6 +393,13 @@
             android:title="@string/settings_edit_allow_title"
             android:summaryOn="@string/settings_edit_allow_summary_on"
             android:summaryOff="@string/settings_edit_allow_summary_off" />
+        <SwitchPreference
+            android:key="pref_double_tap_to_lock"
+            android:title="@string/double_tap_to_lock_title"
+            android:summary="@string/double_tap_to_lock_summary"
+            android:defaultValue="false"
+            android:persistent="true"
+            />
         <PreferenceCategory
             android:title="@string/icon_badging_title">
             <com.android.launcher3.views.ButtonPreference
