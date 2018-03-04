@@ -51,6 +51,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -82,6 +83,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
@@ -4006,6 +4008,16 @@ public class Launcher extends BaseActivity
             }
         });
 
+        mPackageIcon.setOnClickListener(new View.OnClickListener() {
+
+           @Override
+            public void onClick(View v) {
+            if (!iconPacks.second.isEmpty()) {
+                 listPopupWindow.show();
+                }
+            }
+        });
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setView(mIconPackView)
                 .setTitle(getString(R.string.edit_app))
@@ -4035,15 +4047,17 @@ public class Launcher extends BaseActivity
                     });
         }
         mIconPackDialog = builder.create();
-        mPackageIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!iconPacks.second.isEmpty()) {
-                    listPopupWindow.show();
-                }
-            }
-        });
-        mIconPackDialog.show();
+        boolean dark = Themes.getAttrBoolean(this, R.attr.isMainColorDark);
+        int color = getColor(dark ? R.color.icon_edit_dialog_dark_background_color
+                : R.color.icon_edit_dialog_light_background_color);
+        ColorDrawable backgroundDrawable = new ColorDrawable(color);
+
+        listPopupWindow.setBackgroundDrawable(backgroundDrawable);
+
+        Window dialogWindow = mIconPackDialog.getWindow();
+        if (dialogWindow != null) {
+            dialogWindow.setBackgroundDrawable(backgroundDrawable);
+        }
         mIconPackDialog.show();
     }
 

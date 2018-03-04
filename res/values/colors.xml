@@ -58,9 +58,12 @@
     <color name="qsb_icon_shadow_color">#20000000</color>
     <color name="qsb_dark_icon_tint">#ff757575</color>
 
+
     <color name="settings_action_bar_color">#ff263238</color>
     <color name="settings_status_bar_color">#ff21272b</color>
     <color name="icon_settings_background">#ff313131</color>
     <color name="icon_settings_text">#ffafafaf</color>
+    <color name="icon_edit_dialog_dark_background_color">#494949</color>
+    <color name="icon_edit_dialog_light_background_color">#ffffff</color>
 
 </resources>
