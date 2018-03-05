@@ -87,7 +87,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             } catch (PackageManager.NameNotFoundException ex) {
                 Log.e("SettingsActivity", "Unable to load my own package info", ex);
             }
-            findPreference(APP_BUILD_DATE_PREF).setSummary(BuildConfig.BUILD_TIME + "\n" + "(" + BuildConfig.BUILD_HOST + ")");
+            findPreference(APP_BUILD_DATE_PREF).setSummary(BuildConfig.BUILD_TIME + "\n" + "(" + BuildConfig.BUILD_HOST + "/" + BuildConfig.BUILD_WHOAMI + ")");
 
             mIconPackPref = (CustomIconPreference) findPreference(ICON_PACK_PREF);
             mIconPackPref.setOnPreferenceChangeListener(this);

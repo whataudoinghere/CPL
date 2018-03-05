@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.1'
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.0'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.3'
     }
 }
 
@@ -15,16 +15,17 @@ apply plugin: 'com.google.protobuf'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '26.0.0'
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
-        versionName "1.6"
+        versionName "1.6.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'BUILD_TIME', 'new java.text.SimpleDateFormat("E dd.MM.yy HH:mm:ss a", java.util.Locale.ENGLISH).format(new java.util.Date(' + System.currentTimeMillis() +'L))'
         buildConfigField 'String', 'BUILD_HOST', '"' + InetAddress.getLocalHost().getHostName() + '"'
+        buildConfigField 'String', 'BUILD_WHOAMI', '"' + System.getProperty("user.name") + '"'
     }
     buildTypes {
         debug {
