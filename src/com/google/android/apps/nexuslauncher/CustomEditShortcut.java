@@ -8,6 +8,7 @@ import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.graphics.DrawableFactory;
 import com.android.launcher3.popup.SystemShortcut;
 
@@ -20,6 +21,9 @@ public class CustomEditShortcut extends SystemShortcut {
 
     @Override
     public View.OnClickListener getOnClickListener(final Launcher launcher, final ItemInfo itemInfo) {
+        if (!Utilities.isWorkspaceEditAllowed(launcher.getApplicationContext())) {
+            return null;
+        }
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
