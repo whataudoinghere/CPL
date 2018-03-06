@@ -1,9 +1,12 @@
 package com.android.launcher3.popup;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.android.launcher3.AbstractFloatingView;
@@ -99,6 +102,38 @@ public abstract class SystemShortcut extends ItemInfo {
                     InfoDropTarget.startDetailsActivityForInfo(itemInfo, launcher, null, sourceBounds, opts);
                     launcher.getUserEventDispatcher().logActionOnControl(Action.Touch.TAP,
                             ControlType.APPINFO_TARGET, view);
+                }
+            };
+        }
+    }
+    public static class Uninstall extends SystemShortcut {
+
+        public Uninstall() {
+            super(R.drawable.ic_delete_no_shadow, R.string.uninstall_drop_target_label);
+        }
+
+        @Override
+        public View.OnClickListener getOnClickListener(Launcher launcher, final ItemInfo itemInfo) {
+            boolean isSystemApp;
+            try {
+                isSystemApp = Utilities.isSystemApp(launcher, itemInfo.getIntent());
+            } catch (Throwable t) {
+                isSystemApp = false;
+            }
+            if (isSystemApp || !Utilities.isWorkspaceEditAllowed(launcher.getApplicationContext())) {
+                return null;
+            }
+
+            return new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Intent intent = new Intent(Intent.ACTION_DELETE);
+                        intent.setData(Uri.parse("package:" + itemInfo.getTargetComponent().getPackageName()));
+                        v.getContext().startActivity(intent);
+                    } catch (Throwable t) {
+                        Log.e("UninstallShortcut", "Failed to start uninstall intent for: " + itemInfo.toString(), t);
+                    }
                 }
             };
         }
