@@ -483,4 +483,21 @@
     <string name="double_tap_to_lock_disable_warning">By disabling admin access, you will not be able to use double tap to lock on your home screen.</string>
     <string name="action_edit">Edit</string>
 
+    <!-- Icon pack -->
+    <string name="default_iconpack" translatable="false">Stock</string>
+    <string name="default_iconpack_title">System default</string>
+    <string name="icons_pack_name">Icon Pack</string>
+    <string name="edit_drop_target_label">Edit</string>
+    <string name="edit_app">Edit</string>
+    <string name="reset_icon">Reset</string>
+    <string name="customize">Customize</string>
+    <string name="visual">Visual</string>
+    <string name="all_icons">All icons</string>
+    <string name="similar_icons">Similar icons</string>
+    <string name="ok">Ok</string>
+    <string name="icon_label">Label</string>
+    <string name="loading">Loading, please wait</string>
+    <string name="icon_chooser">Icon chooser</string>
+    <string name="icon_search">Search for icons</string>
+
 </resources>
