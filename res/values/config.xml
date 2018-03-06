@@ -104,11 +104,12 @@
 <!-- Hotseat -->
     <bool name="hotseat_transpose_layout_with_orientation">true</bool>
 
+
     <!-- Name of an icon provider class. -->
-    <string name="icon_provider_class" translatable="false">com.google.android.apps.nexuslauncher.CustomIconProvider</string>
+    <string name="icon_provider_class" translatable="false">com.google.android.apps.nexuslauncher.DynamicIconProvider</string>
 
     <!-- Name of a drawable factory class. -->
-    <string name="drawable_factory_class" translatable="false">com.google.android.apps.nexuslauncher.CustomDrawableFactory</string>
+    <string name="drawable_factory_class" translatable="false">com.google.android.apps.nexuslauncher.DynamicDrawableFactory</string>
 
     <!-- Name of a user event dispatcher class. -->
     <string name="user_event_dispatcher_class" translatable="false">com.google.android.apps.nexuslauncher.CustomAppPredictor</string>
