@@ -63,7 +63,7 @@
     <color name="settings_status_bar_color">#ff21272b</color>
     <color name="icon_settings_background">#ff313131</color>
     <color name="icon_settings_text">#ffafafaf</color>
-    <color name="icon_edit_dialog_dark_background_color">#494949</color>
+    <color name="icon_edit_dialog_dark_background_color">#414141</color>
     <color name="icon_edit_dialog_light_background_color">#ffffff</color>
 
 </resources>

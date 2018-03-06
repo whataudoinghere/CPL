@@ -288,10 +288,11 @@
     <string name="action_edit">Редактировать</string>
 
     <!-- Icon pack -->
-    <string name="default_iconpack_title">Стандарный</string>
-    <string name="icons_pack_name">Пакет значков</string>
-    <string name="edit_drop_target_label">Редактировать</string>
-    <string name="edit_app">Редактировать</string>
+    <string name="default_iconpack" translatable="false">Системный (по умолчанию)</string>
+    <string name="default_iconpack_title">По умолчанию</string>
+    <string name="icons_pack_name">Набор значков</string>
+    <string name="edit_drop_target_label">Изменить</string>
+    <string name="edit_app">Изменить значок</string>
     <string name="reset_icon">Сбросить</string>
     <string name="customize">Кастомизировать</string>
     <string name="visual">Визуально</string>

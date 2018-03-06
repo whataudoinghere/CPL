@@ -279,6 +279,10 @@
 
         <PreferenceCategory
             android:title="@string/custom_ico">
+            <Preference
+                android:persistent="true"
+                android:key="icon-packs"
+                android:title="@string/icons_pack_name" />
             <ListPreference
                 android:key="pref_override_icon_shape"
                 android:title="@string/icon_shape_override_label"
@@ -288,10 +292,6 @@
                 android:entryValues="@array/icon_shape_override_paths_values"
                 android:defaultValue=""
                 android:persistent="false" />
-            <Preference
-                android:persistent="true"
-                android:key="icon-packs"
-                android:title="@string/icons_pack_name" />
         </PreferenceCategory>
 
     </PreferenceScreen>

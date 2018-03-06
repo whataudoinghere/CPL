@@ -12,6 +12,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.ListPreference;
@@ -195,12 +196,16 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             String defaultPack = mContext.getString(R.string.default_iconpack);
             String iconPack = PreferenceManager.getDefaultSharedPreferences(getActivity())
                     .getString(Utilities.KEY_ICON_PACK, defaultPack);
-
+            Drawable icon = getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
             try {
                 ApplicationInfo info = mContext.getPackageManager().getApplicationInfo(iconPack, 0);
                 preference.setSummary(mContext.getPackageManager().getApplicationLabel(info));
+                icon = mPackageManager.getApplicationIcon(info);
+                preference.setIcon(icon);
             } catch (PackageManager.NameNotFoundException e) {
+                icon = getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
                 preference.setSummary(defaultPack);
+                preference.setIcon(icon);
             }
         }
 
