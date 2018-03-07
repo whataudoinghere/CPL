@@ -283,8 +283,8 @@
     <string name="textinbadge_sum">Показывать колличество уведомлений в значке</string>
     <string name="double_tap_to_lock_title">Двойной тап для блокировки экрана</string>
     <string name="double_tap_to_lock_summary">На рабочем столе</string>
-    <string name="double_tap_to_lock_hint">Для возможности блокировки экрана с помощью двойного тапв, Вам нужно предоставить права администратора для Customised Pixel Launcher. Это безопасная блокировка, для включения экрана вам потребуется ввести ПИН-код, приложить палец или начертить графический ключ, если таковые методы защиты установлены.</string>
-    <string name="double_tap_to_lock_disable_warning">Отключая приложению к доступ к правам администратора, функция двойного тапа для блокировки перестает работать.</string>
+    <string name="double_tap_to_lock_hint">Для возможности блокировки экрана с помощью двойного тапа, Вам нужно предоставить права администратора для Customised Pixel Launcher. Это безопасная блокировка, для включения экрана вам потребуется ввести ПИН-код, приложить палец или начертить графический ключ, если таковые методы защиты установлены.</string>
+    <string name="double_tap_to_lock_disable_warning">Для работы функциии двойного тапа для блокировки приложению необходимы права администратора.</string>
     <string name="action_edit">Редактировать</string>
 
     <!-- Icon pack -->
@@ -297,8 +297,8 @@
     <string name="customize">Кастомизировать</string>
     <string name="visual">Визуально</string>
     <string name="all_icons">Все значки</string>
-    <string name="similar_icons">Похожие значки</string>
-    <string name="ok">Ок</string>
+    <string name="similar_icons">Предложения</string>
+    <string name="ok">Применить</string>
     <string name="icon_label">Ярлык</string>
     <string name="loading">Загрузка, пожалуйста подождите</string>
     <string name="icon_chooser">Выбор значка</string>
