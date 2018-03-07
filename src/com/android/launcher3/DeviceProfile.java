@@ -128,6 +128,7 @@ public class DeviceProfile {
     public int hotseaSizePx;
 
     // All apps
+    public boolean needfixpadding;
     public int allAppsCellHeightPx;
     public int allAppsNumCols;
     public int allAppsNumPredictiveCols;
@@ -188,6 +189,11 @@ public class DeviceProfile {
         if (marginsize == 1) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
         if (marginsize == 2) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_small);
         if (marginsize == 3) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_disabled);
+
+        needfixpadding = false;
+        int paddingfix = Integer.valueOf(Utilities.getPrefs(context).getString("pref_drawer_icon_size", "100"));
+        if (paddingfix == 105) needfixpadding = true;
+        if (paddingfix == 108) needfixpadding = true;
 
         edgeMarginPx = edgeMarginPx1;
         desiredWorkspaceLeftRightMarginPx = isVerticalBarLayout() ? 0 : edgeMarginPx;
@@ -391,7 +397,10 @@ public class DeviceProfile {
         allAppsIconTextSizePx = iconTextSizePx;
         allAppsIconSizePx = iconAllAppSizePx;
         allAppsIconDrawablePaddingPx = iconDrawablePaddingPx;
-        allAppsCellHeightPx = getCellSize().y +iconDrawablePaddingPx;
+        allAppsCellHeightPx = getCellSize().y;
+        if (needfixpadding) {
+            allAppsCellHeightPx = allAppsCellHeightPx + iconDrawablePaddingPx;
+        }
 
         if (isVerticalBarLayout()) {
             // Always hide the Workspace text with vertical bar layout.
