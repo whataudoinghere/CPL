@@ -339,10 +339,13 @@ public class IconsHandler {
         if (drawable == null) {
             return null;
         }
+
+        if (Utilities.ATLEAST_OREO){
         if (drawable instanceof AdaptiveIconDrawable) {
 
             return generateBitmap(componentName, LauncherIcons.createBadgedIconBitmap(drawable,
                     Process.myUserHandle(), mContext, Build.VERSION_CODES.O));
+        }
         }
 
         if (drawable instanceof BitmapDrawable) {
