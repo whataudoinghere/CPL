@@ -562,7 +562,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             float newBadgeScale = isBadged ? 1f : 0;
             mBadgeRenderer = mLauncher.getDeviceProfile().mBadgeRenderer;
             if (wasBadged || isBadged) {
-                mBadgePalette = IconPalette.getBadgePalette(getResources());
+                mBadgePalette = IconPalette.getBadgePalette(getContext(),getResources());
                 if (mBadgePalette == null) {
                     mBadgePalette = ((FastBitmapDrawable) mIcon).getIconPalette();
                 }

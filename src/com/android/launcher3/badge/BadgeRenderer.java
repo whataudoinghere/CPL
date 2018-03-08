@@ -17,6 +17,7 @@
 package com.android.launcher3.badge;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -105,6 +106,11 @@ public class BadgeRenderer {
     public void draw(Canvas canvas, IconPalette palette, @Nullable BadgeInfo badgeInfo,
             Rect iconBounds, float badgeScale, Point spaceForOffset) {
         mTextPaint.setColor(palette.textColor);
+        SharedPreferences prefs = Utilities.getPrefs(mContext);
+        if (prefs.getBoolean("pref_change_badge_color", false)){
+            Integer intColor = prefs.getInt("pref_badge_text_color_picker", -1);
+            mTextPaint.setColor(intColor);
+        }
         IconDrawer iconDrawer = badgeInfo != null && badgeInfo.isIconLarge()
                 ? mLargeIconDrawer : mSmallIconDrawer;
         Shader icon = badgeInfo == null ? null : badgeInfo.getNotificationIconForBadge(

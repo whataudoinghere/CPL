@@ -4331,6 +4331,15 @@ public class Launcher extends BaseActivity
             if (Utilities.P_DOCK.equals(key)) {
                 recreate();
             }
+            if (Utilities.KEY_BADGE_COLOUR.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.KEY_BADGE_CAN_CHANGE_COLOUR.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.KEY_BADGE_TEXT_COLOUR.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

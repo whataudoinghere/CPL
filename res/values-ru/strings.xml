@@ -289,6 +289,9 @@
     <string name="double_tap_to_lock_hint">Для возможности блокировки экрана с помощью двойного тапа, Вам нужно предоставить права администратора для Customised Pixel Launcher. Это безопасная блокировка, для включения экрана вам потребуется ввести ПИН-код, приложить палец или начертить графический ключ, если таковые методы защиты установлены.</string>
     <string name="double_tap_to_lock_disable_warning">Для работы функциии двойного тапа для блокировки приложению необходимы права администратора.</string>
     <string name="action_edit">Редактировать</string>
+    <string name="use_custom_badge_color">Изменить цвета значка</string>
+    <string name="custom_badge_color">Цвет значка</string>
+    <string name="custom_badge_text_color">Цвет текста значка</string>
 
     <!-- Icon pack -->
     <string name="default_iconpack" translatable="false">Системный (по умолчанию)</string>

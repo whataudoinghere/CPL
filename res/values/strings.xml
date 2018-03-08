@@ -485,6 +485,10 @@
     <string name="double_tap_to_lock_hint">To be able to use double tap to lock, you have to enable admin access for Customised Pixel Launcher. This is a secure lock, meaning you have to enter your PIN on the next unlock, if you have any.</string>
     <string name="double_tap_to_lock_disable_warning">By disabling admin access, you will not be able to use double tap to lock on your home screen.</string>
     <string name="action_edit">Edit</string>
+    <string name="use_custom_badge_color">Custom Badge Colors</string>
+    <string name="custom_badge_color">Badge Color</string>
+    <string name="custom_badge_text_color">Badge Text Color</string>
+
 
     <!-- Icon pack -->
     <string name="default_iconpack" translatable="false">Use system default</string>

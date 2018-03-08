@@ -18,6 +18,7 @@ package com.android.launcher3.graphics;
 
 import android.app.Notification;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
@@ -28,6 +29,7 @@ import android.support.v4.graphics.ColorUtils;
 import android.util.Log;
 
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.util.Themes;
 
 /**
@@ -94,8 +96,14 @@ public class IconPalette {
      * Returns an IconPalette based on the badge_color in colors.xml.
      * If that color is Color.TRANSPARENT, then returns null instead.
      */
-    public static @Nullable IconPalette getBadgePalette(Resources resources) {
+    public static @Nullable IconPalette getBadgePalette(Context context,Resources resources) {
         int badgeColor = resources.getColor(R.color.badge_color);
+        SharedPreferences prefs = Utilities.getPrefs(context);
+        if (prefs.getBoolean("pref_change_badge_color", false)){
+            Integer intColor = prefs.getInt("pref_badge_color_picker", -1);
+            String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+            badgeColor = Color.parseColor(hexColor);
+        }
         if (badgeColor == Color.TRANSPARENT) {
             // Colors will be extracted per app icon, so a static palette won't work.
             return null;

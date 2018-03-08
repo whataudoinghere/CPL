@@ -182,6 +182,11 @@ public final class Utilities {
     public static final String KEY_ICON_PACK = "icon-packs";
     public static final String SYSTEM_FONT = "pref_system_font_for_smartspace";
     public static final String P_DOCK = "pref_pdock";
+    public static final String KEY_BADGE_COLOUR = "pref_change_badge_color";
+    public static final String KEY_BADGE_TEXT_COLOUR = "pref_badge_text_color_picker";
+    public static final String KEY_BADGE_CAN_CHANGE_COLOUR = "pref_badge_color_picker";
+
+
 
 
     public static boolean isPropertyEnabled(String propertyName) {

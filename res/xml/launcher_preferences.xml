@@ -432,6 +432,24 @@
                 android:summary="@string/textinbadge_sum"
                 android:dependency="pref_icon_badging"
                 android:defaultValue="false" />
+
+            <SwitchPreference
+                android:key="pref_change_badge_color"
+                android:title="@string/use_custom_badge_color"
+                android:defaultValue="false"
+                android:disableDependentsState="false"
+                android:persistent="true" />
+
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_badge_color_picker"
+                android:defaultValue="0xffff0000"
+                android:dependency="pref_change_badge_color"
+                android:title="@string/custom_badge_color" />
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:key="pref_badge_text_color_picker"
+                android:defaultValue="0xffffffff"
+                android:dependency="pref_change_badge_color"
+                android:title="@string/custom_badge_text_color" />
         </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/allow_vibration">
