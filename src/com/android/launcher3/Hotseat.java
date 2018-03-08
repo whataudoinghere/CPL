@@ -179,16 +179,18 @@ public class Hotseat extends FrameLayout
     }
 
     public void updateColor(ExtractedColors extractedColors, boolean animate) {
-        if (FeatureFlags.LAUNCHER3_GRADIENT_ALL_APPS) {
+        if (!Utilities.Pdock(getContext())) {
             // not hotseat visible
             return;
         }
         if (!mHasVerticalHotseat) {
-            int color = extractedColors.getColor(ExtractedColors.HOTSEAT_INDEX);
+            // int color = extractedColors.getColor(ExtractedColors.HOTSEAT_INDEX);
+            // int color = Themes.getAttrBoolean(mLauncher, R.attr.isMainColorDark) ? 0xD9444444 : 0xCCFFFFFE;
+            int color = Themes.getAttrColor(mLauncher, R.attr.PBarColor);
             if (mBackgroundColorAnimator != null) {
                 mBackgroundColorAnimator.cancel();
             }
-            if (!animate) {
+            if (Utilities.Pdock(getContext())) {
                 setBackgroundColor(color);
             } else {
                 mBackgroundColorAnimator = ValueAnimator.ofInt(mBackgroundColor, color);
@@ -207,6 +209,7 @@ public class Hotseat extends FrameLayout
                 });
                 mBackgroundColorAnimator.start();
             }
+
             mBackgroundColor = color;
         }
     }

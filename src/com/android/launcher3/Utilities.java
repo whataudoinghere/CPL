@@ -181,6 +181,7 @@ public final class Utilities {
     public static final String DOUBLE_TAP_TO_LOCK = "pref_double_tap_to_lock";
     public static final String KEY_ICON_PACK = "icon-packs";
     public static final String SYSTEM_FONT = "pref_system_font_for_smartspace";
+    public static final String P_DOCK = "pref_pdock";
 
 
     public static boolean isPropertyEnabled(String propertyName) {
@@ -198,6 +199,10 @@ public final class Utilities {
 
     public static boolean fadeout(Context context) {
         return getPrefs(context).getBoolean(FADE_OUT, false);
+    }
+
+    public static boolean Pdock(Context context) {
+        return getPrefs(context).getBoolean(P_DOCK, false);
     }
 
     public static boolean isDoubleTapToLockEnabled(Context context) {

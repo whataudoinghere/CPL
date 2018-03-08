@@ -388,6 +388,7 @@
     <string name="custom_qsb_in_dock">Search Bar Settings</string>
     <string name="qsb_in_dock_show">Search Bar In Dock</string>
     <string name="googleinappmenu">New Google Search Bar</string>
+    <string name="pdock">Solid Dock</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>

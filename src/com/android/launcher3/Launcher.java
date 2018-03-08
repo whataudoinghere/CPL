@@ -4328,6 +4328,9 @@ public class Launcher extends BaseActivity
             if (Utilities.SYSTEM_FONT.equals(key)) {
                 needRestart();
             }
+            if (Utilities.P_DOCK.equals(key)) {
+                recreate();
+            }
         }
     }
 }

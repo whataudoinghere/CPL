@@ -317,6 +317,12 @@
             android:title="@string/num_hotseat_icons_pref_title" />
         <SwitchPreference
             android:defaultValue="false"
+            android:key="pref_pdock"
+            android:title="@string/pdock"
+            android:disableDependentsState="true"/>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:dependency="pref_pdock"
             android:key="pref_disablegrad"
             android:title="@string/remove_gradient"
             android:disableDependentsState="true"/>

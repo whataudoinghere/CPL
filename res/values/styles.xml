@@ -30,6 +30,7 @@
 
     <style name="BaseLauncherThemeWithCustomAttrs" parent="@style/BaseLauncherTheme">
         <item name="allAppsScrimColor">#CCFFFFFF</item>
+        <item name="PBarColor">#33FFFFFF</item>
         <item name="allAppsNavBarScrimColor">@color/all_apps_navbar_color</item>
         <item name="popupColorPrimary">#FFF</item>
         <item name="popupColorSecondary">#F5F5F5</item> <!-- Gray 100 -->
@@ -49,6 +50,7 @@
 
     <style name="LauncherThemeDarkText" parent="@style/LauncherTheme">
         <item name="workspaceTextColor">#FF212121</item>
+        <item name="PBarColor">#CCFFFFFF</item>
         <item name="workspaceShadowColor">@android:color/transparent</item>
         <item name="workspaceAmbientShadowColor">@android:color/transparent</item>
         <item name="workspaceKeyShadowColor">@android:color/transparent</item>
@@ -58,6 +60,7 @@
 
     <style name="LauncherThemeDark" parent="@style/LauncherTheme">
         <item name="android:textColorPrimary">#FFFFFFFF</item>
+        <item name="PBarColor">#33212121</item>
         <item name="android:textColorSecondary">#FFFFFFFF</item>
         <item name="android:textColorTertiary">#CCFFFFFF</item>
         <item name="android:textColorHint">#A0FFFFFF</item>
@@ -73,6 +76,7 @@
     </style>
 
     <style name="LauncherThemeBlack" parent="@style/LauncherTheme">
+        <item name="PBarColor">#33212121</item>
         <item name="android:textColorPrimary">#FFFFFFFF</item>
         <item name="android:textColorSecondary">#FFFFFFFF</item>
         <item name="android:textColorTertiary">#CCFFFFFF</item>

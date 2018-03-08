@@ -83,6 +83,9 @@ public class GradientView extends View implements WallpaperColorInfo.OnChangeLis
         if (disablegrad) {
             mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : 0;
         }
+        if (Utilities.Pdock(getContext())) {
+            mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : 0;
+        }
         this.mAlphaStart = mAlphaStart1;
         this.mScrimColor = Themes.getAttrColor(context, R.attr.allAppsScrimColor);
         this.mWallpaperColorInfo = WallpaperColorInfo.getInstance(launcher);
