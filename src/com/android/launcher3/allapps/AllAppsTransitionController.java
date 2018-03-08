@@ -7,15 +7,22 @@ import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.support.animation.SpringAnimation;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.widget.Toast;
 
 import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.Hotseat;
@@ -33,8 +40,11 @@ import com.android.launcher3.userevent.nano.LauncherLogProto.ContainerType;
 import com.android.launcher3.util.SystemUiController;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.util.TouchController;
+import com.google.android.apps.nexuslauncher.qsb.ConfigBuilder;
 
 import java.lang.reflect.InvocationTargetException;
+
+import static android.util.Config.LOGD;
 
 /**
  * Handles AllApps view transition.
@@ -76,6 +86,8 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
     private final SwipeDetector mDetector;
     private final ArgbEvaluator mEvaluator;
     private final boolean mIsDarkTheme;
+
+    private int pointerCount;
 
     // Animation in this class is controlled by a single variable {@link mProgress}.
     // Visually, it represents top y coordinate of the all apps container if multiplied with
@@ -131,6 +143,9 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
 
     @Override
     public boolean onControllerInterceptTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_MOVE) {
+            pointerCount = ev.getPointerCount();
+        }
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             mNoIntercept = false;
             mTouchEventStartedOnHotseat = mLauncher.getDragLayer().isEventOverHotseat(ev);
@@ -222,9 +237,16 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
                 //Disable code when access to the hidden APIs returns an error
                 if (velocity > NOTIFICATION_OPEN_VELOCITY &&
                         (mNotificationState == NotificationState.Free || mNotificationState == NotificationState.Closed)) {
-                    mNotificationState = openNotifications() ?
-                            NotificationState.Opened :
-                            NotificationState.Locked;
+                    if (pointerCount == 1) {
+                        mNotificationState = openNotifications() ?
+                                NotificationState.Opened :
+                                NotificationState.Locked;
+                    }
+                    if (pointerCount == 2) {
+                        mNotificationState = openSettings() ?
+                                NotificationState.Opened :
+                                NotificationState.Locked;
+                    }
                 } else if (velocity < NOTIFICATION_CLOSE_VELOCITY &&
                         mNotificationState == NotificationState.Opened) {
                     mNotificationState = closeNotifications() ?
@@ -264,6 +286,18 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
         try {
             Class.forName("android.app.StatusBarManager")
                     .getMethod("collapsePanels")
+                    .invoke(mLauncher.getSystemService("statusbar"));
+            return true;
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException ex) {
+            return false;
+        }
+    }
+
+    @SuppressLint({"WrongConstant", "PrivateApi"})
+    private boolean openSettings() {
+        try {
+            Class.forName("android.app.StatusBarManager")
+                    .getMethod("expandSettingsPanel")
                     .invoke(mLauncher.getSystemService("statusbar"));
             return true;
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException ex) {
