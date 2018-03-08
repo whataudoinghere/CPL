@@ -437,6 +437,7 @@
                 android:key="pref_change_badge_color"
                 android:title="@string/use_custom_badge_color"
                 android:defaultValue="false"
+                android:dependency="pref_icon_badging"
                 android:disableDependentsState="false"
                 android:persistent="true" />
 
