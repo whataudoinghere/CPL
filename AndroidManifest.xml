@@ -120,6 +120,8 @@
         <activity
             android:name="com.android.launcher3.ChooseIconActivity"
             android:autoRemoveFromRecents="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/icon_chooser"
             android:theme="@android:style/Theme.DeviceDefault.Settings" />
 
