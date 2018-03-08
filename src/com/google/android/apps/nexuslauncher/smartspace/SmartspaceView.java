@@ -197,8 +197,9 @@ public class SmartspaceView extends FrameLayout implements ISmartspace, ValueAni
         mClockView = findViewById(R.id.clock);
         backportClockVisibility(true);
         mTitleSeparator = findViewById(R.id.title_sep);
-
-        setGoogleSans(mTitleText, mSubtitleText, mTitleWeatherText, mSubtitleWeatherText, mClockView);
+        if (!Utilities.getPrefs((getContext())).getBoolean("pref_system_font_for_smartspace", false)) {
+            setGoogleSans(mTitleText, mSubtitleText, mTitleWeatherText, mSubtitleWeatherText, mClockView);
+        }
     }
 
     private void setGoogleSans(TextView... views) {

@@ -180,6 +180,7 @@ public final class Utilities {
     public static final String CHANGE_GRID = "pref_change_grid_size";
     public static final String DOUBLE_TAP_TO_LOCK = "pref_double_tap_to_lock";
     public static final String KEY_ICON_PACK = "icon-packs";
+    public static final String SYSTEM_FONT = "pref_system_font_for_smartspace";
 
 
     public static boolean isPropertyEnabled(String propertyName) {

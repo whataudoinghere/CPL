@@ -4325,6 +4325,9 @@ public class Launcher extends BaseActivity
             if (Utilities.CHANGE_GRID.equals(key)) {
                 needRestart();
             }
+            if (Utilities.SYSTEM_FONT.equals(key)) {
+                needRestart();
+            }
         }
     }
 }

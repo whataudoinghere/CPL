@@ -246,6 +246,8 @@
     <string name="settings_edit_widgets_error">Невозожно добавить виджет</string>
     <string name="fade_out_animation">Анимация исчезновения</string>
     <string name="fade_out_animation_sum">При смене страницы рабочего стола</string>
+    <string name="system_font_for_smartspace">Системный шрифт</string>
+    <string name="system_font_for_smartspace_sum">Для виджета \"Обратный отсчет\"</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Подписи значков</string>

@@ -443,6 +443,8 @@
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the Home screen</string>
     <string name="fade_out_animation">Fade Out Animation</string>
     <string name="fade_out_animation_sum">When switching page</string>
+    <string name="system_font_for_smartspace">Use System Font</string>
+    <string name="system_font_for_smartspace_sum">For \"At a Glance\" widget</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Icon Labels on Home Screen</string>

@@ -143,6 +143,13 @@
                 android:summary="%s"
                 android:enabled="false"
                 android:title="@string/date_format" />
+            <SwitchPreference
+                android:key="pref_system_font_for_smartspace"
+                android:title="@string/system_font_for_smartspace"
+                android:summary="@string/system_font_for_smartspace_sum"
+                android:dependency="pref_disabless"
+                android:defaultValue="false"
+                />
         </PreferenceCategory>
 
         <PreferenceCategory
