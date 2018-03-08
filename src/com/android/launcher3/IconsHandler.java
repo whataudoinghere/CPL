@@ -417,7 +417,7 @@ public class IconsHandler {
         maskCanvas.drawBitmap(targetBitmap, 0, 0, new Paint());
 
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST));
         canvas.drawBitmap(scaledBitmap, (w - scaledBitmap.getWidth()) / 2,
                 (h - scaledBitmap.getHeight()) / 2, null);
         canvas.drawBitmap(mutableMask, 0, 0, paint);
