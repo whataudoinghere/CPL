@@ -61,6 +61,12 @@ public class PopupDataProvider implements NotificationListener.NotificationsChan
             new SystemShortcut.AppInfo(),
     };
 
+    private static final SystemShortcut[] SYSTEM_SHORTCUTS_FOR_LOLLIPOP = new SystemShortcut[] {
+            new SystemShortcut.Uninstall(),
+            new SystemShortcut.Widgets(),
+            new SystemShortcut.AppInfo(),
+    };
+
     private final Launcher mLauncher;
 
     /** Maps launcher activity components to their list of shortcut ids. */
@@ -266,7 +272,7 @@ public class PopupDataProvider implements NotificationListener.NotificationsChan
 
     public @NonNull List<SystemShortcut> getEnabledSystemShortcutsForItem(ItemInfo info) {
         List<SystemShortcut> systemShortcuts = new ArrayList<>();
-        for (SystemShortcut systemShortcut : SYSTEM_SHORTCUTS) {
+        for (SystemShortcut systemShortcut : Utilities.ATLEAST_MARSHMALLOW ? SYSTEM_SHORTCUTS : SYSTEM_SHORTCUTS_FOR_LOLLIPOP) {
             if (systemShortcut.getOnClickListener(mLauncher, info) != null) {
                 systemShortcuts.add(systemShortcut);
             }
