@@ -11,6 +11,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Vibrator;
 import android.support.animation.SpringAnimation;
@@ -23,7 +24,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Toast;
-
+import android.view.inputmethod.InputMethodManager;
 import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.Hotseat;
 import com.android.launcher3.Launcher;
@@ -43,8 +44,6 @@ import com.android.launcher3.util.TouchController;
 import com.google.android.apps.nexuslauncher.qsb.ConfigBuilder;
 
 import java.lang.reflect.InvocationTargetException;
-
-import static android.util.Config.LOGD;
 
 /**
  * Handles AllApps view transition.
@@ -361,6 +360,8 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
      */
     public void preparePull(boolean start) {
         if (start) {
+            ((InputMethodManager) mLauncher.getSystemService(Context.INPUT_METHOD_SERVICE))
+                    .hideSoftInputFromWindow(mGradientView.getWindowToken(), 0);
             // Initialize values that should not change until #onDragEnd
             mStatusBarHeight = mLauncher.getDragLayer().getInsets().top;
             mHotseat.setVisibility(View.VISIBLE);
