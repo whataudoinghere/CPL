@@ -42,6 +42,7 @@ import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.LauncherActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -93,6 +94,7 @@ import android.view.ContextThemeWrapper;
 import android.widget.AdapterView;
 import android.widget.Advanceable;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListPopupWindow;
@@ -3986,8 +3988,8 @@ public class Launcher extends BaseActivity
 
         final int popupWidth = getResources().getDimensionPixelSize(R.dimen.edit_dialog_min_width);
         final Pair<List<String>, List<String>> iconPacks = mIconsHandler.getAllIconPacks();
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.edit_dialog_item, iconPacks.second);
+        final IconPackArrayAdapter adapter = new IconPackArrayAdapter(this,
+                iconPacks.first);
         final ListPopupWindow listPopupWindow = new ListPopupWindow(this);
         listPopupWindow.setAdapter(adapter);
         listPopupWindow.setWidth(popupWidth);
@@ -4192,6 +4194,69 @@ public class Launcher extends BaseActivity
         else
             Utilities.restartLauncher(getApplicationContext());
     }
+
+    private class IconPackArrayAdapter extends BaseAdapter {
+        private Context context;
+        private List<String> items;
+
+        IconPackArrayAdapter(Context context, List<String> items) {
+            this.context = context;
+            this.items = items;
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder holder;
+            if (convertView == null) {
+                LayoutInflater inflater = LayoutInflater.from(context);
+
+                convertView = inflater.inflate(R.layout.edit_dialog_item, null);
+                holder = new ViewHolder();
+                holder.title = convertView.findViewById(R.id.app_title);
+                holder.icon = convertView.findViewById(R.id.app_icon);
+
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder) convertView.getTag();
+            }
+
+            PackageManager pm = context.getPackageManager();
+
+            try {
+                String name = items.get(position);
+                Drawable appIcon = pm.getApplicationIcon(name);
+                ApplicationInfo info = pm.getApplicationInfo(name, 0);
+
+                holder.icon.setImageDrawable(appIcon);
+                holder.title.setText(pm.getApplicationLabel(info));
+            } catch (PackageManager.NameNotFoundException e) {
+            }
+
+            return convertView;
+        }
+
+        private class ViewHolder {
+            private TextView title;
+            private ImageView icon;
+        }
+    }
+
+
 
     private class RotationPrefChangeHandler implements OnSharedPreferenceChangeListener {
 
