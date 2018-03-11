@@ -388,7 +388,7 @@
     <string name="custom_qsb_in_dock">Search Bar Settings</string>
     <string name="qsb_in_dock_show">Search Bar In Dock</string>
     <string name="googleinappmenu">New Google Search Bar</string>
-    <string name="pdock">Solid Dock</string>
+    <string name="pdock">Solid Dock Background</string>
 
     <!-- Sizes -->
     <string name="size_biggest">Biggest</string>
@@ -443,7 +443,7 @@
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the Home screen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the Home screen</string>
     <string name="fade_out_animation">Fade Out Animation</string>
-    <string name="fade_out_animation_sum">When switching page</string>
+    <string name="fade_out_animation_sum">When switching pages</string>
     <string name="system_font_for_smartspace">Use System Font</string>
     <string name="system_font_for_smartspace_sum">For \"At a Glance\" widget</string>
 
