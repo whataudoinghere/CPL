@@ -41,9 +41,9 @@
         android:paddingRight="10dp"
         android:textColor="?workspaceTextColor"
         android:textSize="@dimen/smartspace_title_size"
-        launcher:ambientShadowBlur="3dp"
+        launcher:ambientShadowBlur="2.5dp"
         launcher:ambientShadowColor="?workspaceAmbientShadowColor"
-        launcher:keyShadowBlur="2dp"
+        launcher:keyShadowBlur="1dp"
         launcher:keyShadowColor="?workspaceKeyShadowColor"
         launcher:keyShadowOffset="0.5dip" />
 
