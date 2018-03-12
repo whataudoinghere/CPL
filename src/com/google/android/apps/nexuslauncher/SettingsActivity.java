@@ -51,6 +51,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         if (bundle == null) {
             getFragmentManager().beginTransaction().replace(android.R.id.content, new MySettingsFragment()).commit();
         }
