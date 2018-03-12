@@ -4036,8 +4036,8 @@ public class Launcher extends BaseActivity
                                 mIconPackDialog.dismiss();
                             }
                         });
-        if (!mIconsHandler.isDefaultIconPack()) {
-            builder.setNeutralButton(R.string.reset_icon,
+        //if (!mIconsHandler.isDefaultIconPack()) {
+            builder.setNegativeButton(R.string.reset_icon,
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -4045,7 +4045,7 @@ public class Launcher extends BaseActivity
                             mIconPackDialog.dismiss();
                         }
                     });
-        }
+        //}
         mIconPackDialog = builder.create();
         boolean dark = Themes.getAttrBoolean(this, R.attr.isMainColorDark);
         int color = getColor(dark ? R.color.icon_edit_dialog_dark_background_color

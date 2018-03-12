@@ -506,5 +506,6 @@
     <string name="loading">Loading, please wait</string>
     <string name="icon_chooser">Icon Chooser</string>
     <string name="icon_search">Search for icons</string>
+    <string name="use_background_from_iconpack">Use the background from the icon pack</string>
 
 </resources>

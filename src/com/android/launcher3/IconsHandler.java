@@ -30,6 +30,10 @@ import android.content.pm.ResolveInfo;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.graphics.Color;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.LayoutInflater;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
@@ -38,6 +42,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.AdaptiveIconDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -45,17 +50,27 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Process;
 import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.launcher3.graphics.LauncherIcons;
+import com.android.launcher3.util.Themes;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -69,6 +84,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
+import static android.graphics.Color.BLACK;
+import static android.view.Gravity.CENTER;
+import static android.view.Gravity.CENTER_HORIZONTAL;
+import static android.view.Gravity.CENTER_VERTICAL;
+import static android.view.Gravity.RIGHT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+import static com.android.launcher3.userevent.nano.LauncherLogProto.Action.Direction.LEFT;
 
 public class IconsHandler {
 
@@ -100,6 +123,8 @@ public class IconsHandler {
     private IconCache mIconCache;
     private PackageManager mPackageManager;
     private String mDefaultIconPack;
+
+    private boolean UseBackground;
 
     private boolean mDialogShowing;
     private float mFactor = 1.0f;
@@ -357,9 +382,9 @@ public class IconsHandler {
 
     public void switchIconPacks(String packageName) {
 
-        if (packageName.equals(mIconPackPackageName)) {
-            packageName = mDefaultIconPack;
-        }
+        //if (packageName.equals(mIconPackPackageName)) {
+        //    packageName = mDefaultIconPack;
+        //}
         if (packageName.equals(mDefaultIconPack) || mIconPacks.containsKey(packageName)) {
             new IconPackLoader(packageName).execute();
         }
@@ -384,7 +409,7 @@ public class IconsHandler {
 
     // Get the first icon pack parsed icon for reset purposes
     Drawable getResetIconDrawable(Context context, LauncherActivityInfo app, ItemInfo info) {
-        final Drawable icon = new BitmapDrawable(context.getResources(), getDrawableIconForPackage(info.getTargetComponent()));
+        final Drawable icon = new BitmapDrawable(context.getResources(), getDefaultAppDrawable(info.getTargetComponent()));
         return new BitmapDrawable(context.getResources(), LauncherIcons.createBadgedIconBitmap(icon, info.user, context, Build.VERSION_CODES.O));
     }
 
@@ -395,7 +420,7 @@ public class IconsHandler {
     }
 
     private Bitmap generateBitmap(ComponentName componentName, Bitmap defaultBitmap) {
-        if (mBackImages.isEmpty()) {
+        if (mBackImages.isEmpty() || !UseBackground) {
             return defaultBitmap;
         }
         Random random = new Random();
@@ -526,18 +551,45 @@ public class IconsHandler {
 
     public void showDialog(Activity activity) {
         loadAvailableIconPacks();
+        final Switch myswitch = new Switch(mContext);
+        myswitch.setText(R.string.use_background_from_iconpack);
+        myswitch.setTextColor(BLACK);
+        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        DisplayMetrics dm = new DisplayMetrics();
+        display.getMetrics(dm);
+        myswitch.setSwitchPadding(Utilities.pxFromDp(15, dm));
+        if (!Utilities.ATLEAST_OREO) {
+        myswitch.getThumbDrawable().setColorFilter(mContext.getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        myswitch.getTrackDrawable().setColorFilter(mContext.getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        }
+        LinearLayout linearLayout = new LinearLayout(mContext);
+        linearLayout.addView(myswitch);
+        linearLayout.setGravity(CENTER);
         final IconAdapter adapter = new IconAdapter(mContext, mIconPacks);
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity)
+                .setView(linearLayout)
+                .setAdapter(adapter, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int position) {
-                String selected = adapter.getItem(position);
-                if (!PreferenceManager.getDefaultSharedPreferences(mContext).getString(Utilities.KEY_ICON_PACK, mDefaultIconPack).equals(selected)) {
+                if(myswitch.isChecked()){
+                    UseBackground = true;
+                } else UseBackground = false;
+                final String selected = adapter.getItem(position);
+                //if (!PreferenceManager.getDefaultSharedPreferences(mContext).getString(Utilities.KEY_ICON_PACK, mDefaultIconPack).equals(selected)) {
                     switchIconPacks(selected);
-                }
+                //}
             }
         });
         mAlertDialog = builder.create();
+        if (Utilities.ATLEAST_MARSHMALLOW) {
+        int color = mContext.getColor(R.color.icon_edit_dialog_light_background_color);
+        ColorDrawable backgroundDrawable = new ColorDrawable(color);
+        Window dialogWindow = mAlertDialog.getWindow();
+        if (dialogWindow != null) {
+            dialogWindow.setBackgroundDrawable(backgroundDrawable);
+        }
+        }
         mAlertDialog.show();
         mDialogShowing = true;
     }

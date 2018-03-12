@@ -309,5 +309,6 @@
     <string name="loading">Загрузка, пожалуйста подождите</string>
     <string name="icon_chooser">Выбор значка</string>
     <string name="icon_search">Поиск значков</string>
+    <string name="use_background_from_iconpack">Задний фон значка из набора</string>
 
 </resources>

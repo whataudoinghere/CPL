@@ -33,7 +33,8 @@
         android:paddingEnd="8dip"
         android:paddingStart="8dip"
         android:textSize="19sp"
-        android:textColor="@color/colorAccent" />
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@android:color/black" />
     <RadioButton
         android:id="@+id/radio"
         android:layout_width="wrap_content"
