@@ -517,4 +517,11 @@
     <string name="springstockcoef">4 (Stock)</string>
     <string name="use_spring_sum">In the app drawer</string>
 
+    <!-- Favorite app -->
+    <string name="favorite_assigned">Favorite app assigned</string>
+    <string name="make_favorite">Make favorite</string>
+    <string name="favorite_not_found">Favorite app not found</string>
+    <string name="launch_favorite_app_itle">Open Favorite App</string>
+    <string name="launch_favorite_app_summary">For two finger swipe down</string>
+
 </resources>

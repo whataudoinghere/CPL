@@ -2,12 +2,14 @@ package com.android.launcher3.popup;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.InfoDropTarget;
@@ -106,6 +108,31 @@ public abstract class SystemShortcut extends ItemInfo {
             };
         }
     }
+
+    public static class Favorite extends SystemShortcut {
+        public Favorite() {
+            super(R.drawable.ic_favorite_24dp, R.string.make_favorite);
+        }
+        @Override
+        public View.OnClickListener getOnClickListener(final Launcher launcher,
+                                                       final ItemInfo itemInfo) {
+            if (!Utilities.LaunchFavoriteApp(launcher)) {
+                return null;
+            }
+            return new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AbstractFloatingView.closeAllOpenViews(launcher);
+                    SharedPreferences prefs = Utilities.getPrefs(launcher.getApplicationContext());
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString(Utilities.FAVORITE_APP, String.valueOf(itemInfo.getTargetComponent().getPackageName())).apply();
+                    editor.commit();
+                    Toast.makeText(launcher, R.string.favorite_assigned, Toast.LENGTH_SHORT).show();
+                }
+            };
+        }
+    }
+
     public static class Uninstall extends SystemShortcut {
 
         public Uninstall() {

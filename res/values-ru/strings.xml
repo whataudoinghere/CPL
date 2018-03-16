@@ -320,4 +320,11 @@
     <string name="springstockcoef">4 (Стандартный)</string>
     <string name="use_spring_sum">В меню приложений</string>
 
+    <!-- Favorite app -->
+    <string name="favorite_assigned">Избранное приложение назначено</string>
+    <string name="make_favorite">Сделать избранными</string>
+    <string name="favorite_not_found">Избранное приложение не найдено</string>
+    <string name="launch_favorite_app_itle">Запускать избранное приложение</string>
+    <string name="launch_favorite_app_summary">При проведении двумя пальцами вниз по главному экрану</string>
+
 </resources>

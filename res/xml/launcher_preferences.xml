@@ -426,6 +426,13 @@
             android:defaultValue="false"
             android:persistent="true"
             />
+        <SwitchPreference
+            android:key="pref_launch_favorite_app"
+            android:title="@string/launch_favorite_app_itle"
+            android:summary="@string/launch_favorite_app_summary"
+            android:defaultValue="false"
+            android:persistent="true"
+            />
         <PreferenceCategory
             android:title="@string/icon_badging_title">
             <com.android.launcher3.views.ButtonPreference

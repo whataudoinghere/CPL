@@ -7,11 +7,13 @@ import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Vibrator;
 import android.support.animation.SpringAnimation;
@@ -242,9 +244,22 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
                                 NotificationState.Locked;
                     }
                     if (pointerCount == 2) {
-                        mNotificationState = openSettings() ?
-                                NotificationState.Opened :
-                                NotificationState.Locked;
+                        if (Utilities.LaunchFavoriteApp(mLauncher)) {
+                            try {
+                                PackageManager pm = mLauncher.getPackageManager();
+
+                                Intent intent = pm.getLaunchIntentForPackage(Utilities.FavoriteApp(mLauncher));
+                                mLauncher.startActivity(intent);
+                            }
+                            catch (Exception e) {
+                                Toast.makeText(mLauncher, R.string.favorite_not_found, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else {
+                            mNotificationState = openSettings() ?
+                                    NotificationState.Opened :
+                                    NotificationState.Locked;
+                        }
                     }
                 } else if (velocity < NOTIFICATION_CLOSE_VELOCITY &&
                         mNotificationState == NotificationState.Opened) {

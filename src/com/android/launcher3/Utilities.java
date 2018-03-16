@@ -187,6 +187,8 @@ public final class Utilities {
     public static final String KEY_BADGE_CAN_CHANGE_COLOUR = "pref_badge_color_picker";
     public static final String SPRING_COEFF = "pref_springcoeff";
     public static final String USE_SPRING = "pref_use_spring";
+    public static final String FAVORITE_APP = "pref_favorite_app";
+    public static final String LAUNCH_FAVORITE_APP = "pref_launch_favorite_app";
 
 
 
@@ -210,6 +212,14 @@ public final class Utilities {
 
     public static String SpringCoeff(Context context) {
         return getPrefs(context).getString(SPRING_COEFF, "0.55");
+    }
+
+    public static boolean LaunchFavoriteApp(Context context) {
+        return getPrefs(context).getBoolean(LAUNCH_FAVORITE_APP, false);
+    }
+
+    public static String FavoriteApp(Context context) {
+        return getPrefs(context).getString(FAVORITE_APP, "");
     }
 
     public static boolean fadeout(Context context) {
