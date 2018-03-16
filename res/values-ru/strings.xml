@@ -154,7 +154,7 @@
     <string name="title_google_app">ленту новостей Google</string>
     <string name="title_app_suggestions">Рекомендуемые приложения</string>
     <string name="summary_app_suggestions">Вверху списка всех приложений</string>
-    <string name="app_name_pixel_launcher">Customised Pixel Launcher</string>
+    <string name="app_name_pixel_launcher">Customized Pixel Launcher</string>
     <string name="title_disable_suggestions_prompt">Не показывать рекомендуемые приложения?</string>
     <string name="msg_disable_suggestions_prompt">Рекомендуемые приложения не будут показываться в начале списка. Данные, связанные с этой функцией, будут удалены.</string>
     <string name="label_turn_off_suggestions">ОТКЛЮЧИТЬ</string>
@@ -213,7 +213,7 @@
     <string name="num_cols">Количество столбцов</string>
 
     <!-- About -->
-    <string name="about_sum">Customised Pixel Launcher - лаунчер с открытым исходным кодом и расширенным функционалом, основан на AOSP. Он бесплатен и не содержит рекламы.</string>
+    <string name="about_sum">Customized Pixel Launcher - лаунчер с открытым исходным кодом и расширенным функционалом, основан на AOSP. Он бесплатен и не содержит рекламы.</string>
     <string name="thanks">Благодарности</string>
     <string name="forgot">Может быть я кого-нибудь забыл ...</string>
     <string name="date">Дата сборки</string>
@@ -289,7 +289,7 @@
     <string name="textinbadge_sum">Показывать количество уведомлений в значке</string>
     <string name="double_tap_to_lock_title">Двойной тап для блокировки экрана</string>
     <string name="double_tap_to_lock_summary">На рабочем столе</string>
-    <string name="double_tap_to_lock_hint">Для возможности блокировки экрана с помощью двойного тапа, Вам нужно предоставить права администратора для Customised Pixel Launcher. Это безопасная блокировка, для включения экрана вам потребуется ввести ПИН-код, приложить палец или начертить графический ключ, если таковые методы защиты установлены.</string>
+    <string name="double_tap_to_lock_hint">Для возможности блокировки экрана с помощью двойного тапа, Вам нужно предоставить права администратора для Customized Pixel Launcher. Это безопасная блокировка, для включения экрана вам потребуется ввести ПИН-код, приложить палец или начертить графический ключ, если таковые методы защиты установлены.</string>
     <string name="double_tap_to_lock_disable_warning">Для работы функции двойного тапа для блокировки приложению необходимы права администратора.</string>
     <string name="action_edit">Редактировать</string>
     <string name="use_custom_badge_color">Изменить цвета значка</string>

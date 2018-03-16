@@ -347,7 +347,7 @@
     <string name="title_google_app">Google App</string>
     <string name="title_app_suggestions">App Suggestions</string>
     <string name="summary_app_suggestions">At the top of the app drawer</string>
-    <string name="app_name_pixel_launcher">Customised Pixel Launcher</string>
+    <string name="app_name_pixel_launcher">Customized Pixel Launcher</string>
     <string name="title_disable_suggestions_prompt">Turn off app suggestions?</string>
     <string name="msg_disable_suggestions_prompt">"Suggestions won't appear at the top of your apps list, and the usage data used to create them will be permanently erased."</string>
     <string name="label_turn_off_suggestions">TURN OFF</string>
@@ -485,7 +485,7 @@
     <string name="textinbadge_sum">Show the number of notifications in a badge</string>
     <string name="double_tap_to_lock_title">Double Tap to Lock</string>
     <string name="double_tap_to_lock_summary">On the Home screen</string>
-    <string name="double_tap_to_lock_hint">To be able to use double tap to lock, you have to enable admin access for Customised Pixel Launcher. This is a secure lock, meaning you have to enter your PIN on the next unlock, if you have any.</string>
+    <string name="double_tap_to_lock_hint">To be able to use double tap to lock, you have to enable admin access for Customized Pixel Launcher. This is a secure lock, meaning you have to enter your PIN on the next unlock, if you have any.</string>
     <string name="double_tap_to_lock_disable_warning">By disabling admin access, you will not be able to use double tap to lock on your home screen.</string>
     <string name="action_edit">Edit</string>
     <string name="use_custom_badge_color">Custom Badge Colors</string>
