@@ -181,7 +181,7 @@
     <!-- Dock bar -->
     <string name="custom_dockbar">Док-бар</string>
     <string name="custom_dockbar_summary">Настроить док-бар</string>
-    <string name="num_hotseat_icons_pref_title">Колличество значков в док-баре</string>
+    <string name="num_hotseat_icons_pref_title">Количество значков в док-баре</string>
     <string name="force_mic">Микрофон в строке поиска</string>
     <string name="force_colour_logo">Цветной логотип Google</string>
     <string name="dark_themeqsb">Темная строка поиска</string>
@@ -196,15 +196,18 @@
 
     <!-- Sizes -->
     <string name="size_biggest">Большой</string>
-    <string name="size_big">Увеличеный</string>
+    <string name="size_big">Увеличенный</string>
     <string name="size_smallest">Наименьший</string>
-    <string name="size_small">Уменьшеный</string>
+    <string name="size_small">Уменьшенный</string>
     <string name="size_stock">Стандартный</string>
+    <string name="size_extrabig1">Сверхбольшой 1</string>
+    <string name="size_extrabig2">Сверхбольшой 2</string>
+    <string name="size_extrabig3">Сверхбольшой 3</string>
 
     <!-- Rows and Coloumns -->
     <string name="change_grid_size">Изменить размер сетки</string>
     <string name="custom_grid_size">Размер сетки</string>
-    <string name="custom_grid_size_on">Использовать выбраный размер</string>
+    <string name="custom_grid_size_on">Использовать выбранный размер</string>
     <string name="custom_grid_size_off">Размер сетки зависит от DPI устройства</string>
     <string name="num_rows">Количество строк</string>
     <string name="num_cols">Количество столбцов</string>
@@ -242,7 +245,7 @@
     <string name="diabledgemargin">Отключить</string>
     <string name="diabledgemargin_sum">Поля на рабочем столе</string>
     <string name="settings_edit_allow_title">Разрешить редактирование</string>
-    <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавленны, удалены или перемещены</string>
+    <string name="settings_edit_allow_summary_on">Значки и виджеты могут быть добавлены, удалены или перемещены</string>
     <string name="settings_edit_allow_summary_off">Значки и виджеты могут не могут быть добавленны, удалены или перемещены</string>
     <string name="settings_edit_widgets_error">Невозожно добавить виджет</string>
     <string name="fade_out_animation">Анимация исчезновения</string>
@@ -283,11 +286,11 @@
     <string name="vibrationduration">Продолжительность вибрации</string>
     <string name="vibrationdurationtest">Тест вибрации</string>
     <string name="textinbadge">Не просто точка</string>
-    <string name="textinbadge_sum">Показывать колличество уведомлений в значке</string>
+    <string name="textinbadge_sum">Показывать количество уведомлений в значке</string>
     <string name="double_tap_to_lock_title">Двойной тап для блокировки экрана</string>
     <string name="double_tap_to_lock_summary">На рабочем столе</string>
     <string name="double_tap_to_lock_hint">Для возможности блокировки экрана с помощью двойного тапа, Вам нужно предоставить права администратора для Customised Pixel Launcher. Это безопасная блокировка, для включения экрана вам потребуется ввести ПИН-код, приложить палец или начертить графический ключ, если таковые методы защиты установлены.</string>
-    <string name="double_tap_to_lock_disable_warning">Для работы функциии двойного тапа для блокировки приложению необходимы права администратора.</string>
+    <string name="double_tap_to_lock_disable_warning">Для работы функции двойного тапа для блокировки приложению необходимы права администратора.</string>
     <string name="action_edit">Редактировать</string>
     <string name="use_custom_badge_color">Изменить цвета значка</string>
     <string name="custom_badge_color">Цвет значка</string>
@@ -310,5 +313,11 @@
     <string name="icon_chooser">Выбор значка</string>
     <string name="icon_search">Поиск значков</string>
     <string name="use_background_from_iconpack">Задний фон значка из набора</string>
+
+    <!-- Spring -->
+    <string name="springanim">Анимация пружины</string>
+    <string name="springcoef">Коэффициент жесткости пружины</string>
+    <string name="springstockcoef">4 (Стандартный)</string>
+    <string name="use_spring_sum">В меню приложений</string>
 
 </resources>
