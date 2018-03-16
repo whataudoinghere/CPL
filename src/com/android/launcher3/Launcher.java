@@ -96,6 +96,7 @@ import android.widget.Advanceable;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
@@ -363,6 +364,8 @@ public class Launcher extends BaseActivity
     private AlertDialog mIconPackDialog;
     private EditText mEditText;
     private ImageView mPackageIcon;
+    private TextView mPackageNameText;
+    private ImageButton mResetNameButton;
     private IconsHandler mIconsHandler;
     private View mIconPackView;
 
@@ -3973,13 +3976,17 @@ public class Launcher extends BaseActivity
         return mState == State.WORKSPACE && !mSharedPrefs.getBoolean(APPS_VIEW_SHOWN, false) && !um.isDemoUser();
     }
 
-    public void startEdit(final ItemInfo info, final ComponentName component) {
+    public void startEdit(final ItemInfo info, final ComponentName component, final Rect sourceBounds, final Bundle opts) {
         final LauncherActivityInfo app = LauncherAppsCompat.getInstance(this)
                 .resolveActivity(info.getIntent(), info.user);
         mIconPackView = getLayoutInflater().inflate(R.layout.edit_dialog, null);
         mPackageIcon = mIconPackView.findViewById(R.id.package_icon);
         mEditText = mIconPackView.findViewById(R.id.editText);
         mEditText.setText(mIconCache.getCacheEntry(app).title);
+
+        mResetNameButton = mIconPackView.findViewById(R.id.reset_name_button);
+        mPackageNameText = mIconPackView.findViewById(R.id.packageNameText);
+        mPackageNameText.setText(component.getPackageName());
 
         final Resources res = getResources();
 
@@ -3990,7 +3997,7 @@ public class Launcher extends BaseActivity
         final Pair<List<String>, List<String>> iconPacks = mIconsHandler.getAllIconPacks();
         final IconPackArrayAdapter adapter = new IconPackArrayAdapter(this,
                 iconPacks.first);
-        final ListPopupWindow listPopupWindow = new ListPopupWindow(this);
+        final ListPopupWindow listPopupWindow = new ListPopupWindow(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
         listPopupWindow.setAdapter(adapter);
         listPopupWindow.setWidth(popupWidth);
         listPopupWindow.setAnchorView(mPackageIcon);
@@ -4018,7 +4025,38 @@ public class Launcher extends BaseActivity
             }
         });
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        mResetNameButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                final String packageName = component.getPackageName();
+                PackageManager packageManager= getApplicationContext().getPackageManager();
+                try {
+                    String appName = (String) packageManager.getApplicationLabel(packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
+                    mEditText.setText(appName);
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        if (component != null) {
+            mPackageIcon.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    try {
+                        LauncherAppsCompat.getInstance(getApplicationContext())
+                                .showAppDetailsForProfile(component, info.user, sourceBounds, opts);
+                    } catch (SecurityException | ActivityNotFoundException e) {
+                        Toast.makeText(getApplicationContext(), R.string.activity_not_found, Toast.LENGTH_SHORT).show();
+                        Log.e(TAG, "Unable to launch settings", e);
+                    }
+                    return false;
+                }
+            });
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom))
                 .setView(mIconPackView)
                 .setTitle(getString(R.string.edit_app))
                 .setOnDismissListener(new DialogInterface.OnDismissListener() {
@@ -4047,17 +4085,6 @@ public class Launcher extends BaseActivity
                     });
         //}
         mIconPackDialog = builder.create();
-        boolean dark = Themes.getAttrBoolean(this, R.attr.isMainColorDark);
-        int color = getColor(dark ? R.color.icon_edit_dialog_dark_background_color
-                : R.color.icon_edit_dialog_light_background_color);
-        ColorDrawable backgroundDrawable = new ColorDrawable(color);
-
-        listPopupWindow.setBackgroundDrawable(backgroundDrawable);
-
-        Window dialogWindow = mIconPackDialog.getWindow();
-        if (dialogWindow != null) {
-            dialogWindow.setBackgroundDrawable(backgroundDrawable);
-        }
         mIconPackDialog.show();
     }
 
@@ -4401,6 +4428,12 @@ public class Launcher extends BaseActivity
                 needRestart();
             }
             if (Utilities.KEY_BADGE_TEXT_COLOUR.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.USE_SPRING.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.SPRING_COEFF.equals(key)) {
                 needRestart();
             }
         }

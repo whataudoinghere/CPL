@@ -35,7 +35,7 @@ public class CustomEditShortcut extends SystemShortcut {
                 }
 
                 if (componentName != null) {
-                    launcher.startEdit(itemInfo, componentName);
+                    launcher.startEdit(itemInfo, componentName, null, null);
                 }
             }
         };
