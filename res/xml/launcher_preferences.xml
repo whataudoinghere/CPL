@@ -236,6 +236,22 @@
                 android:defaultValue="0xEBFFFFFE" />
         </PreferenceCategory>
         <PreferenceCategory
+            android:title="@string/springanim">
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_use_spring"
+                android:summary="@string/use_spring_sum"
+                android:title="@string/springanim" />
+        <ListPreference
+            android:defaultValue="0.55f"
+            android:entries="@array/SpringCoeffName"
+            android:entryValues="@array/SpringCoeff"
+            android:dependency="pref_use_spring"
+            android:key="pref_springcoeff"
+            android:summary="%s"
+            android:title="@string/springcoef" />
+        </PreferenceCategory>
+        <PreferenceCategory
             android:title="@string/custom_ico">
             <SwitchPreference
                 android:defaultValue="true"

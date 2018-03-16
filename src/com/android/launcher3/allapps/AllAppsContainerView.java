@@ -216,7 +216,7 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
         mAppsRecyclerView.setHasFixedSize(true);
         // No animations will occur when changes occur to the items in this RecyclerView.
         mAppsRecyclerView.setItemAnimator(null);
-        if (FeatureFlags.LAUNCHER3_PHYSICS) {
+        if (FeatureFlags.LAUNCHER3_PHYSICS && Utilities.usespring(getContext())) {
             mAppsRecyclerView.setSpringAnimationHandler(mSpringAnimationHandler);
         }
 

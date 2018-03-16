@@ -185,6 +185,8 @@ public final class Utilities {
     public static final String KEY_BADGE_COLOUR = "pref_change_badge_color";
     public static final String KEY_BADGE_TEXT_COLOUR = "pref_badge_text_color_picker";
     public static final String KEY_BADGE_CAN_CHANGE_COLOUR = "pref_badge_color_picker";
+    public static final String SPRING_COEFF = "pref_springcoeff";
+    public static final String USE_SPRING = "pref_use_spring";
 
 
 
@@ -200,6 +202,14 @@ public final class Utilities {
 
     public static boolean showqsb(Context context) {
         return getPrefs(context).getBoolean(SHOW_QSB_IN_DOCK, true);
+    }
+
+    public static boolean usespring(Context context) {
+        return getPrefs(context).getBoolean(USE_SPRING , true);
+    }
+
+    public static String SpringCoeff(Context context) {
+        return getPrefs(context).getString(SPRING_COEFF, "0.55");
     }
 
     public static boolean fadeout(Context context) {

@@ -220,7 +220,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         mLayoutInflater = LayoutInflater.from(launcher);
         mIconClickListener = iconClickListener;
         mIconLongClickListener = iconLongClickListener;
-        if (FeatureFlags.LAUNCHER3_PHYSICS) {
+        if (FeatureFlags.LAUNCHER3_PHYSICS &&Utilities.usespring(mLauncher)) {
             mSpringAnimationHandler = new SpringAnimationHandler<>(
                     SpringAnimationHandler.Y_DIRECTION, new AllAppsSpringAnimationFactory());
         }
@@ -376,7 +376,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     @Override
     public void onViewAttachedToWindow(ViewHolder holder) {
         int type = holder.getItemViewType();
-        if (FeatureFlags.LAUNCHER3_PHYSICS && isViewType(type, VIEW_TYPE_MASK_HAS_SPRINGS)) {
+        if (FeatureFlags.LAUNCHER3_PHYSICS && Utilities.usespring(mLauncher) && isViewType(type, VIEW_TYPE_MASK_HAS_SPRINGS)) {
             mSpringAnimationHandler.add(holder.itemView, holder);
         }
     }
@@ -384,7 +384,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     @Override
     public void onViewDetachedFromWindow(ViewHolder holder) {
         int type = holder.getItemViewType();
-        if (FeatureFlags.LAUNCHER3_PHYSICS && isViewType(type, VIEW_TYPE_MASK_HAS_SPRINGS)) {
+        if (FeatureFlags.LAUNCHER3_PHYSICS && Utilities.usespring(mLauncher) && isViewType(type, VIEW_TYPE_MASK_HAS_SPRINGS)) {
             mSpringAnimationHandler.remove(holder.itemView);
         }
     }
@@ -477,7 +477,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     .setMaxValue(maxValue)
                     .getSpring()
                     .setStiffness(stiffness)
-                    .setDampingRatio(SPRING_DAMPING_RATIO);
+                    .setDampingRatio(Float.valueOf(Utilities.SpringCoeff(mLauncher)));
         }
 
         /**
