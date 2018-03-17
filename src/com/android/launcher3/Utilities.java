@@ -140,6 +140,9 @@ public final class Utilities {
     public static final String TRANSPARENTQSB = "pref_transparentqsbqsb";
     public static final String COLSHOME = "pref_numCols";
     public static final String ROWSHOME = "pref_numRows";
+    public static final String COLSDRAVER = "pref_numDrawerCols";
+    public static final String ROWSDRAVER = "pref_numDrawerRows";
+    public static final String CHANGE_GRID_DRAVER = "pref_change_grid_size_in_drawer";
     public static final String COLFOLDER = "pref_numFolderCols";
     public static final String ROWFOLDER = "pref_numFolderRows";
     public static final String HOTSEATICONS = "pref_numHotseatIcons";

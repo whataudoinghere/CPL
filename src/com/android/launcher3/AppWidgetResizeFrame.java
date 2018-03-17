@@ -307,8 +307,8 @@ public class AppWidgetResizeFrame extends FrameLayout
 
             // Initiate cell sizes.
             sCellSize = new Point[2];
-            sCellSize[0] = inv.landscapeProfile.getCellSize();
-            sCellSize[1] = inv.portraitProfile.getCellSize();
+            sCellSize[0] = inv.landscapeProfile.getCellSize(context);
+            sCellSize[1] = inv.portraitProfile.getCellSize(context);
         }
 
         if (rect == null) {

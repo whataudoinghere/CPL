@@ -157,11 +157,11 @@ public class InvariantDeviceProfile {
             numRows = closestProfile.numRows;
             numColumns = closestProfile.numColumns;
         }
-        a = prefs.getBoolean("pref_addcoloumnallapp", false);
-        if (!a) {
-            numColumnsAll = numColumns;
+        a = prefs.getBoolean("pref_change_grid_size_in_drawer", false);
+        if (a) {
+            numColumnsAll = Integer.valueOf(prefs.getString("pref_numDrawerCols", "5"));
         }
-        else numColumnsAll = numColumns + 1;
+        else numColumnsAll = numColumns;
         numHotseatIcons = Integer.valueOf(prefs.getString("pref_numHotseatIcons", "5"));
         defaultLayoutId = closestProfile.defaultLayoutId;
         demoModeLayoutId = closestProfile.demoModeLayoutId;

@@ -4319,6 +4319,15 @@ public class Launcher extends BaseActivity
             if (Utilities.HOTSEATICONS.equals(key)) {
                 needRestart();
             }
+            if (Utilities.COLSDRAVER.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.ROWSDRAVER.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.CHANGE_GRID_DRAVER.equals(key)) {
+                needRestart();
+            }
             if (Utilities.SMALLALAPPS.equals(key)) {
                 recreate();
             }

@@ -19,6 +19,7 @@ package com.android.launcher3;
 import android.appwidget.AppWidgetHostView;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -128,7 +129,6 @@ public class DeviceProfile {
     public int hotseaSizePx;
 
     // All apps
-    public boolean needfixpadding;
     public int allAppsCellHeightPx;
     public int allAppsNumCols;
     public int allAppsNumPredictiveCols;
@@ -190,10 +190,6 @@ public class DeviceProfile {
         if (marginsize == 2) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_small);
         if (marginsize == 3) edgeMarginPx1 = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin_disabled);
 
-        needfixpadding = false;
-        int paddingfix = Integer.valueOf(Utilities.getPrefs(context).getString("pref_drawer_icon_size", "100"));
-        if (paddingfix == 105) needfixpadding = true;
-        if (paddingfix == 108) needfixpadding = true;
 
         edgeMarginPx = edgeMarginPx1;
         desiredWorkspaceLeftRightMarginPx = isVerticalBarLayout() ? 0 : edgeMarginPx;
@@ -270,7 +266,7 @@ public class DeviceProfile {
         }
 
         // Calculate all of the remaining variables.
-        updateAvailableDimensions(dm, res);
+        updateAvailableDimensions(context, dm, res);
 
         // Now that we have all of the variables calculated, we can tune certain sizes.
         float aspectRatio = ((float) Math.max(widthPx, heightPx)) / Math.min(widthPx, heightPx);
@@ -280,11 +276,11 @@ public class DeviceProfile {
             // ie. For a display with a large aspect ratio, we can keep the icons on the workspace
             // in portrait mode closer together by adding more height to the hotseat.
             // Note: This calculation was created after noticing a pattern in the design spec.
-            int extraSpace = getCellSize().y - iconSizePx - iconDrawablePaddingPx;
+            int extraSpace = getCellSize(context).y - iconSizePx - iconDrawablePaddingPx;
             hotseatBarSizePx += extraSpace - pageIndicatorSizePx;
 
             // Recalculate the available dimensions using the new hotseat size.
-            updateAvailableDimensions(dm, res);
+            updateAvailableDimensions(context, dm, res);
         }
 
         computeAllAppsButtonSize(context);
@@ -309,8 +305,8 @@ public class DeviceProfile {
 
         // We use these scales to measure and layout the widgets using their full invariant profile
         // sizes and then draw them scaled and centered to fit in their multi-window mode cellspans.
-        float appWidgetScaleX = (float) profile.getCellSize().x / getCellSize().x;
-        float appWidgetScaleY = (float) profile.getCellSize().y / getCellSize().y;
+        float appWidgetScaleX = (float) profile.getCellSize(context).x / getCellSize(context).x;
+        float appWidgetScaleY = (float) profile.getCellSize(context).y / getCellSize(context).y;
         profile.appWidgetScale.set(appWidgetScaleX, appWidgetScaleY);
 
         return profile;
@@ -357,20 +353,20 @@ public class DeviceProfile {
                         .getDimensionPixelSize(R.dimen.all_apps_button_scale_down);
     }
 
-    private void updateAvailableDimensions(DisplayMetrics dm, Resources res) {
-        updateIconSize(1f, res, dm);
+    private void updateAvailableDimensions(Context context, DisplayMetrics dm, Resources res) {
+        updateIconSize(context, 1f, res, dm);
 
         // Check to see if the icons fit within the available height.  If not, then scale down.
         float usedHeight = (cellHeightPx * inv.numRows);
         int maxHeight = (availableHeightPx - getTotalWorkspacePadding().y);
         if (usedHeight > maxHeight) {
             float scale = maxHeight / usedHeight;
-            updateIconSize(scale, res, dm);
+            updateIconSize(context, scale, res, dm);
         }
         updateAvailableFolderCellDimensions(dm, res);
     }
 
-    private void updateIconSize(float scale, Resources res, DisplayMetrics dm) {
+    private void updateIconSize(Context context, float scale, Resources res, DisplayMetrics dm) {
         // Workspace
 
         float invIconSizePx = isVerticalBarLayout() ? inv.landscapeIconSize : inv.iconSize;
@@ -382,7 +378,7 @@ public class DeviceProfile {
 
         cellHeightPx = iconSizePx + iconDrawablePaddingPx
                 + Utilities.calculateTextHeight(iconTextSizePx);
-        int cellYPadding = (getCellSize().y - cellHeightPx) / 2;
+        int cellYPadding = (getCellSize(context).y - cellHeightPx) / 2;
         if (iconDrawablePaddingPx > cellYPadding && !isVerticalBarLayout()
                 && !inMultiWindowMode()) {
             // Ensures that the label is closer to its corresponding icon. This is not an issue
@@ -397,10 +393,11 @@ public class DeviceProfile {
         allAppsIconTextSizePx = iconTextSizePx;
         allAppsIconSizePx = iconAllAppSizePx;
         allAppsIconDrawablePaddingPx = iconDrawablePaddingPx;
-        allAppsCellHeightPx = getCellSize().y;
-        if (needfixpadding) {
-            allAppsCellHeightPx = allAppsCellHeightPx + iconDrawablePaddingPx;
-        }
+
+        SharedPreferences prefs = Utilities.getPrefs(context);
+        boolean a = prefs.getBoolean("pref_change_grid_size", true);
+
+        allAppsCellHeightPx = getCellSize(context).y;
 
         if (isVerticalBarLayout()) {
             // Always hide the Workspace text with vertical bar layout.
@@ -513,15 +510,17 @@ public class DeviceProfile {
         }
     }
 
-    public Point getCellSize() {
+    public Point getCellSize(Context context) {
         Point result = new Point();
         // Since we are only concerned with the overall padding, layout direction does
         // not matter.
         Point padding = getTotalWorkspacePadding();
         result.x = calculateCellWidth(availableWidthPx - padding.x
                 - cellLayoutPaddingLeftRightPx * 2, inv.numColumns);
-        result.y = calculateCellHeight(availableHeightPx - padding.y
-                - cellLayoutBottomPaddingPx, inv.numRows);
+        SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
+        if (prefs.getBoolean("pref_change_grid_size_in_drawer", false))
+        result.y = calculateCellHeight(availableHeightPx - padding.y - cellLayoutBottomPaddingPx, Integer.valueOf(prefs.getString("pref_numDrawerRows", "5")));
+        else result.y = calculateCellHeight(availableHeightPx - padding.y - cellLayoutBottomPaddingPx, inv.numRows);
         return result;
     }
 

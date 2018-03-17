@@ -163,6 +163,34 @@
         android:summary="@string/custom_allapp_summary"
         android:icon="@drawable/ic_app_drawer"
         android:title="@string/custom_allapp">
+        <PreferenceCategory
+            android:title="@string/custom_grid_size">
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_change_grid_size_in_drawer"
+                android:disableDependentsState="false"
+                android:title="@string/change_grid_size" />
+            <ListPreference
+                android:defaultValue="5"
+                android:entries="@array/numGridValues"
+                android:entryValues="@array/numGridValues"
+                android:key="pref_numDrawerCols"
+                android:dependency="pref_change_grid_size_in_drawer"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/num_cols" />
+            <ListPreference
+                android:defaultValue="5"
+                android:entries="@array/numGridValues"
+                android:entryValues="@array/numGridValues"
+                android:dependency="pref_change_grid_size_in_drawer"
+                android:key="pref_numDrawerRows"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/num_rows" />
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:title="@string/custom_allapp">
         <SwitchPreference
             android:key="pref_show_predictions"
             android:title="@string/title_app_suggestions"
@@ -185,6 +213,7 @@
             android:key="pref_hide_widgets_too"
             android:summary="@string/hide_widgets_too_sum"
             android:title="@string/hide_widgets_too" />
+        </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/googleinappmenu">
             <SwitchPreference
