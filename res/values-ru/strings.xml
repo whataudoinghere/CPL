@@ -158,6 +158,7 @@
     <string name="title_disable_suggestions_prompt">Не показывать рекомендуемые приложения?</string>
     <string name="msg_disable_suggestions_prompt">Рекомендуемые приложения не будут показываться в начале списка. Данные, связанные с этой функцией, будут удалены.</string>
     <string name="label_turn_off_suggestions">ОТКЛЮЧИТЬ</string>
+    <string name="icon_badging_sum">Настроить значки уведомлений</string>
 
     <!-- Hidden app -->
     <string name="hide_app">Скрыть приложения</string>
@@ -231,6 +232,7 @@
     <string name="custom_ico">Значки</string>
     <string name="smallfont">Уменьшить шрифт подписей</string>
     <string name="icon_size">Размер значка</string>
+    <string name="text_size">Размер шрифта подписей</string>
 
     <!-- Reboot -->
     <string name="custom_reboot">Перезапустить приложение</string>
@@ -239,7 +241,7 @@
 
     <!-- Home screen -->
     <string name="custom_hs">Рабочий стол</string>
-    <string name="custom_hs_summary">Настроить рабочий стол, виджет \"Обратный отсчет\" и папки</string>
+    <string name="custom_hs_summary">Настроить рабочий стол и виджет \"Обратный отсчет\"</string>
     <string name="edgemarginstock">Стандартные</string>
     <string name="edgemarginsmall">Уменьшеные</string>
     <string name="diabledgemargin">Отключить</string>
@@ -295,6 +297,7 @@
     <string name="use_custom_badge_color">Изменить цвета значка</string>
     <string name="custom_badge_color">Цвет значка</string>
     <string name="custom_badge_text_color">Цвет текста значка</string>
+    <string name="bage_size">Размер значка</string>
 
     <!-- Icon pack -->
     <string name="default_iconpack" translatable="false">Системный (по умолчанию)</string>
@@ -322,7 +325,7 @@
 
     <!-- Favorite app -->
     <string name="favorite_assigned">Избранное приложение назначено</string>
-    <string name="make_favorite">Сделать избранными</string>
+    <string name="make_favorite">Сделать избранным</string>
     <string name="favorite_not_found">Избранное приложение не найдено</string>
     <string name="launch_favorite_app_itle">Запускать избранное приложение</string>
     <string name="launch_favorite_app_summary">При проведении двумя пальцами вниз по главному экрану</string>

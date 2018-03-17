@@ -72,24 +72,30 @@
         </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/custom_ico">
-            <ListPreference
-                android:defaultValue="56"
-                android:entries="@array/IconSizeName"
-                android:entryValues="@array/IconSizesValues"
-                android:key="pref_IconSize"
-                android:summary="%s"
-                android:title="@string/icon_size" />
-
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_icon_size_home"
+                android:title="@string/icon_size"
+                app:minValue="0.5"
+                app:maxValue="1.5"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="1.0"
+                android:persistent="true" />
             <SwitchPreference
                 android:defaultValue="true"
                 android:key="pref_desktop_show_labels"
                 android:disableDependentsState="false"
                 android:title="@string/desktop_show_labels" />
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="pref_minusfont"
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_text_size_home"
+                android:title="@string/text_size"
                 android:dependency="pref_desktop_show_labels"
-                android:title="@string/smallfont" />
+                app:minValue="0.5"
+                app:maxValue="1.5"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="1.0"
+                android:persistent="true" />
             <SwitchPreference
                 android:key="pref_change_workspace_label_color"
                 android:title="@string/use_custom_label_color"
@@ -97,8 +103,8 @@
                 android:dependency="pref_desktop_show_labels"
                 android:disableDependentsState="false"
                 android:persistent="true" />
-
             <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:icon="@drawable/ic_colorize_24dp"
                 android:key="pref_workspace_label_color_picker"
                 android:defaultValue="0xff666666"
                 android:dependency="pref_change_workspace_label_color"
@@ -107,18 +113,18 @@
 
         <PreferenceCategory
             android:title="@string/smartspace_preferences_in_settings">
+            <SwitchPreference
+                android:key="pref_disabless"
+                android:disableDependentsState="true"
+                android:title="@string/smartspace_disable"
+                android:defaultValue="false"
+                />
             <PreferenceScreen
                 android:key="pref_smartspace"
                 android:title="@string/smartspace_customize_in_settings"
                 android:dependency="pref_disabless"
                 android:summary="@string/smartspace_preferences_in_settings_desc"
                 android:persistent="false"
-                />
-            <SwitchPreference
-                android:key="pref_disabless"
-                android:disableDependentsState="true"
-                android:title="@string/smartspace_disable"
-                android:defaultValue="false"
                 />
             <SwitchPreference
                 android:key="pref_smartspase_time"
@@ -151,48 +157,6 @@
                 android:defaultValue="false"
                 />
         </PreferenceCategory>
-
-        <PreferenceCategory
-            android:summary="@string/custom_folders_summary"
-            android:title="@string/custom_folders">
-            <ListPreference
-                android:defaultValue="4"
-                android:entries="@array/numFolderValues"
-                android:entryValues="@array/numFolderValues"
-                android:key="pref_numFolderCols"
-                android:persistent="true"
-                android:summary="%s"
-                android:title="@string/num_cols" />
-            <ListPreference
-                android:defaultValue="4"
-                android:entries="@array/numFolderValues"
-                android:entryValues="@array/numFolderValues"
-                android:key="pref_numFolderRows"
-                android:persistent="true"
-                android:summary="%s"
-                android:title="@string/num_rows" />
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="pref_old_folder_animation"
-                android:title="@string/old_folder_animation" />
-            <SwitchPreference
-                android:defaultValue="true"
-                android:key="pref_folder_show_labels"
-                android:title="@string/folder_show_labels" />
-            <SwitchPreference
-                android:key="pref_change_folder_label_color"
-                android:title="@string/use_custom_label_color"
-                android:defaultValue="false"
-                android:dependency="pref_folder_show_labels"
-                android:disableDependentsState="false"
-                android:persistent="true" />
-            <yuku.ambilwarna.widget.AmbilWarnaPreference
-                android:key="pref_folder_label_color_picker"
-                android:dependency="pref_change_folder_label_color"
-                android:title="@string/custom_label_color"
-                android:defaultValue="0xff666666" />
-        </PreferenceCategory>
-
     </PreferenceScreen>
 
     <PreferenceScreen
@@ -229,6 +193,7 @@
                 android:disableDependentsState="false"
                 android:title="@string/googleinappmenu" />
             <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:icon="@drawable/ic_colorize_24dp"
                 android:key="pref_allappqsb_color_picker"
                 android:dependency="pref_googleinappmenu_enabled"
                 android:title="@string/custom_qsb_color"
@@ -242,33 +207,42 @@
                 android:key="pref_use_spring"
                 android:summary="@string/use_spring_sum"
                 android:title="@string/springanim" />
-        <ListPreference
-            android:defaultValue="0.55f"
-            android:entries="@array/SpringCoeffName"
-            android:entryValues="@array/SpringCoeff"
-            android:dependency="pref_use_spring"
-            android:key="pref_springcoeff"
-            android:summary="%s"
-            android:title="@string/springcoef" />
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_spring_coefficient"
+                android:title="@string/springcoef"
+                android:dependency="pref_use_spring"
+                app:minValue="0.15"
+                app:maxValue="0.85"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="0.55"
+                android:persistent="true" />
         </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/custom_ico">
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_icon_size_drawer"
+                android:title="@string/icon_size"
+                app:minValue="0.5"
+                app:maxValue="1.5"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="1.0"
+                android:persistent="true" />
             <SwitchPreference
                 android:defaultValue="true"
                 android:key="pref_drawer_show_labels"
                 android:title="@string/drawer_show_labels" />
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="pref_minusfontallapp"
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_text_size_drawer"
+                android:title="@string/text_size"
                 android:dependency="pref_drawer_show_labels"
-                android:title="@string/smallfont" />
-            <ListPreference
-                android:defaultValue="100"
-                android:entries="@array/IconSizePrName"
-                android:entryValues="@array/IconSizesPrValues"
-                android:key="pref_drawer_icon_size"
-                android:summary="%s"
-                android:title="@string/icon_size" />
+                app:minValue="0.5"
+                app:maxValue="1.5"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="1.0"
+                android:persistent="true" />
             <SwitchPreference
                 android:key="pref_change_drawer_label_color"
                 android:title="@string/use_custom_label_color"
@@ -277,6 +251,7 @@
                 android:disableDependentsState="false"
                 android:persistent="true" />
             <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:icon="@drawable/ic_colorize_24dp"
                 android:key="pref_drawer_label_color_picker"
                 android:dependency="pref_change_drawer_label_color"
                 android:title="@string/custom_label_color"
@@ -284,39 +259,76 @@
         </PreferenceCategory>
     </PreferenceScreen>
 
-    <PreferenceScreen
-        android:summary="@string/custom_theme_summary"
-        android:icon="@drawable/ic_theme"
-        android:title="@string/custom_theme">
-    <PreferenceCategory
-        android:title="@string/custom_theme">
-        <ListPreference
-            android:defaultValue="1"
-            android:entries="@array/ThemeName"
-            android:entryValues="@array/ThemeValues"
-            android:key="pref_themestyle"
-            android:persistent="true"
-            android:summary="%s"
-            android:title="@string/custom_theme" />
-    </PreferenceCategory>
 
+    <PreferenceScreen
+        android:icon="@drawable/ic_folder_open_24dp"
+        android:summary="@string/custom_folders_summary"
+        android:title="@string/custom_folders">
+        <PreferenceCategory
+            android:title="@string/custom_grid_size">
+            <ListPreference
+                android:defaultValue="4"
+                android:entries="@array/numFolderValues"
+                android:entryValues="@array/numFolderValues"
+                android:key="pref_numFolderCols"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/num_cols" />
+            <ListPreference
+                android:defaultValue="4"
+                android:entries="@array/numFolderValues"
+                android:entryValues="@array/numFolderValues"
+                android:key="pref_numFolderRows"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/num_rows" />
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:title="@string/custom_folders">
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_old_folder_animation"
+                android:title="@string/old_folder_animation" />
+        </PreferenceCategory>
         <PreferenceCategory
             android:title="@string/custom_ico">
-            <Preference
-                android:persistent="true"
-                android:key="icon-packs"
-                android:title="@string/icons_pack_name" />
-            <ListPreference
-                android:key="pref_override_icon_shape"
-                android:title="@string/icon_shape_override_label"
-                android:summary="%s"
-                android:enabled="false"
-                android:entries="@array/icon_shape_override_paths_names"
-                android:entryValues="@array/icon_shape_override_paths_values"
-                android:defaultValue=""
-                android:persistent="false" />
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_icon_size_folder"
+                android:title="@string/icon_size"
+                app:minValue="0.5"
+                app:maxValue="1.5"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="1.0"
+                android:persistent="true" />
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_folder_show_labels"
+                android:title="@string/folder_show_labels" />
+            <com.android.launcher3.SeekbarPreference
+                android:key="pref_text_size_folder"
+                android:title="@string/text_size"
+                android:dependency="pref_folder_show_labels"
+                app:minValue="0.5"
+                app:maxValue="1.5"
+                app:summaryFormat="%.0f%%"
+                app:summaryMultiplier="100"
+                app:defaultValue="1.0"
+                android:persistent="true" />
+            <SwitchPreference
+                android:key="pref_change_folder_label_color"
+                android:title="@string/use_custom_label_color"
+                android:defaultValue="false"
+                android:dependency="pref_folder_show_labels"
+                android:disableDependentsState="false"
+                android:persistent="true" />
+            <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:icon="@drawable/ic_colorize_24dp"
+                android:key="pref_folder_label_color_picker"
+                android:dependency="pref_change_folder_label_color"
+                android:title="@string/custom_label_color"
+                android:defaultValue="0xff666666" />
         </PreferenceCategory>
-
     </PreferenceScreen>
 
     <PreferenceScreen
@@ -342,14 +354,16 @@
             android:key="pref_disablegrad"
             android:title="@string/remove_gradient"
             android:disableDependentsState="true"/>
-        <ListPreference
-            android:defaultValue="100"
-            android:entries="@array/GradientSizeName"
-            android:entryValues="@array/GradientSize"
-            android:key="pref_gradsize"
-            android:summary="%s"
+        <com.android.launcher3.SeekbarPreference
+            android:key="pref_gradient_size"
+            android:title="@string/gradient_size"
             android:dependency="pref_disablegrad"
-            android:title="@string/gradient_size" />
+            app:minValue="0.5"
+            app:maxValue="2.0"
+            app:summaryFormat="%.0f%%"
+            app:summaryMultiplier="100"
+            app:defaultValue="1.0"
+            android:persistent="true" />
         <SwitchPreference
             android:defaultValue="true"
             android:key="pref_hotseatShowArrow"
@@ -384,12 +398,48 @@
                 android:key="pref_customqsbcolour"
                 android:title="@string/use_qsb_label_color" />
             <yuku.ambilwarna.widget.AmbilWarnaPreference
+                android:icon="@drawable/ic_colorize_24dp"
                 android:key="pref_qsb_color_picker"
                 app:supportsAlpha="true"
                 android:dependency="pref_customqsbcolour"
                 android:title="@string/custom_qsb_color"
                 android:defaultValue="0xff666666" />
         </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:summary="@string/custom_theme_summary"
+        android:icon="@drawable/ic_theme"
+        android:title="@string/custom_theme">
+        <PreferenceCategory
+            android:title="@string/custom_theme">
+            <ListPreference
+                android:defaultValue="1"
+                android:entries="@array/ThemeName"
+                android:entryValues="@array/ThemeValues"
+                android:key="pref_themestyle"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/custom_theme" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/custom_ico">
+            <Preference
+                android:persistent="true"
+                android:key="icon-packs"
+                android:title="@string/icons_pack_name" />
+            <ListPreference
+                android:key="pref_override_icon_shape"
+                android:title="@string/icon_shape_override_label"
+                android:summary="%s"
+                android:enabled="false"
+                android:entries="@array/icon_shape_override_paths_names"
+                android:entryValues="@array/icon_shape_override_paths_values"
+                android:defaultValue=""
+                android:persistent="false" />
+        </PreferenceCategory>
+
     </PreferenceScreen>
 
     <PreferenceScreen
@@ -434,48 +484,6 @@
             android:persistent="true"
             />
         <PreferenceCategory
-            android:title="@string/icon_badging_title">
-            <com.android.launcher3.views.ButtonPreference
-                android:key="pref_icon_badging"
-                android:title="@string/icon_badging_title"
-                android:persistent="false"
-                android:enabled="false"
-                android:disableDependentsState="false"
-                android:widgetLayout="@layout/notification_pref_warning" >
-                <intent android:action="android.settings.NOTIFICATION_SETTINGS">
-                    <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
-                    <extra
-                        android:name=":settings:fragment_args_key"
-                        android:value="notification_badging" />
-                </intent>
-            </com.android.launcher3.views.ButtonPreference>
-            <SwitchPreference
-                android:key="pref_textinbadge"
-                android:title="@string/textinbadge"
-                android:summary="@string/textinbadge_sum"
-                android:dependency="pref_icon_badging"
-                android:defaultValue="false" />
-
-            <SwitchPreference
-                android:key="pref_change_badge_color"
-                android:title="@string/use_custom_badge_color"
-                android:defaultValue="false"
-                android:dependency="pref_icon_badging"
-                android:disableDependentsState="false"
-                android:persistent="true" />
-
-            <yuku.ambilwarna.widget.AmbilWarnaPreference
-                android:key="pref_badge_color_picker"
-                android:defaultValue="0xffff0000"
-                android:dependency="pref_change_badge_color"
-                android:title="@string/custom_badge_color" />
-            <yuku.ambilwarna.widget.AmbilWarnaPreference
-                android:key="pref_badge_text_color_picker"
-                android:defaultValue="0xffffffff"
-                android:dependency="pref_change_badge_color"
-                android:title="@string/custom_badge_text_color" />
-        </PreferenceCategory>
-        <PreferenceCategory
             android:title="@string/allow_vibration">
             <SwitchPreference
                 android:key="pref_vibration"
@@ -496,6 +504,62 @@
                 android:dependency="pref_vibration"
                 android:title="@string/vibrationdurationtest" />
         </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/ic_notification_24dp"
+        android:summary="@string/icon_badging_sum"
+        android:title="@string/icon_badging_title">
+        <com.android.launcher3.views.ButtonPreference
+            android:key="pref_icon_badging"
+            android:title="@string/icon_badging_title"
+            android:persistent="false"
+            android:enabled="false"
+            android:disableDependentsState="false"
+            android:widgetLayout="@layout/notification_pref_warning" >
+            <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+                <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
+                <extra
+                    android:name=":settings:fragment_args_key"
+                    android:value="notification_badging" />
+            </intent>
+        </com.android.launcher3.views.ButtonPreference>
+        <SwitchPreference
+            android:key="pref_textinbadge"
+            android:title="@string/textinbadge"
+            android:summary="@string/textinbadge_sum"
+            android:dependency="pref_icon_badging"
+            android:defaultValue="false" />
+        <com.android.launcher3.SeekbarPreference
+            android:key="pref_bage_size"
+            android:title="@string/bage_size"
+            android:dependency="pref_icon_badging"
+            app:minValue="0.9"
+            app:maxValue="1.2"
+            app:summaryFormat="%.0f%%"
+            app:summaryMultiplier="100"
+            app:defaultValue="1.0"
+            android:persistent="true" />
+        <SwitchPreference
+            android:key="pref_change_badge_color"
+            android:title="@string/use_custom_badge_color"
+            android:defaultValue="false"
+            android:dependency="pref_icon_badging"
+            android:disableDependentsState="false"
+            android:persistent="true" />
+
+        <yuku.ambilwarna.widget.AmbilWarnaPreference
+            android:icon="@drawable/ic_colorize_24dp"
+            android:key="pref_badge_color_picker"
+            android:defaultValue="0xffff0000"
+            android:dependency="pref_change_badge_color"
+            android:title="@string/custom_badge_color" />
+        <yuku.ambilwarna.widget.AmbilWarnaPreference
+            android:icon="@drawable/ic_colorize_24dp"
+            android:key="pref_badge_text_color_picker"
+            android:defaultValue="0xffffffff"
+            android:dependency="pref_change_badge_color"
+            android:title="@string/custom_badge_text_color" />
     </PreferenceScreen>
 
     <Preference

@@ -43,11 +43,11 @@ public class BadgeRenderer {
     private static boolean DOTS_ONLY = true;
 
     // The badge sizes are defined as percentages of the app icon size.
-    private static final float SIZE_PERCENTAGE = 0.38f;
-    private static final float SIZE_PERCENTAGE_DOT_WITH_TEXT = 0.33f;
+    private static float SIZE_PERCENTAGE = 0.38f;
+    private static float SIZE_PERCENTAGE_DOT_WITH_TEXT = 0.33f;
     // Used to expand the width of the badge for each additional digit.
     private static final float CHAR_SIZE_PERCENTAGE = 0.08f;
-    private static final float TEXT_SIZE_PERCENTAGE = 0.22f;
+    private static float TEXT_SIZE_PERCENTAGE = 0.22f;
     private static final float OFFSET_PERCENTAGE = 0.02f;
     private static final float STACK_OFFSET_PERCENTAGE_X = 0.05f;
     private static final float STACK_OFFSET_PERCENTAGE_Y = 0.06f;
@@ -72,6 +72,11 @@ public class BadgeRenderer {
 
     public BadgeRenderer(Context context, int iconSizePx) {
         mContext = context;
+        if (Utilities.getPrefs(mContext).getFloat("pref_icon_size_home", 1f) != 1f) {
+        SIZE_PERCENTAGE = SIZE_PERCENTAGE * Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f);
+        SIZE_PERCENTAGE_DOT_WITH_TEXT = SIZE_PERCENTAGE_DOT_WITH_TEXT * Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f);
+        TEXT_SIZE_PERCENTAGE = TEXT_SIZE_PERCENTAGE * Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f);
+        }
         DOTS_ONLY = !Utilities.getPrefs(mContext).getBoolean("pref_textinbadge", false);
         Resources res = context.getResources();
         mSize = (int) (SIZE_PERCENTAGE * iconSizePx);

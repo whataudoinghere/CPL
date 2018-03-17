@@ -150,13 +150,17 @@ public final class Utilities {
     public static final String KEY_PREF_HOTSEAT_SHOW_ARROW = "pref_hotseatShowArrow";
     public static final String KEY_PREF_HOTSEAT_SHOW_PAGE_INDICATOR = "pref_hotseatShowPageIndicator";
     public static final String DISABLEGRADIENT_PREFERENCE_KEY = "pref_disablegrad";
-    public static final String GRADIENTSIZE = "pref_gradsize";
+    public static final String GRADIENTSIZE = "pref_gradient_size";
+    public static final String BADGE_SIZE = "pref_bage_size";
     public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_SHOW_FOLDER_LABELS = "pref_folder_show_labels";
-    public static final String MINUSFONT = "pref_minusfont";
-    public static final String MINUSFONTALLAPP = "pref_minusfontallapp";
-    public static final String ICONSIZE = "pref_IconSize";
+    public static final String ICONSIZE_DRAWER = "pref_icon_size_drawer";
+    public static final String TEXTSIZE_DRAWER = "pref_text_size_drawer";
+    public static final String ICONSIZE_FOLDER = "pref_icon_size_folder";
+    public static final String TEXTSIZE_FOLDER = "pref_text_size_folder";
+    public static final String ICONSIZE = "pref_icon_size_home";
+    public static final String TEXTSIZEHOME = "pref_text_size_home";
     public static final String KEY_REBOOT = "pref_reboot";
     public static final String KEY_ABOUT_FORGOT = "about_forgot";
     public static final String KEY_HIDE_WIDGET_TOO = "pref_hide_widgets_too";
@@ -185,7 +189,7 @@ public final class Utilities {
     public static final String KEY_BADGE_COLOUR = "pref_change_badge_color";
     public static final String KEY_BADGE_TEXT_COLOUR = "pref_badge_text_color_picker";
     public static final String KEY_BADGE_CAN_CHANGE_COLOUR = "pref_badge_color_picker";
-    public static final String SPRING_COEFF = "pref_springcoeff";
+    public static final String SPRING_COEFF_FLOAT = "pref_spring_coefficient";
     public static final String USE_SPRING = "pref_use_spring";
     public static final String FAVORITE_APP = "pref_favorite_app";
     public static final String LAUNCH_FAVORITE_APP = "pref_launch_favorite_app";
@@ -210,8 +214,8 @@ public final class Utilities {
         return getPrefs(context).getBoolean(USE_SPRING , true);
     }
 
-    public static String SpringCoeff(Context context) {
-        return getPrefs(context).getString(SPRING_COEFF, "0.55");
+    public static float SpringCoeff(Context context) {
+        return getPrefs(context).getFloat(SPRING_COEFF_FLOAT, 0.55f);
     }
 
     public static boolean LaunchFavoriteApp(Context context) {
@@ -241,7 +245,6 @@ public final class Utilities {
     public static boolean hidewidgettoo(Context context) {
         return getPrefs(context).getBoolean(KEY_HIDE_WIDGET_TOO, true);
     }
-
     public static boolean vibration(Context context) {
         return getPrefs(context).getBoolean(VIBRATIONFEEDBACK, false);
     }

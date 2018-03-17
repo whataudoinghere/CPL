@@ -29,6 +29,7 @@ import android.graphics.Shader;
 import android.support.v4.graphics.ColorUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
@@ -78,7 +79,10 @@ public class GradientView extends View implements WallpaperColorInfo.OnChangeLis
         this.mMaskHeight = Utilities.pxFromDp(ALPHA_MASK_HEIGHT_DP, dm);
         this.mMaskWidth = Utilities.pxFromDp(ALPHA_MASK_WIDTH_DP, dm);
         Launcher launcher = Launcher.getLauncher(context);
-        mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : Integer.valueOf(prefs.getString("pref_gradsize", "100"));
+
+        if ((prefs.getFloat("pref_gradient_size", 1f) != 1f))
+            mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : (int) 100 * prefs.getFloat("pref_gradient_size", 1f);
+        else mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : 100;
         boolean disablegrad = Utilities.getPrefs((getContext())).getBoolean("pref_disablegrad", false);
         if (disablegrad) {
             mAlphaStart1 = launcher.getDeviceProfile().isVerticalBarLayout() ? 0 : 0;

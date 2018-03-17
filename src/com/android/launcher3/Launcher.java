@@ -4361,10 +4361,19 @@ public class Launcher extends BaseActivity
             if (Utilities.ROWFOLDER.equals(key)) {
                 needRestart();
             }
-            if (Utilities.MINUSFONT.equals(key)) {
+            if (Utilities.TEXTSIZEHOME.equals(key)) {
                 needRestart();
             }
-            if (Utilities.MINUSFONTALLAPP.equals(key)) {
+            if (Utilities.ICONSIZE_DRAWER.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.TEXTSIZE_DRAWER.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.TEXTSIZE_FOLDER.equals(key)) {
+                needRestart();
+            }
+            if (Utilities.TEXTSIZE_FOLDER.equals(key)) {
                 needRestart();
             }
             if (Utilities.ICONSIZE.equals(key)) {
@@ -4409,6 +4418,9 @@ public class Launcher extends BaseActivity
             if (Utilities.SHOW_QSB_IN_DOCK.equals(key)) {
                 needRestart();
             }
+            if (Utilities.BADGE_SIZE.equals(key)) {
+                needRestart();
+            }
             if (Utilities.OLD_FOLDER_ANIMATION.equals(key)) {
                 needRestart();
             }
@@ -4433,7 +4445,7 @@ public class Launcher extends BaseActivity
             if (Utilities.USE_SPRING.equals(key)) {
                 needRestart();
             }
-            if (Utilities.SPRING_COEFF.equals(key)) {
+            if (Utilities.SPRING_COEFF_FLOAT.equals(key)) {
                 needRestart();
             }
         }

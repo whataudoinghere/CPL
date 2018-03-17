@@ -321,6 +321,7 @@
 
     <!-- Accessibility confirmation for notification being dismissed. -->
     <string name="notification_dismissed">Notification dismissed</string>
+    <string name="icon_badging_sum">Customize notification dots</string>
 
 
     <string name="icu_abbrev_wday_month_day_no_year">EEEMMMd</string>
@@ -433,10 +434,11 @@
     <string name="custom_ico">Icons</string>
     <string name="smallfont">Smaller Font for Labels</string>
     <string name="icon_size">Icon Size</string>
+    <string name="text_size">Label Text Size</string>
 
     <!-- Home screen -->
     <string name="custom_hs">Home Screen</string>
-    <string name="custom_hs_summary">Customize your Home screen, \"At a Glance\" widget, folders</string>
+    <string name="custom_hs_summary">Customize your Home screen and \"At a Glance\" widget</string>
     <string name="edgemarginstock">Stock</string>
     <string name="edgemarginsmall">Small</string>
     <string name="diabledgemargin">Disable</string>
@@ -456,6 +458,7 @@
 
     <!-- Folders -->
     <string name="custom_folders">Folders</string>
+    <string name="custom_folders_summary">Customize your folders</string>
     <string name="folder_show_labels">Icon Labels in Folders</string>
     <string name="old_folder_animation">Old Folder Animation</string>
 
@@ -523,5 +526,6 @@
     <string name="favorite_not_found">Favorite app not found</string>
     <string name="launch_favorite_app_itle">Open Favorite App</string>
     <string name="launch_favorite_app_summary">For two finger swipe down</string>
+    <string name="bage_size">Bage Size</string>
 
 </resources>

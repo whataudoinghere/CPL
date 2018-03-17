@@ -150,7 +150,7 @@ public class InvariantDeviceProfile {
         InvariantDeviceProfile closestProfile = closestProfiles.get(0);
         boolean a = prefs.getBoolean("pref_change_grid_size", true);
         if (a) {
-            numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) +1;
+            numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) + 1;
             numColumns = Integer.valueOf(prefs.getString("pref_numCols", "5"));
         }
         else {
@@ -168,8 +168,10 @@ public class InvariantDeviceProfile {
         numFolderRows = Integer.valueOf(prefs.getString("pref_numFolderRows", "4"));
         numFolderColumns = Integer.valueOf(prefs.getString("pref_numFolderCols", "4"));
         minAllAppsPredictionColumns = closestProfile.minAllAppsPredictionColumns;
-        iconSize = Integer.valueOf(prefs.getString("pref_IconSize", "56"));
-        iconAllAppSize = 56;
+        iconSize = interpolatedDeviceProfileOut.iconSize;
+        if (prefs.getFloat("pref_icon_size_home", 1f) != 1f)
+            iconSize = (int) ( iconSize * prefs.getFloat("pref_icon_size_home", 1f));
+        iconAllAppSize = interpolatedDeviceProfileOut.iconSize;
         landscapeIconSize = interpolatedDeviceProfileOut.landscapeIconSize;
         iconBitmapSize = Utilities.pxFromDp(iconSize, dm);
         iconTextSize = interpolatedDeviceProfileOut.iconTextSize;

@@ -21,7 +21,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
-        versionName "1.7.3"
+        versionName "1.7.2.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'BUILD_TIME', 'new java.text.SimpleDateFormat("E dd.MM.yy HH:mm:ss a", java.util.Locale.ENGLISH).format(new java.util.Date(' + System.currentTimeMillis() +'L))'
         buildConfigField 'String', 'BUILD_HOST', '"' + InetAddress.getLocalHost().getHostName() + '"'

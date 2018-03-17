@@ -152,4 +152,12 @@
 
     <!-- Custom -->
     <attr name="bottomSheetNavBarColor" format="color" />
+
+    <declare-styleable name="SeekbarPreference">
+        <attr name="minValue" format="float" />
+        <attr name="maxValue" format="float" />
+        <attr name="summaryFormat" format="string" />
+        <attr name="summaryMultiplier" format="integer" />
+        <attr name="defaultValue" format="float" />
+    </declare-styleable>
 </resources>

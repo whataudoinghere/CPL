@@ -162,34 +162,53 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
         int display = a.getInteger(R.styleable.BubbleTextView_iconDisplay, DISPLAY_WORKSPACE);
         int defaultIconSize = grid.iconSizePx;
         if (display == DISPLAY_WORKSPACE) {
-            smallfont = prefs.getBoolean("pref_minusfont", false);
-            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx - 3);
-            else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx);
+
+            if ((prefs.getFloat("pref_text_size_home", 1f) != 1f))
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (grid.iconTextSizePx ) * prefs.getFloat("pref_text_size_home", 1f));
+            else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx );
+
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
+
             if (prefs.getBoolean("pref_change_workspace_label_color", false)){
                 Integer intColor = prefs.getInt("pref_workspace_label_color_picker", -1);
                 String hexColor = "#" + Integer.toHexString(intColor).substring(2);
                 setTextColor(Color.parseColor(hexColor));
             }
+
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
+
         } else if (display == DISPLAY_ALL_APPS) {
-            smallfont = prefs.getBoolean("pref_minusfontallapp", false);
-            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx - 3);
+
+            if ((prefs.getFloat("pref_text_size_drawer", 1f) != 1f))
+                 setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (grid.allAppsIconTextSizePx) * prefs.getFloat("pref_text_size_drawer", 1f));
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
+
             setCompoundDrawablePadding(grid.allAppsIconDrawablePaddingPx);
-            defaultIconSize = grid.allAppsIconSizePx * Integer.valueOf(prefs.getString("pref_drawer_icon_size", "100"))/100;
+
+            if (prefs.getFloat("pref_icon_size_drawer", 1f) != 1f)
+            defaultIconSize = (int) ( grid.allAppsIconSizePx * prefs.getFloat("pref_icon_size_drawer", 1f));
+            else defaultIconSize = grid.allAppsIconSizePx;
+
             if (prefs.getBoolean("pref_change_drawer_label_color", false)){
                 Integer intColor = prefs.getInt("pref_drawer_label_color_picker", -1);
                 String hexColor = "#" + Integer.toHexString(intColor).substring(2);
                 setTextColor(Color.parseColor(hexColor));
             }
+
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DRAWER_LABELS, true);
+
         } else if (display == DISPLAY_FOLDER) {
-            smallfont = prefs.getBoolean("pref_minusfont", false);
-            if (smallfont) setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx - 3);
+
+            if ((prefs.getFloat("pref_text_size_folder", 1f) != 1f))
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (grid.folderChildTextSizePx) * prefs.getFloat("pref_text_size_folder", 1f));
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx);
+
             setCompoundDrawablePadding(grid.folderChildDrawablePaddingPx);
-            defaultIconSize = grid.folderChildIconSizePx;
+
+            if (prefs.getFloat("pref_icon_size_folder", 1f) != 1f)
+                defaultIconSize = (int) ( grid.folderChildIconSizePx * prefs.getFloat("pref_icon_size_folder", 1f));
+            else defaultIconSize = grid.folderChildIconSizePx;
+
             if (prefs.getBoolean("pref_change_folder_label_color", false)){
                 Integer intColor = prefs.getInt("pref_folder_label_color_picker", -1);
                 String hexColor = "#" + Integer.toHexString(intColor).substring(2);
