@@ -72,7 +72,7 @@ public class BadgeRenderer {
 
     public BadgeRenderer(Context context, int iconSizePx) {
         mContext = context;
-        if (Utilities.getPrefs(mContext).getFloat("pref_icon_size_home", 1f) != 1f) {
+        if (Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f) != 1f) {
         SIZE_PERCENTAGE = SIZE_PERCENTAGE * Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f);
         SIZE_PERCENTAGE_DOT_WITH_TEXT = SIZE_PERCENTAGE_DOT_WITH_TEXT * Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f);
         TEXT_SIZE_PERCENTAGE = TEXT_SIZE_PERCENTAGE * Utilities.getPrefs(mContext).getFloat("pref_bage_size", 1f);
