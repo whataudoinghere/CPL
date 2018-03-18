@@ -209,6 +209,8 @@
     <string name="date">Дата сборки</string>
     <string name="sum_aboutapp">Версия, информация, благодарности</string>
     <string name="about_app_version_wtu">Версия / whataudoinghere GitHub</string>
+    <string name="custom_about_cpl">О Customized Pixel Launcher</string>
+    <string name="custom_version">Версия</string>
 
     <!-- Allapp -->
     <string name="custom_allapp">Меню приложений</string>
@@ -319,5 +321,10 @@
     <string name="favorite_not_found">Избранное приложение не найдено</string>
     <string name="launch_favorite_app_itle">Запускать избранное приложение</string>
     <string name="launch_favorite_app_summary">При проведении двумя пальцами вниз по главному экрану</string>
+
+    <!-- Telegram -->
+    <string name="custom_telegram">CPL в Telegram</string>
+    <string name="telegram_discussion_group">Группа обсуждения CPL</string>
+    <string name="telegram_update_channel">Канал с обновлениями CPL</string>
 
 </resources>

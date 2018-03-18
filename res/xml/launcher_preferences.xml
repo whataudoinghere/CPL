@@ -614,7 +614,7 @@
         android:key="about_screen"
         android:icon="@drawable/ic_information"
         android:summary="@string/sum_aboutapp"
-        android:title="@string/about">
+        android:title="@string/custom_about_cpl">
 
         <Preference
             android:title="@string/about"
@@ -624,7 +624,27 @@
                 android:key="about_forgot"
                 android:title="@string/thanks"
                 android:summary="@string/sum_thanks" >
+        </Preference>
+
+        <PreferenceCategory
+            android:title="@string/custom_telegram">
+            <Preference
+                android:title="@string/telegram_discussion_group"
+                android:persistent="false">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://t.me/CPL_discussion_group" />
             </Preference>
+            <Preference
+                android:title="@string/telegram_update_channel"
+                android:persistent="false">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://t.me/CPL_update_channel" />
+            </Preference>
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:title="@string/custom_version">
             <Preference
                 android:key="about_app_version"
                 android:title="@string/about_app_version_wtu"
@@ -645,6 +665,7 @@
                     android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
                     android:data="package:com.google.android.apps.nexuslauncher" />
             </Preference>
+        </PreferenceCategory>
         </PreferenceScreen>
 
 </PreferenceScreen>

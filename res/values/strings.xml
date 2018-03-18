@@ -407,6 +407,8 @@
     <string name="sum_aboutapp">About the app, version information, credits</string>
     <string name="about_app_version_wtu">Version / whataudoinghere GitHub</string>
     <string name="url_wtu_git">https://github.com/whataudoinghere/Launcher3</string>
+    <string name="custom_about_cpl">About Customized Pixel Launcher</string>
+    <string name="custom_version">Version</string>
 
     <!-- Reboot -->
     <string name="custom_reboot">Restart Launcher</string>
@@ -518,5 +520,10 @@
     <string name="launch_favorite_app_itle">Open Favorite App</string>
     <string name="launch_favorite_app_summary">For two finger swipe down</string>
     <string name="bage_size">Bage Size</string>
+
+    <!-- Telegram -->
+    <string name="custom_telegram">CPL in Telegram</string>
+    <string name="telegram_discussion_group">CPL Discussion Group</string>
+    <string name="telegram_update_channel">CPL Update Channel</string>
 
 </resources>
