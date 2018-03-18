@@ -185,7 +185,6 @@
     <string name="num_hotseat_icons_pref_title">Количество значков в док-баре</string>
     <string name="force_mic">Микрофон в строке поиска</string>
     <string name="force_colour_logo">Цветной логотип Google</string>
-    <string name="dark_themeqsb">Темная строка поиска</string>
     <string name="transparentqsb">Прозрачная строка поиска</string>
     <string name="hotseatShowArrow">Отображать стрелку</string>
     <string name="hotseat_show_page_indicator">Отображать индикатор страниц</string>
@@ -194,16 +193,6 @@
     <string name="custom_qsb_in_dock">Настройки строки поиска</string>
     <string name="qsb_in_dock_show">Отображать строку поиска</string>
     <string name="pdock">Сплошной цвет</string>
-
-    <!-- Sizes -->
-    <string name="size_biggest">Большой</string>
-    <string name="size_big">Увеличенный</string>
-    <string name="size_smallest">Наименьший</string>
-    <string name="size_small">Уменьшенный</string>
-    <string name="size_stock">Стандартный</string>
-    <string name="size_extrabig1">Сверхбольшой 1</string>
-    <string name="size_extrabig2">Сверхбольшой 2</string>
-    <string name="size_extrabig3">Сверхбольшой 3</string>
 
     <!-- Rows and Coloumns -->
     <string name="change_grid_size">Изменить размер сетки</string>
@@ -224,13 +213,11 @@
     <!-- Allapp -->
     <string name="custom_allapp">Меню приложений</string>
     <string name="custom_allapp_summary">Настроить меню приложений</string>
-    <string name="num_colsallapp">Дополнительный столбец</string>
     <string name="smallallaps">Уменьшить строку поиска</string>
     <string name="googleinappmenu">Cтрока поиска Google</string>
 
     <!-- Icons -->
     <string name="custom_ico">Значки</string>
-    <string name="smallfont">Уменьшить шрифт подписей</string>
     <string name="icon_size">Размер значка</string>
     <string name="text_size">Размер шрифта подписей</string>
 
@@ -324,7 +311,6 @@
     <!-- Spring -->
     <string name="springanim">Анимация пружины</string>
     <string name="springcoef">Коэффициент жесткости пружины</string>
-    <string name="springstockcoef">4 (Стандартный)</string>
     <string name="use_spring_sum">В меню приложений</string>
 
     <!-- Favorite app -->

@@ -385,21 +385,10 @@
     <string name="hotseat_show_page_indicator">Show Page Indicator</string>
     <string name="gradient_size">Gradient Size</string>
     <string name="remove_gradient">Disable Dock Gradient</string>
-    <string name="dark_themeqsb">Dark Search Bar</string>
     <string name="custom_qsb_in_dock">Search Bar Settings</string>
     <string name="qsb_in_dock_show">Search Bar In Dock</string>
     <string name="googleinappmenu">New Google Search Bar</string>
     <string name="pdock">Solid Dock Background</string>
-
-    <!-- Sizes -->
-    <string name="size_biggest">Biggest</string>
-    <string name="size_big">Big</string>
-    <string name="size_smallest">Smallest</string>
-    <string name="size_small">Small</string>
-    <string name="size_stock">Stock</string>
-    <string name="size_extrabig1">Extra big 1</string>
-    <string name="size_extrabig2">Extra big 2</string>
-    <string name="size_extrabig3">Extra big 3</string>
 
     <!-- Rows and Coloumns -->
     <string name="change_grid_size">Change Grid Size</string>
@@ -427,12 +416,10 @@
     <!-- Allapp -->
     <string name="custom_allapp">All Apps</string>
     <string name="custom_allapp_summary">Customize your app drawer</string>
-    <string name="num_colsallapp">Extra Column in App Drawer</string>
     <string name="smallallaps">Small Search Bar</string>
 
     <!-- Icons -->
     <string name="custom_ico">Icons</string>
-    <string name="smallfont">Smaller Font for Labels</string>
     <string name="icon_size">Icon Size</string>
     <string name="text_size">Label Text Size</string>
 
@@ -522,7 +509,6 @@
     <!-- Spring -->
     <string name="springanim">Spring Aimation</string>
     <string name="springcoef">Spring Flexibility Coefficient</string>
-    <string name="springstockcoef">4 (Stock)</string>
     <string name="use_spring_sum">In the app drawer</string>
 
     <!-- Favorite app -->

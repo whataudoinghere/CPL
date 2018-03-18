@@ -394,9 +394,6 @@ public class DeviceProfile {
         allAppsIconSizePx = iconAllAppSizePx;
         allAppsIconDrawablePaddingPx = iconDrawablePaddingPx;
 
-        SharedPreferences prefs = Utilities.getPrefs(context);
-        boolean a = prefs.getBoolean("pref_change_grid_size", true);
-
         allAppsCellHeightPx = getCellSize(context).y;
 
         if (isVerticalBarLayout()) {

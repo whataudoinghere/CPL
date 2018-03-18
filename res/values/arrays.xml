@@ -26,13 +26,6 @@
         <item>5</item>
     </string-array>
 
-    <string-array name="GradientSizeName">
-        <item>@string/size_small</item>
-        <item>@string/size_stock</item>
-        <item>@string/size_big</item>
-        <item>@string/size_biggest</item>
-    </string-array>
-
     <string-array name="VibrationDurationValues">
         <item>20</item>
         <item>25</item>
@@ -51,57 +44,6 @@
         <item>90</item>
         <item>95</item>
         <item>100</item>
-    </string-array>
-
-    <string-array name="GradientSize">
-        <item>70</item>
-        <item>100</item>
-        <item>150</item>
-        <item>200</item>
-    </string-array>
-
-    <string-array name="IconSizeName">
-        <item>@string/size_smallest</item>
-        <item>@string/size_small</item>
-        <item>@string/size_stock</item>
-        <item>@string/size_big</item>
-        <item>@string/size_biggest</item>
-        <item>@string/size_extrabig1</item>
-        <item>@string/size_extrabig2</item>
-        <item>@string/size_extrabig3</item>
-    </string-array>
-
-    <string-array name="IconSizesValues">
-        <item>50</item>
-        <item>54</item>
-        <item>56</item>
-        <item>58</item>
-        <item>60</item>
-        <item>64</item>
-        <item>68</item>
-        <item>72</item>
-    </string-array>
-
-    <string-array name="IconSizePrName">
-        <item>@string/size_smallest</item>
-        <item>@string/size_small</item>
-        <item>@string/size_stock</item>
-        <item>@string/size_big</item>
-        <item>@string/size_biggest</item>
-        <item>@string/size_extrabig1</item>
-        <item>@string/size_extrabig2</item>
-        <item>@string/size_extrabig3</item>
-    </string-array>
-
-    <string-array name="IconSizesPrValues">
-        <item>90</item>
-        <item>95</item>
-        <item>100</item>
-        <item>105</item>
-        <item>108</item>
-        <item>112</item>
-        <item>114</item>
-        <item>116</item>
     </string-array>
 
     <string-array name="DateFormatsName">
@@ -148,23 +90,4 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="SpringCoeffName">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>@string/springstockcoef</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-    </string-array>
-
-    <string-array name="SpringCoeff">
-        <item>0.25</item>
-        <item>0.35</item>
-        <item>0.45</item>
-        <item>0.55</item>
-        <item>0.65</item>
-        <item>0.75</item>
-        <item>0.85</item>
-    </string-array>
 </resources>

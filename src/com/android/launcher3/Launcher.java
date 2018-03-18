@@ -4379,7 +4379,7 @@ public class Launcher extends BaseActivity
             if (Utilities.TEXTSIZE_DRAWER.equals(key)) {
                 needRestart();
             }
-            if (Utilities.TEXTSIZE_FOLDER.equals(key)) {
+            if (Utilities.ICONSIZE_FOLDER.equals(key)) {
                 needRestart();
             }
             if (Utilities.TEXTSIZE_FOLDER.equals(key)) {
