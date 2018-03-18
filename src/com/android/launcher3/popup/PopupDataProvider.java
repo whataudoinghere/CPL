@@ -57,16 +57,16 @@ public class PopupDataProvider implements NotificationListener.NotificationsChan
     private static final SystemShortcut[] SYSTEM_SHORTCUTS = new SystemShortcut[] {
             new SystemShortcut.Uninstall(),
             new SystemShortcut.Edit(),
+            new SystemShortcut.Favorite(),
             new SystemShortcut.Widgets(),
             new SystemShortcut.AppInfo(),
-            new SystemShortcut.Favorite(),
     };
 
     private static final SystemShortcut[] SYSTEM_SHORTCUTS_FOR_LOLLIPOP = new SystemShortcut[] {
             new SystemShortcut.Uninstall(),
+            new SystemShortcut.Favorite(),
             new SystemShortcut.Widgets(),
             new SystemShortcut.AppInfo(),
-            new SystemShortcut.Favorite(),
     };
 
     private final Launcher mLauncher;
