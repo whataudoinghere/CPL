@@ -316,6 +316,10 @@
     <string name="icon_chooser">Выбор значка</string>
     <string name="icon_search">Поиск значков</string>
     <string name="use_background_from_iconpack">Задний фон значка из набора</string>
+    <string name="alt_gen_iconpack">Альтернативный метод обрезки</string>
+    <string name="custom_gen_iconpack">Опции генерации значков</string>
+    <string name="custom_gen_iconpack_note">После смены этих настроек необходимо повторно применить набор значков</string>
+    <string name="custom_important">Важно!</string>
 
     <!-- Spring -->
     <string name="springanim">Анимация пружины</string>

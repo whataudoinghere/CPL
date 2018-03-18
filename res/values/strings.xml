@@ -513,6 +513,11 @@
     <string name="icon_chooser">Icon Chooser</string>
     <string name="icon_search">Search for icons</string>
     <string name="use_background_from_iconpack">Use the background from the icon pack</string>
+    <string name="alt_gen_iconpack">Alternative Icon Cropping</string>
+    <string name="custom_gen_iconpack">Icons Generation Options</string>
+    <string name="custom_gen_iconpack_note">After changing these settings, you need to reapply the icon pack</string>
+    <string name="custom_important">Important!</string>
+
 
     <!-- Spring -->
     <string name="springanim">Spring Aimation</string>

@@ -30,9 +30,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.graphics.Color;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
@@ -43,34 +40,22 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Process;
 import android.preference.PreferenceManager;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.Pair;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.android.launcher3.graphics.LauncherIcons;
-import com.android.launcher3.util.Themes;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -84,14 +69,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-
-import static android.graphics.Color.BLACK;
-import static android.view.Gravity.CENTER;
-import static android.view.Gravity.CENTER_HORIZONTAL;
-import static android.view.Gravity.CENTER_VERTICAL;
-import static android.view.Gravity.RIGHT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static com.android.launcher3.userevent.nano.LauncherLogProto.Action.Direction.LEFT;
 
 public class IconsHandler {
 
@@ -420,7 +397,7 @@ public class IconsHandler {
     }
 
     private Bitmap generateBitmap(ComponentName componentName, Bitmap defaultBitmap) {
-        if (mBackImages.isEmpty() || !UseBackground) {
+        if (mBackImages.isEmpty() || !Utilities.UseBackgroungFromIconPack(mContext)) {
             return defaultBitmap;
         }
         Random random = new Random();
@@ -442,7 +419,7 @@ public class IconsHandler {
         maskCanvas.drawBitmap(targetBitmap, 0, 0, new Paint());
 
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST));
+        paint.setXfermode(new PorterDuffXfermode(Utilities.AlternativeGenerateIcon(mContext) ? PorterDuff.Mode.DST : PorterDuff.Mode.DST_OUT));
         canvas.drawBitmap(scaledBitmap, (w - scaledBitmap.getWidth()) / 2,
                 (h - scaledBitmap.getHeight()) / 2, null);
         canvas.drawBitmap(mutableMask, 0, 0, paint);
@@ -551,30 +528,11 @@ public class IconsHandler {
 
     public void showDialog(Activity activity) {
         loadAvailableIconPacks();
-        final Switch myswitch = new Switch(mContext);
-        myswitch.setText(R.string.use_background_from_iconpack);
-        myswitch.setTextColor(BLACK);
-        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        DisplayMetrics dm = new DisplayMetrics();
-        display.getMetrics(dm);
-        myswitch.setSwitchPadding(Utilities.pxFromDp(15, dm));
-        if (!Utilities.ATLEAST_OREO) {
-        myswitch.getThumbDrawable().setColorFilter(mContext.getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
-        myswitch.getTrackDrawable().setColorFilter(mContext.getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
-        }
-        LinearLayout linearLayout = new LinearLayout(mContext);
-        linearLayout.addView(myswitch);
-        linearLayout.setGravity(CENTER);
         final IconAdapter adapter = new IconAdapter(mContext, mIconPacks);
         AlertDialog.Builder builder = new AlertDialog.Builder(activity)
-                .setView(linearLayout)
                 .setAdapter(adapter, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int position) {
-                if(myswitch.isChecked()){
-                    UseBackground = true;
-                } else UseBackground = false;
                 final String selected = adapter.getItem(position);
                 //if (!PreferenceManager.getDefaultSharedPreferences(mContext).getString(Utilities.KEY_ICON_PACK, mDefaultIconPack).equals(selected)) {
                     switchIconPacks(selected);
@@ -588,7 +546,7 @@ public class IconsHandler {
         Window dialogWindow = mAlertDialog.getWindow();
         if (dialogWindow != null) {
             dialogWindow.setBackgroundDrawable(backgroundDrawable);
-        }
+            }
         }
         mAlertDialog.show();
         mDialogShowing = true;
@@ -636,7 +594,7 @@ public class IconsHandler {
 
             Resources res = context.getResources();
 
-            Drawable icon = res.getDrawable(android.R.mipmap.sym_def_app_icon, context.getTheme());
+            Drawable icon = res.getDrawable(R.mipmap.ic_cpl_bowie_lightning_bolt, context.getTheme());
             String defaultLabel = res.getString(R.string.default_iconpack_title);
             String defaultName = res.getString(R.string.default_iconpack);
 

@@ -469,6 +469,23 @@
                 android:persistent="false" />
         </PreferenceCategory>
 
+        <PreferenceCategory
+            android:title="@string/custom_gen_iconpack">
+            <Preference
+                android:persistent="true"
+                android:icon="@drawable/ic_priority_high_24dp"
+                android:summary="@string/custom_gen_iconpack_note"
+                android:title="@string/custom_important" />
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_use_background_from_icon_pack"
+                android:title="@string/use_background_from_iconpack" />
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="pref_alt_gen"
+                android:title="@string/alt_gen_iconpack" />
+        </PreferenceCategory>
+
     </PreferenceScreen>
 
     <PreferenceScreen

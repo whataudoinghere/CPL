@@ -204,7 +204,7 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
                 icon = mPackageManager.getApplicationIcon(info);
                 preference.setIcon(icon);
             } catch (PackageManager.NameNotFoundException e) {
-                icon = getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
+                icon = getResources().getDrawable(R.mipmap.ic_cpl_bowie_lightning_bolt);
                 preference.setSummary(defaultPack);
                 preference.setIcon(icon);
             }

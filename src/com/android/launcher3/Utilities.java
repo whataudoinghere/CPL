@@ -196,6 +196,8 @@ public final class Utilities {
     public static final String USE_SPRING = "pref_use_spring";
     public static final String FAVORITE_APP = "pref_favorite_app";
     public static final String LAUNCH_FAVORITE_APP = "pref_launch_favorite_app";
+    public static final String BACK_FROM_ICONPACK = "pref_use_background_from_icon_pack";
+    public static final String ALT_GEN = "pref_alt_gen";
 
 
 
@@ -250,6 +252,14 @@ public final class Utilities {
     }
     public static boolean vibration(Context context) {
         return getPrefs(context).getBoolean(VIBRATIONFEEDBACK, false);
+    }
+
+    public static boolean UseBackgroungFromIconPack(Context context) {
+        return getPrefs(context).getBoolean(BACK_FROM_ICONPACK, false);
+    }
+
+    public static boolean AlternativeGenerateIcon(Context context) {
+        return getPrefs(context).getBoolean(ALT_GEN, false);
     }
 
     public static boolean getAllowRotationDefaultValue(Context context) {
