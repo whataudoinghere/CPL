@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
@@ -244,7 +245,9 @@ public class ChooseIconActivity extends Activity {
                         Drawable icon = mIconsHandler.loadDrawable(
                                 mIconPackPackageName, drawables.get(position), true);
                         if (icon != null) {
-                            mIconCache.addCustomInfoToDataBase(icon, sItemInfo, mCurrentPackageLabel);
+                            mIconCache.addCustomInfoToDataBase(new BitmapDrawable(getResources(),
+                                    mIconsHandler.getBadgedCustomIcon(icon, getApplicationContext())),
+                                    sItemInfo, mCurrentPackageLabel);
                         }
                         ChooseIconActivity.this.finish();
                     }
