@@ -21,7 +21,8 @@ public class NexusLauncherActivity extends Launcher {
     public void overrideTheme(boolean isDark, boolean supportsDarkText) {
         int themestyle = Integer.valueOf(Utilities.getPrefs(this).getString("pref_themestyle", "1"));
         boolean googlebarinappmenu = Utilities.getPrefs(this).getBoolean("pref_googleinappmenu_enabled", false);
-        if (googlebarinappmenu) {
+        boolean autotheme = Utilities.getPrefs(this).getBoolean("pref_autotheme_enabled", false);
+        if (googlebarinappmenu && !autotheme) {
             if (themestyle == 1) setTheme(R.style.GoogleSearchLauncherTheme);
             if (themestyle == 2) {
                 if (Utilities.ATLEAST_NOUGAT) setTheme(R.style.GoogleSearchLauncherThemeDarkText);
@@ -29,13 +30,24 @@ public class NexusLauncherActivity extends Launcher {
             if (themestyle == 3) setTheme(R.style.GoogleSearchLauncherThemeDark);
             if (themestyle == 4) setTheme(R.style.GoogleSearchLauncherThemeBlack);
         }
-        if (!googlebarinappmenu) {
+        if (!googlebarinappmenu && !autotheme) {
             if (themestyle == 1) setTheme(R.style.LauncherTheme);
             if (themestyle == 2) {
                 if (Utilities.ATLEAST_NOUGAT) setTheme(R.style.LauncherThemeDarkText);
             }
             if (themestyle == 3) setTheme(R.style.LauncherThemeDark);
             if (themestyle == 4) setTheme(R.style.LauncherThemeBlack);
+        }
+
+        if (googlebarinappmenu && autotheme) {
+            setTheme(R.style.GoogleSearchLauncherTheme);
+            if (isDark) setTheme(R.style.GoogleSearchLauncherThemeDark);
+            if (supportsDarkText && Utilities.ATLEAST_NOUGAT) setTheme(R.style.GoogleSearchLauncherThemeDarkText);
+        }
+        if (!googlebarinappmenu && autotheme) {
+            setTheme(R.style.LauncherTheme);
+            if (isDark) setTheme(R.style.LauncherThemeDark);
+            if (supportsDarkText && Utilities.ATLEAST_NOUGAT) setTheme(R.style.LauncherThemeDarkText);
         }
     }
 

@@ -178,6 +178,8 @@
     <string name="white_withdarktext_theme">Светлая с темным текстом</string>
     <string name="dark_theme">Темная</string>
     <string name="black_theme">Черная</string>
+    <string name="auto_theme">Авто-тема</string>
+    <string name="auto_theme_summary">Выбор темы по установленным обоям</string>
 
     <!-- Dock bar -->
     <string name="custom_dockbar">Док-бар</string>

@@ -360,6 +360,8 @@
     <string name="white_withdarktext_theme">White with dark text</string>
     <string name="dark_theme">Dark</string>
     <string name="black_theme">Black</string>
+    <string name="auto_theme">Auto-theme</string>
+    <string name="auto_theme_summary">Theme depends on chosen wallpaper</string>
 
     <!-- Hidden app -->
     <string name="hide_app">Hide Apps</string>

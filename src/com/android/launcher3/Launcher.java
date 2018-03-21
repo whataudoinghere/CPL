@@ -4457,6 +4457,10 @@ public class Launcher extends BaseActivity
             if (Utilities.SPRING_COEFF_FLOAT.equals(key)) {
                 needRestart();
             }
+            if (Utilities.AUTOTHEME_PREFERENCE_KEY.equals(key)) {
+                // Recreate the activity so that it initializes the rotation preference again.
+                recreate();
+            }
         }
     }
 }

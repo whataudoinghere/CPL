@@ -198,6 +198,7 @@ public final class Utilities {
     public static final String LAUNCH_FAVORITE_APP = "pref_launch_favorite_app";
     public static final String BACK_FROM_ICONPACK = "pref_use_background_from_icon_pack";
     public static final String ALT_GEN = "pref_alt_gen";
+    public static final String AUTOTHEME_PREFERENCE_KEY = "pref_autotheme_enabled";
 
 
 
