@@ -150,7 +150,7 @@ public class InvariantDeviceProfile {
         InvariantDeviceProfile closestProfile = closestProfiles.get(0);
         boolean a = prefs.getBoolean("pref_change_grid_size", true);
         if (a) {
-            numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) + 1;
+            numRows = Integer.valueOf(prefs.getString("pref_numRows", "4")) + (prefs.getBoolean("pref_disabless",false) ? 1 : 0);
             numColumns = Integer.valueOf(prefs.getString("pref_numCols", "5"));
         }
         else {

@@ -516,7 +516,7 @@ public class DeviceProfile {
                 - cellLayoutPaddingLeftRightPx * 2, inv.numColumns);
         SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
         if (prefs.getBoolean("pref_change_grid_size_in_drawer", false))
-        result.y = calculateCellHeight(availableHeightPx - padding.y - cellLayoutBottomPaddingPx, Integer.valueOf(prefs.getString("pref_numDrawerRows", "5")));
+        result.y = calculateCellHeight(availableHeightPx - padding.y - cellLayoutBottomPaddingPx, Integer.valueOf(prefs.getString("pref_numDrawerRows", "5")) - (prefs.getBoolean("pref_show_predictions",true) ? 1 : 0));
         else result.y = calculateCellHeight(availableHeightPx - padding.y - cellLayoutBottomPaddingPx, inv.numRows);
         return result;
     }
