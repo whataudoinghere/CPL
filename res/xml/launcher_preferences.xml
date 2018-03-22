@@ -86,6 +86,15 @@
                 android:key="pref_desktop_show_labels"
                 android:disableDependentsState="false"
                 android:title="@string/desktop_show_labels" />
+            <ListPreference
+                android:defaultValue="sans-serif-condensed"
+                android:entries="@array/FontEntries"
+                android:entryValues="@array/FontValues"
+                android:key="pref_workspace_label_font"
+                android:dependency="pref_desktop_show_labels"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/label_font" />
             <com.android.launcher3.SeekbarPreference
                 android:key="pref_text_size_home"
                 android:title="@string/text_size"
@@ -153,9 +162,19 @@
                 android:key="pref_system_font_for_smartspace"
                 android:title="@string/system_font_for_smartspace"
                 android:summary="@string/system_font_for_smartspace_sum"
+                android:disableDependentsState="false"
                 android:dependency="pref_disabless"
                 android:defaultValue="false"
                 />
+            <ListPreference
+                android:defaultValue="sans-serif"
+                android:entries="@array/FontEntries"
+                android:entryValues="@array/FontValues"
+                android:key="pref_smartspace_font"
+                android:dependency="pref_system_font_for_smartspace"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/smartspace_font" />
         </PreferenceCategory>
     </PreferenceScreen>
 
@@ -258,6 +277,15 @@
                 android:defaultValue="true"
                 android:key="pref_drawer_show_labels"
                 android:title="@string/drawer_show_labels" />
+            <ListPreference
+                android:defaultValue="sans-serif-condensed"
+                android:entries="@array/FontEntries"
+                android:entryValues="@array/FontValues"
+                android:key="pref_drawer_label_font"
+                android:dependency="pref_drawer_show_labels"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/label_font" />
             <com.android.launcher3.SeekbarPreference
                 android:key="pref_text_size_drawer"
                 android:title="@string/text_size"
@@ -330,6 +358,15 @@
                 android:defaultValue="true"
                 android:key="pref_folder_show_labels"
                 android:title="@string/folder_show_labels" />
+            <ListPreference
+                android:defaultValue="sans-serif-condensed"
+                android:entries="@array/FontEntries"
+                android:entryValues="@array/FontValues"
+                android:key="pref_folder_label_font"
+                android:dependency="pref_folder_show_labels"
+                android:persistent="true"
+                android:summary="%s"
+                android:title="@string/label_font" />
             <com.android.launcher3.SeekbarPreference
                 android:key="pref_text_size_folder"
                 android:title="@string/text_size"
@@ -438,10 +475,18 @@
         android:title="@string/custom_theme">
         <PreferenceCategory
             android:title="@string/custom_theme">
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="pref_autotheme_enabled"
+                android:persistent="true"
+                android:disableDependentsState="true"
+                android:title="@string/auto_theme"
+                android:summary="@string/auto_theme_summary"/>
             <ListPreference
                 android:defaultValue="1"
                 android:entries="@array/ThemeName"
                 android:entryValues="@array/ThemeValues"
+                android:dependency="pref_autotheme_enabled"
                 android:key="pref_themestyle"
                 android:persistent="true"
                 android:summary="%s"

@@ -90,4 +90,20 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="FontEntries">
+        <item>Roboto Regular</item>
+        <item>Roboto Light</item>
+        <item>Roboto Medium</item>
+        <item>Roboto Condensed Regular</item>
+        <item>Roboto Condensed Light</item>
+    </string-array>
+
+    <string-array name="FontValues">
+        <item>sans-serif</item>
+        <item>sans-serif-light</item>
+        <item>sans-serif-medium</item>
+        <item>sans-serif-condensed</item>
+        <item>sans-serif-condensed-light</item>
+    </string-array>
+
 </resources>

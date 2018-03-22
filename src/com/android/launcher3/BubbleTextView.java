@@ -26,6 +26,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.ColorUtils;
@@ -168,12 +169,13 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
             else setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx );
 
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
-
             if (prefs.getBoolean("pref_change_workspace_label_color", false)){
                 Integer intColor = prefs.getInt("pref_workspace_label_color_picker", -1);
                 String hexColor = "#" + Integer.toHexString(intColor).substring(2);
                 setTextColor(Color.parseColor(hexColor));
             }
+
+            setTypeface(Typeface.create((prefs.getString("pref_workspace_label_font", "sans-serif-condensed")), Typeface.NORMAL));
 
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
 
@@ -195,6 +197,8 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
                 setTextColor(Color.parseColor(hexColor));
             }
 
+            setTypeface(Typeface.create((prefs.getString("pref_drawer_label_font", "sans-serif-condensed")), Typeface.NORMAL));
+
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DRAWER_LABELS, true);
 
         } else if (display == DISPLAY_FOLDER) {
@@ -214,6 +218,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
                 String hexColor = "#" + Integer.toHexString(intColor).substring(2);
                 setTextColor(Color.parseColor(hexColor));
             }
+
+            setTypeface(Typeface.create((prefs.getString("pref_folder_label_font", "sans-serif-condensed")), Typeface.NORMAL));
+
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_FOLDER_LABELS, true);
         }
         mCenterVertically = a.getBoolean(R.styleable.BubbleTextView_centerVertically, false);
