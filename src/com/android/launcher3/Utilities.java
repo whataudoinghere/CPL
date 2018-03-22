@@ -200,6 +200,11 @@ public final class Utilities {
     public static final String ALT_GEN = "pref_alt_gen";
     public static final String AUTOTHEME_PREFERENCE_KEY = "pref_autotheme_enabled";
 
+    public static final String KEY_DESKTOP_LABELS_FONT = "pref_workspace_label_font";
+    public static final String KEY_DRAWER_LABELS_FONT = "pref_drawer_label_font";
+    public static final String KEY_FOLDER_LABELS_FONT = "pref_folder_label_font";
+    public static final String KEY_SMARTSPACE_FONT = "pref_smartspace_font";
+
 
 
 

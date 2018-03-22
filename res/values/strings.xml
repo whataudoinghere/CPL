@@ -426,6 +426,7 @@
     <string name="custom_ico">Icons</string>
     <string name="icon_size">Icon Size</string>
     <string name="text_size">Label Text Size</string>
+    <string name="label_font">Label Font</string>
 
     <!-- Home screen -->
     <string name="custom_hs">Home Screen</string>
@@ -442,6 +443,7 @@
     <string name="fade_out_animation_sum">When switching pages</string>
     <string name="system_font_for_smartspace">Use System Font</string>
     <string name="system_font_for_smartspace_sum">For \"At a Glance\" widget</string>
+    <string name="smartspace_font">\"At a Glance\" Widget Font</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Icon Labels on Home Screen</string>

@@ -224,6 +224,7 @@
     <string name="custom_ico">Значки</string>
     <string name="icon_size">Размер значка</string>
     <string name="text_size">Размер шрифта подписей</string>
+    <string name="label_font">Шрифт подписей</string>
 
     <!-- Reboot -->
     <string name="custom_reboot">Перезапустить приложение</string>
@@ -245,6 +246,7 @@
     <string name="fade_out_animation_sum">При смене страницы рабочего стола</string>
     <string name="system_font_for_smartspace">Системный шрифт</string>
     <string name="system_font_for_smartspace_sum">Для виджета \"Обратный отсчет\"</string>
+    <string name="smartspace_font">Шрифт виджета \"Обратный отсчет\"</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Подписи значков</string>

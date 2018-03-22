@@ -197,13 +197,24 @@ public class SmartspaceView extends FrameLayout implements ISmartspace, ValueAni
         mClockView = findViewById(R.id.clock);
         backportClockVisibility(true);
         mTitleSeparator = findViewById(R.id.title_sep);
-        if (!Utilities.getPrefs((getContext())).getBoolean("pref_system_font_for_smartspace", false)) {
-            setGoogleSans(mTitleText, mSubtitleText, mTitleWeatherText, mSubtitleWeatherText, mClockView);
+        if (Utilities.getPrefs((getContext())).getBoolean("pref_system_font_for_smartspace", false)) {
+            setFont(mTitleText, mSubtitleText, mTitleWeatherText, mSubtitleWeatherText, mClockView);
         }
+        else setGoogleSans(mTitleText, mSubtitleText, mTitleWeatherText, mSubtitleWeatherText, mClockView);
     }
 
     private void setGoogleSans(TextView... views) {
         Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/GoogleSans-Regular.ttf");
+        for (TextView view : views) {
+            if (view != null) {
+                view.setTypeface(tf);
+            }
+        }
+    }
+
+    private void setFont(TextView... views) {
+        String font = Utilities.getPrefs((getContext())).getString("pref_smartspace_font", "sans-serif");
+        Typeface tf = Typeface.create(font, Typeface.NORMAL);
         for (TextView view : views) {
             if (view != null) {
                 view.setTypeface(tf);
