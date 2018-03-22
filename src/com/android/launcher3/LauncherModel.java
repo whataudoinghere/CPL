@@ -316,7 +316,7 @@ public class LauncherModel extends BroadcastReceiver
     public void onPackageChanged(String packageName, UserHandle user) {
         int op = PackageUpdatedTask.OP_UPDATE;
         enqueueModelUpdateTask(new PackageUpdatedTask(op, user, packageName));
-        IconCache.getIconsHandler(mApp.getContext()).switchIconPacks(packageName);
+        //IconCache.getIconsHandler(mApp.getContext()).switchIconPacks(packageName);
     }
 
     @Override
