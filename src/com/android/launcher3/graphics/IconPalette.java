@@ -117,9 +117,15 @@ public class IconPalette {
     /**
      * Returns an IconPalette based on the folder_badge_color in colors.xml.
      */
-    public static @NonNull IconPalette getFolderBadgePalette(Resources resources) {
+    public static @NonNull IconPalette getFolderBadgePalette(Context context,Resources resources) {
         if (sFolderBadgePalette == null) {
             int badgeColor = resources.getColor(R.color.folder_badge_color);
+            SharedPreferences prefs = Utilities.getPrefs(context);
+            if (prefs.getBoolean("pref_change_badge_color", false)){
+                Integer intColor = prefs.getInt("pref_badge_color_picker", -1);
+                String hexColor = "#" + Integer.toHexString(intColor).substring(2);
+                badgeColor = Color.parseColor(hexColor);
+            }
             sFolderBadgePalette = fromDominantColor(badgeColor, false);
         }
         return sFolderBadgePalette;
