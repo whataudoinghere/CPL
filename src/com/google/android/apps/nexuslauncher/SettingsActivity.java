@@ -125,9 +125,6 @@ public class SettingsActivity extends com.android.launcher3.SettingsActivity imp
             if (Utilities.ATLEAST_OREO) {
                 getPreferenceScreen().findPreference("pref_override_icon_shape").setEnabled(true);
             }
-            if (Utilities.ATLEAST_MARSHMALLOW) {
-                getPreferenceScreen().findPreference("pref_icon_badging").setEnabled(true);
-            }
 
             mPackageManager = getActivity().getPackageManager();
             mDefaultIconPack = getString(R.string.default_iconpack);

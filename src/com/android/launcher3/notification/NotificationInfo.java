@@ -20,10 +20,12 @@ import android.app.ActivityOptions;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
+import android.os.Process;
 import android.service.notification.StatusBarNotification;
 import android.view.View;
 
@@ -31,8 +33,8 @@ import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.compat.LauncherAppsCompat;
 import com.android.launcher3.graphics.IconPalette;
-import com.android.launcher3.popup.PopupContainerWithArrow;
 import com.android.launcher3.util.PackageUserKey;
 
 /**
@@ -70,23 +72,48 @@ public class NotificationInfo implements View.OnClickListener {
         if (Utilities.ATLEAST_OREO) mBadgeIcon = notification.getBadgeIconType();
         // Load the icon. Since it is backed by ashmem, we won't copy the entire bitmap
         // into our process as long as we don't touch it and it exists in systemui.
-        Icon icon = mBadgeIcon == Notification.BADGE_ICON_SMALL ? null : notification.getLargeIcon();
-        if (icon == null) {
-            // Use the small icon.
-            icon = notification.getSmallIcon();
-            mIconDrawable = icon.loadDrawable(context);
-            mIconColor = statusBarNotification.getNotification().color;
-            mIsIconLarge = false;
+        if (Utilities.ATLEAST_MARSHMALLOW) {
+            Icon icon = mBadgeIcon == Notification.BADGE_ICON_SMALL ? null : notification.getLargeIcon();
+            if (icon == null) {
+                // Use the small icon.
+                icon = notification.getSmallIcon();
+                mIconDrawable = icon.loadDrawable(context);
+                mIconColor = statusBarNotification.getNotification().color;
+                mIsIconLarge = false;
+            } else {
+                // Use the large icon.
+                mIconDrawable = icon.loadDrawable(context);
+                mIsIconLarge = true;
+            }
         } else {
-            // Use the large icon.
-            mIconDrawable = icon.loadDrawable(context);
+            // Assume that the app icon which is going to be loaded pre-Marshmallow is large
+            // this way it won't be tinted, as it shouldn't anyway
             mIsIconLarge = true;
         }
+
+        // try to load the icon associated with the application info of the notification
+        if (mIconDrawable == null) {
+            ApplicationInfo appInfo;
+            try {
+                appInfo = LauncherAppsCompat.getInstance(context).getApplicationInfo(packageUserKey.mPackageName, 0, statusBarNotification.getUser());
+            } catch (Throwable statusBarUserError) {
+                try {
+                    appInfo = LauncherAppsCompat.getInstance(context).getApplicationInfo(packageUserKey.mPackageName, 0, Process.myUserHandle());
+                } catch (Throwable myUserError) {
+                    appInfo = null;
+                }
+            }
+
+            if (appInfo != null) {
+                mIconDrawable = appInfo.loadIcon(context.getPackageManager());
+            }
+        }
+
         if (mIconDrawable == null) {
             mIconDrawable = new BitmapDrawable(context.getResources(), LauncherAppState
                     .getInstance(context).getIconCache()
                     .getDefaultIcon(statusBarNotification.getUser()));
-            mBadgeIcon = Notification.BADGE_ICON_NONE;
+            mBadgeIcon = Utilities.ATLEAST_OREO ? Notification.BADGE_ICON_NONE : 0;
         }
         intent = notification.contentIntent;
         autoCancel = (notification.flags & Notification.FLAG_AUTO_CANCEL) != 0;
@@ -99,10 +126,15 @@ public class NotificationInfo implements View.OnClickListener {
             return;
         }
         final Launcher launcher = Launcher.getLauncher(view.getContext());
-        Bundle activityOptions = ActivityOptions.makeClipRevealAnimation(
-                view, 0, 0, view.getWidth(), view.getHeight()).toBundle();
+
         try {
-            intent.send(null, 0, null, null, null, null, activityOptions);
+            if (Utilities.ATLEAST_MARSHMALLOW) {
+                Bundle activityOptions = ActivityOptions.makeClipRevealAnimation(
+                        view, 0, 0, view.getWidth(), view.getHeight()).toBundle();
+                intent.send(null, 0, null, null, null, null, activityOptions);
+            } else {
+                intent.send(null, 0, null, null, null, null);
+            }
             launcher.getUserEventDispatcher().logNotificationLaunch(view, intent);
         } catch (PendingIntent.CanceledException e) {
             e.printStackTrace();
