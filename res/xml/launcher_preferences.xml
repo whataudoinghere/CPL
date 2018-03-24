@@ -85,6 +85,7 @@
                 android:defaultValue="true"
                 android:key="pref_desktop_show_labels"
                 android:disableDependentsState="false"
+                android:icon="@drawable/ic_label_outline_24dp"
                 android:title="@string/desktop_show_labels" />
             <ListPreference
                 android:defaultValue="sans-serif-condensed"
@@ -94,6 +95,7 @@
                 android:dependency="pref_desktop_show_labels"
                 android:persistent="true"
                 android:summary="%s"
+                android:icon="@drawable/ic_title_24dp"
                 android:title="@string/label_font" />
             <com.android.launcher3.SeekbarPreference
                 android:key="pref_text_size_home"
@@ -174,6 +176,7 @@
                 android:dependency="pref_system_font_for_smartspace"
                 android:persistent="true"
                 android:summary="%s"
+                android:icon="@drawable/ic_title_24dp"
                 android:title="@string/smartspace_font" />
         </PreferenceCategory>
     </PreferenceScreen>
@@ -247,6 +250,7 @@
         <PreferenceCategory
             android:title="@string/springanim">
             <SwitchPreference
+                android:icon="@drawable/ic_spting_24dp"
                 android:defaultValue="true"
                 android:key="pref_use_spring"
                 android:summary="@string/use_spring_sum"
@@ -276,6 +280,7 @@
             <SwitchPreference
                 android:defaultValue="true"
                 android:key="pref_drawer_show_labels"
+                android:icon="@drawable/ic_label_outline_24dp"
                 android:title="@string/drawer_show_labels" />
             <ListPreference
                 android:defaultValue="sans-serif-condensed"
@@ -285,6 +290,7 @@
                 android:dependency="pref_drawer_show_labels"
                 android:persistent="true"
                 android:summary="%s"
+                android:icon="@drawable/ic_title_24dp"
                 android:title="@string/label_font" />
             <com.android.launcher3.SeekbarPreference
                 android:key="pref_text_size_drawer"
@@ -357,6 +363,7 @@
             <SwitchPreference
                 android:defaultValue="true"
                 android:key="pref_folder_show_labels"
+                android:icon="@drawable/ic_label_outline_24dp"
                 android:title="@string/folder_show_labels" />
             <ListPreference
                 android:defaultValue="sans-serif-condensed"
@@ -366,6 +373,7 @@
                 android:dependency="pref_folder_show_labels"
                 android:persistent="true"
                 android:summary="%s"
+                android:icon="@drawable/ic_title_24dp"
                 android:title="@string/label_font" />
             <com.android.launcher3.SeekbarPreference
                 android:key="pref_text_size_folder"
@@ -445,8 +453,10 @@
             <SwitchPreference
                 android:defaultValue="false"
                 android:key="pref_forcecolourlogo"
+                android:icon="@drawable/ic_super_g_color"
                 android:title="@string/force_colour_logo" />
             <SwitchPreference
+                android:icon="@drawable/ic_mic_24dp"
                 android:defaultValue="false"
                 android:key="pref_enablemic"
                 android:title="@string/force_mic" />
@@ -601,7 +611,7 @@
             android:key="pref_icon_badging"
             android:title="@string/icon_badging_title"
             android:persistent="false"
-            android:enabled="false"
+            android:icon="@drawable/ic_dot_24dp"
             android:disableDependentsState="false"
             android:widgetLayout="@layout/notification_pref_warning" >
             <intent android:action="android.settings.NOTIFICATION_SETTINGS">
@@ -614,6 +624,7 @@
         <SwitchPreference
             android:key="pref_textinbadge"
             android:title="@string/textinbadge"
+            android:icon="@drawable/ic_plus_1_24dp"
             android:summary="@string/textinbadge_sum"
             android:dependency="pref_icon_badging"
             android:defaultValue="false" />
@@ -663,10 +674,12 @@
 
         <Preference
             android:title="@string/about"
+            android:icon="@drawable/ic_cpl_flash_24dp"
             android:summary="@string/about_sum" >
         </Preference>
         <Preference
                 android:key="about_forgot"
+            android:icon="@drawable/ic_star_24dp"
                 android:title="@string/thanks"
                 android:summary="@string/sum_thanks" >
         </Preference>
@@ -675,6 +688,7 @@
             android:title="@string/custom_telegram">
             <Preference
                 android:title="@string/telegram_discussion_group"
+                android:icon="@drawable/ic_cpl_question_answer_24dp"
                 android:persistent="false">
                 <intent
                     android:action="android.intent.action.VIEW"
@@ -682,6 +696,7 @@
             </Preference>
             <Preference
                 android:title="@string/telegram_update_channel"
+                android:icon="@drawable/ic_cpl_update_24dp"
                 android:persistent="false">
                 <intent
                     android:action="android.intent.action.VIEW"
