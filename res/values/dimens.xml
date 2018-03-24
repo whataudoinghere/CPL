@@ -23,7 +23,7 @@
     <dimen name="dynamic_grid_page_indicator_line_height">1dp</dimen>
     <dimen name="dynamic_grid_page_indicator_land_left_nav_bar_gutter_width">0dp</dimen>
     <dimen name="dynamic_grid_page_indicator_land_right_nav_bar_gutter_width">0dp</dimen>
-    <dimen name="dynamic_grid_icon_drawable_padding">8dp</dimen>
+    <dimen name="dynamic_grid_icon_drawable_padding">4dp</dimen>
     <dimen name="dynamic_grid_overview_min_icon_zone_height">80dp</dimen>
     <dimen name="dynamic_grid_overview_max_icon_zone_height">120dp</dimen>
     <dimen name="dynamic_grid_overview_bar_item_width">80dp</dimen>
@@ -146,7 +146,7 @@
 
 <!-- Folders -->
     <!-- The size of the padding on the preview background drawable -->
-    <dimen name="folder_preview_padding">10dp</dimen>
+    <dimen name="folder_preview_padding">6dp</dimen>
     <dimen name="page_indicator_dot_size">8dp</dimen>
 
     <dimen name="folder_cell_x_padding">9dp</dimen>
